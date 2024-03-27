@@ -6,8 +6,10 @@ package group3_2111652_2110819_2220923_2220044_marriageregisteroffice.sadia;
 
 /**
  *
- * @author zafir
+ * @author HP 840 G6
  */
-public class sadia {
+public class Invoice {
+    private String clientname;
+    private int paidamount;
+    private String clientnumbr;
     
-}
