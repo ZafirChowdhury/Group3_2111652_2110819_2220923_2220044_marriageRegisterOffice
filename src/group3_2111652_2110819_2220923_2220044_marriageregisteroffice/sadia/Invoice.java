@@ -12,4 +12,4 @@ public class Invoice {
     private String clientname;
     private int paidamount;
     private String clientnumbr;
-    
+}
