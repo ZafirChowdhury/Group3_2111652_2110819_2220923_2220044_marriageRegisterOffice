@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="345.0" prefWidth="489.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="group3_2111652_2110819_2220923_2220044_marriageregisteroffice.sadia.Accountant_PurchaseInfoSceneController">
+   <children>
+      <Label layoutX="28.0" layoutY="69.0" text="Price:" />
+      <Label layoutX="28.0" layoutY="40.0" text="Purchased Item:" />
+      <Label layoutX="28.0" layoutY="110.0" text="Purchasing Dept:" />
+      <ComboBox fx:id="deptnameComboBox" layoutX="129.0" layoutY="106.0" prefHeight="25.0" prefWidth="123.0" promptText="Department" />
+      <Button layoutX="26.0" layoutY="186.0" mnemonicParsing="false" onAction="#createandStoreOnclick" text="Create &amp; Store" />
+      <Button layoutX="266.0" layoutY="131.0" mnemonicParsing="false" onAction="#viewonTextFieldOnclick" text="View" />
+      <Button layoutX="28.0" layoutY="232.0" mnemonicParsing="false" onAction="#generatePDFonClick" text="Generate PDF" />
+      <TextArea fx:id="viewDetailsTextArea" layoutX="145.0" layoutY="165.0" prefHeight="149.0" prefWidth="283.0" />
+      <TextField layoutX="129.0" layoutY="36.0" prefHeight="25.0" prefWidth="123.0" promptText="purchasedItemnameTF" />
+      <TextField layoutX="74.0" layoutY="66.0" prefHeight="25.0" prefWidth="110.0" promptText="priceofItemTF" />
+      <Label layoutX="292.0" layoutY="67.0" text="Purchasing Date:" />
+      <DatePicker fx:id="purchaseDate" layoutX="291.0" layoutY="83.0" />
+      <Button layoutX="26.0" layoutY="281.0" mnemonicParsing="false" onAction="#deptwiseinfoSortOnclick" prefHeight="43.0" prefWidth="95.0" text="Sort dept wise info" wrapText="true" />
+   </children>
+</AnchorPane>
