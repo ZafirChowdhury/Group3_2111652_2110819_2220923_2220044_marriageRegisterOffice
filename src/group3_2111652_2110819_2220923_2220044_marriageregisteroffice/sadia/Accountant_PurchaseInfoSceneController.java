@@ -11,7 +11,10 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 
 /**
  * FXML Controller class
@@ -23,9 +26,17 @@ public class Accountant_PurchaseInfoSceneController implements Initializable {
     @FXML
     private ComboBox<?> deptnameComboBox;
     @FXML
-    private TextArea viewDetailsTextArea;
-    @FXML
     private DatePicker purchaseDate;
+    @FXML
+    private TableView<?> ViewdetailsonTable;
+    @FXML
+    private TextField quantityofItemTF;
+    @FXML
+    private RadioButton accountingdeptRadioButton;
+    @FXML
+    private RadioButton marriagedeptRadioButton;
+    @FXML
+    private RadioButton advisorsdeptRadioButton;
 
     /**
      * Initializes the controller class.
