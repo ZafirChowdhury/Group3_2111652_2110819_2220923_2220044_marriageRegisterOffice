@@ -9,36 +9,36 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.ComboBox;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 
 /**
  * FXML Controller class
  *
  * @author HP 840 G6
  */
-public class Accountant_InvoiceSceneController implements Initializable {
+public class LegalAdvisor_PrenupDocController implements Initializable {
 
     @FXML
-    private ComboBox<?> PaymenttypeComboBox;
+    private TextArea aggremencontentTextArea;
+    @FXML
+    private TextField client1TF;
+    @FXML
+    private TextField client2TF;
+    @FXML
+    private DatePicker documentmakingDate;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // invoice er controller will call its method that will be placed in the accountant class
+        // TODO
     }    
 
     @FXML
-    private void CreateandStoreInvoiceOnclick(ActionEvent event) {
-    }
-
-    @FXML
-    private void ViewInvoiceonTxtField(ActionEvent event) {
-    }
-
-    @FXML
-    private void UpdateInvoiceOnclick(ActionEvent event) {
+    private void generatePrenupDocPdfButton(ActionEvent event) {
     }
     
 }

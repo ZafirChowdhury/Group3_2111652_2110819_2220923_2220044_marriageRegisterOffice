@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="434.0" prefWidth="544.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group3_2111652_2110819_2220923_2220044_marriageregisteroffice.sadia.Accountant_PurchaseInfoSceneController">
+   <children>
+      <Label layoutX="28.0" layoutY="69.0" text="Price:" />
+      <Label layoutX="28.0" layoutY="40.0" text="Purchased Item:" />
+      <Label layoutX="28.0" layoutY="110.0" text="Purchasing Dept:" />
+      <ComboBox fx:id="deptnameComboBox" layoutX="129.0" layoutY="106.0" prefHeight="25.0" prefWidth="123.0" promptText="Department" />
+      <Button layoutX="26.0" layoutY="186.0" mnemonicParsing="false" onAction="#createandStoreOnclick" text="Create &amp; Store" />
+      <Button layoutX="266.0" layoutY="131.0" mnemonicParsing="false" onAction="#viewonTextFieldOnclick" text="View" />
+      <Button layoutX="28.0" layoutY="232.0" mnemonicParsing="false" onAction="#generatePDFonClick" text="Generate PDF" />
+      <TextField layoutX="129.0" layoutY="36.0" prefHeight="25.0" prefWidth="123.0" promptText="purchasedItemnameTF" />
+      <TextField layoutX="74.0" layoutY="66.0" prefHeight="25.0" prefWidth="110.0" promptText="priceofItemTF" />
+      <Label layoutX="292.0" layoutY="67.0" text="Purchasing Date:" />
+      <DatePicker fx:id="purchaseDate" layoutX="291.0" layoutY="83.0" />
+      <Label layoutX="118.0" layoutY="4.0" text="Department wise Purchase info:" textFill="#8f0cc3">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <TableView fx:id="ViewdetailsonTable" layoutX="145.0" layoutY="173.0" prefHeight="200.0" prefWidth="384.0">
+        <columns>
+          <TableColumn prefWidth="103.0" text="Purchased item" />
+          <TableColumn prefWidth="47.0" text="Price" />
+            <TableColumn prefWidth="47.0" text="QTY" />
+            <TableColumn prefWidth="86.0" text="Dept" />
+            <TableColumn prefWidth="100.0" text="Purch Date" />
+        </columns>
+      </TableView>
+      <Label layoutX="276.0" layoutY="40.0" text="QTY:" />
+      <TextField fx:id="quantityofItemTF" layoutX="317.0" layoutY="36.0" prefHeight="25.0" prefWidth="51.0" promptText="qtyofItemTF" />
+      <RadioButton fx:id="accountingdeptRadioButton" layoutX="27.0" layoutY="286.0" mnemonicParsing="false" text="Accounting" />
+      <RadioButton fx:id="marriagedeptRadioButton" layoutX="27.0" layoutY="317.0" mnemonicParsing="false" text="Marriage dept" />
+      <RadioButton fx:id="advisorsdeptRadioButton" layoutX="26.0" layoutY="344.0" mnemonicParsing="false" text="Advisors dept" />
+      <Button layoutX="29.0" layoutY="376.0" mnemonicParsing="false" onAction="#deptwiseinfoSortOnclick" text="Sort deptwise info" />
+   </children>
+</AnchorPane>

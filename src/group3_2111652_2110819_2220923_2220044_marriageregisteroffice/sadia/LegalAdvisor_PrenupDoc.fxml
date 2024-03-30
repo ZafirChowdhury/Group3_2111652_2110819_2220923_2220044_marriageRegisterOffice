@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="group3_2111652_2110819_2220923_2220044_marriageregisteroffice.sadia.LegalAdvisor_PrenupDocController">
+   <children>
+      <Label layoutX="29.0" layoutY="58.0" text="Client name 1:" />
+      <Label layoutX="29.0" layoutY="87.0" text="Client name 2:" />
+      <Label layoutX="30.0" layoutY="117.0" text="Document created date:" />
+      <Label layoutX="29.0" layoutY="144.0" text="Aggrement Text:" />
+      <TextArea fx:id="aggremencontentTextArea" layoutX="27.0" layoutY="170.0" prefHeight="200.0" prefWidth="363.0" />
+      <TextField fx:id="client1TF" layoutX="117.0" layoutY="54.0" />
+      <TextField fx:id="client2TF" layoutX="117.0" layoutY="83.0" />
+      <DatePicker fx:id="documentmakingDate" layoutX="163.0" layoutY="113.0" />
+      <Button layoutX="435.0" layoutY="187.0" mnemonicParsing="false" onAction="#generatePrenupDocPdfButton" text="Generate PDF" />
+   </children>
+</AnchorPane>
