@@ -12,4 +12,36 @@ public class Invoice {
     private String clientname;
     private int paidamount;
     private String clientnumbr;
+
+
+    public Invoice(String clientname, int paidamount, String clientnumbr) {
+        this.clientname = clientname;
+        this.paidamount = paidamount;
+        this.clientnumbr = clientnumbr;
+    }
+
+    public String getClientname() {
+        return clientname;
+    }
+
+    public void setClientname(String clientname) {
+        this.clientname = clientname;
+    }
+
+    public int getPaidamount() {
+        return paidamount;
+    }
+
+    public void setPaidamount(int paidamount) {
+        this.paidamount = paidamount;
+    }
+
+    public String getClientnumbr() {
+        return clientnumbr;
+    }
+
+    public void setClientnumbr(String clientnumbr) {
+        this.clientnumbr = clientnumbr;
+    }
+
 }
