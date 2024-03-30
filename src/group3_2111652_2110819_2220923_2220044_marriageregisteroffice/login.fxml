@@ -1,11 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="group3_2111652_2110819_2220923_2220044_marriageregisteroffice.LoginController">
+<AnchorPane id="AnchorPane" prefHeight="306.0" prefWidth="364.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group3_2111652_2110819_2220923_2220044_marriageregisteroffice.LoginController">
    <children>
-      <Label layoutX="140.0" layoutY="152.0" prefHeight="48.0" prefWidth="232.0" text="LOGIN SCENE" />
+      <TextField layoutX="150.0" layoutY="73.0" />
+      <TextField layoutX="150.0" layoutY="112.0" />
+      <ComboBox layoutX="150.0" layoutY="146.0" prefHeight="26.0" prefWidth="171.0" />
+      <Label layoutX="32.0" layoutY="78.0" text="Username: " />
+      <Label layoutX="35.0" layoutY="117.0" text="Password: " />
+      <Label layoutX="33.0" layoutY="151.0" text="User Type: " />
+      <Label alignment="CENTER" layoutX="144.0" layoutY="21.0" text="LOGIN">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Button layoutX="277.0" layoutY="265.0" mnemonicParsing="false" text="Register" />
+      <Label layoutX="201.0" layoutY="270.0" text="New User?" />
+      <Button layoutX="147.0" layoutY="184.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="70.0" text="Login" />
    </children>
 </AnchorPane>

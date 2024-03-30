@@ -13,6 +13,7 @@ public class Invoice {
     private int paidamount;
     private String clientnumbr;
 
+
     public Invoice(String clientname, int paidamount, String clientnumbr) {
         this.clientname = clientname;
         this.paidamount = paidamount;
@@ -44,6 +45,3 @@ public class Invoice {
     }
 
 }
-    
-    
-    
