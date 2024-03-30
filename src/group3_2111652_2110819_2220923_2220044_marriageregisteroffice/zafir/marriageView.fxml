@@ -37,6 +37,8 @@
             <Font size="15.0" />
          </font>
       </Label>
-      <Button layoutX="60.0" layoutY="325.0" mnemonicParsing="false" text="Button" />
+      <Button layoutX="60.0" layoutY="325.0" mnemonicParsing="false" text="Schedule Date" />
+      <Button layoutX="218.0" layoutY="325.0" mnemonicParsing="false" text="Create marrage certificate" />
+      <Button layoutX="440.0" layoutY="325.0" mnemonicParsing="false" text="Edit" />
    </children>
 </AnchorPane>
