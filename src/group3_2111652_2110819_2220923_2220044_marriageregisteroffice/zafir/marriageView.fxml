@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group3_2111652_2110819_2220923_2220044_marriageregisteroffice.zafir.MarriageViewController">
+   <children>
+      <Label layoutX="218.0" layoutY="22.0" text="Marrage View">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Label>
+      <Label layoutX="45.0" layoutY="81.0" text="Candidate 1:">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="45.0" layoutY="111.0" text="Candidate 2:">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="45.0" layoutY="139.0" text="Date: ">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="45.0" layoutY="192.0" text="Witness list: ">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="45.0" layoutY="217.0" text="Location: ">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Button layoutX="60.0" layoutY="325.0" mnemonicParsing="false" text="Schedule Date" />
+      <Button layoutX="218.0" layoutY="325.0" mnemonicParsing="false" text="Create marrage certificate" />
+      <Button layoutX="440.0" layoutY="325.0" mnemonicParsing="false" text="Edit" />
+   </children>
+</AnchorPane>

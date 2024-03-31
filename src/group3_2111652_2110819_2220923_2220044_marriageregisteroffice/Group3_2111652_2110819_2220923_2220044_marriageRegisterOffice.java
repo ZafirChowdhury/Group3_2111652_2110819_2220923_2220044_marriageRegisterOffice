@@ -18,11 +18,12 @@ public class Group3_2111652_2110819_2220923_2220044_marriageRegisterOffice exten
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("login.fxml"));
         
         Scene scene = new Scene(root);
         
         stage.setScene(scene);
+        stage.setTitle("Login");
         stage.show();
     }
 
