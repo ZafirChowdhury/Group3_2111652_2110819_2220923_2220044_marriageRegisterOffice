@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="745.0" prefWidth="1195.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171">
+   <children>
+      <TextArea layoutX="35.0" layoutY="65.0" prefHeight="666.0" prefWidth="1137.0" />
+      <Label layoutX="65.0" layoutY="31.0" prefHeight="21.0" prefWidth="337.0" text="Notices from legal advisor" />
+   </children>
+</AnchorPane>

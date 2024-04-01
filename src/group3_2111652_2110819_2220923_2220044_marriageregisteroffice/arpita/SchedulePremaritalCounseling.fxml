@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="671.0" prefWidth="1123.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="43.0" layoutY="88.0" prefHeight="21.0" prefWidth="67.0" text="Task Id" />
+      <Label layoutX="43.0" layoutY="128.0" prefHeight="21.0" prefWidth="103.0" text="Counselor id" />
+      <ComboBox layoutX="110.0" layoutY="73.0" prefWidth="150.0" />
+      <ComboBox layoutX="154.0" layoutY="123.0" prefWidth="150.0" />
+      <TableView layoutX="77.0" layoutY="227.0" prefHeight="200.0" prefWidth="401.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="Task ID" />
+          <TableColumn prefWidth="134.0" text="Counselor ID" />
+            <TableColumn prefWidth="129.0" text="Date" />
+            <TableColumn prefWidth="62.0" text="Time" />
+        </columns>
+      </TableView>
+      <Button layoutX="510.0" layoutY="465.0" mnemonicParsing="false" text="Submit and Send it the counselor" />
+   </children>
+</AnchorPane>
