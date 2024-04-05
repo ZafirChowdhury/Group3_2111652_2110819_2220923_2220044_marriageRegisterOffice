@@ -37,6 +37,10 @@ public class Accountant_PurchaseInfoSceneController implements Initializable {
     private RadioButton marriagedeptRadioButton;
     @FXML
     private RadioButton advisorsdeptRadioButton;
+    @FXML
+    private TextField itemnameTF;
+    @FXML
+    private TextField itempriceTF;
 
     /**
      * Initializes the controller class.

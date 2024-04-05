@@ -10,37 +10,40 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextField;
 
 /**
  * FXML Controller class
  *
  * @author HP 840 G6
  */
-public class Accountant_InvoiceSceneController implements Initializable {
+public class Accountant_ClineBankInfoStorageSceneController implements Initializable {
 
+    @FXML
+    private TextField clientnameTF;
+    @FXML
+    private TextField accntnumberTF;
+    @FXML
+    private TextField bankbranchTF;
+    @FXML
+    private ComboBox<String> banknameComboBox;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // invoice er controller will call its method that will be placed in the accountant class
+        
+        banknameComboBox.getItems().addAll("City Bank","Jamuna Bank","BRAC Bank");
     }    
 
     @FXML
-    private void CreateandStoreInvoiceOnclick(ActionEvent event) {
+    private void StoreBankAccntInfoButton(ActionEvent event) {
+        
     }
 
     @FXML
-    private void ViewInvoiceonTxtField(ActionEvent event) {
-    }
-
-    @FXML
-    private void UpdateInvoiceOnclick(ActionEvent event) {
-    }
-
-    @FXML
-    private void ViewUpdatedInvoiceOnclick(ActionEvent event) {
+    private void viewBankAccntInfoButton(ActionEvent event) {
     }
     
 }

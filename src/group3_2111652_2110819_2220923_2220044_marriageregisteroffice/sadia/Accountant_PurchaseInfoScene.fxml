@@ -20,8 +20,8 @@
       <Button layoutX="26.0" layoutY="186.0" mnemonicParsing="false" onAction="#createandStoreOnclick" text="Create &amp; Store" />
       <Button layoutX="266.0" layoutY="131.0" mnemonicParsing="false" onAction="#viewonTextFieldOnclick" text="View" />
       <Button layoutX="28.0" layoutY="232.0" mnemonicParsing="false" onAction="#generatePDFonClick" text="Generate PDF" />
-      <TextField layoutX="129.0" layoutY="36.0" prefHeight="25.0" prefWidth="123.0" promptText="purchasedItemnameTF" />
-      <TextField layoutX="74.0" layoutY="66.0" prefHeight="25.0" prefWidth="110.0" promptText="priceofItemTF" />
+      <TextField fx:id="itemnameTF" layoutX="129.0" layoutY="36.0" prefHeight="25.0" prefWidth="123.0" promptText="purchasedItemnameTF" />
+      <TextField fx:id="itempriceTF" layoutX="74.0" layoutY="66.0" prefHeight="25.0" prefWidth="110.0" promptText="priceofItemTF" />
       <Label layoutX="292.0" layoutY="67.0" text="Purchasing Date:" />
       <DatePicker fx:id="purchaseDate" layoutX="291.0" layoutY="83.0" />
       <Label layoutX="118.0" layoutY="4.0" text="Department wise Purchase info:" textFill="#8f0cc3">

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="283.0" prefWidth="603.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group3_2111652_2110819_2220923_2220044_marriageregisteroffice.sadia.Accountant_ClineBankInfoStorageSceneController">
+   <children>
+      <Label layoutX="71.0" layoutY="42.0" text="Client name" />
+      <Label layoutX="72.0" layoutY="78.0" text="Bank name" />
+      <Label layoutX="67.0" layoutY="154.0" text="Bank Branch" />
+      <Label layoutX="71.0" layoutY="115.0" text="Account number" />
+      <TextField fx:id="clientnameTF" layoutX="151.0" layoutY="38.0" />
+      <TextField fx:id="accntnumberTF" layoutX="176.0" layoutY="115.0" />
+      <TextField fx:id="bankbranchTF" layoutX="158.0" layoutY="153.0" />
+      <ComboBox fx:id="banknameComboBox" layoutX="151.0" layoutY="74.0" prefWidth="150.0" promptText="Banks" />
+      <TextArea layoutX="357.0" layoutY="49.0" prefHeight="191.0" prefWidth="227.0" />
+      <Button layoutX="67.0" layoutY="201.0" mnemonicParsing="false" onAction="#StoreBankAccntInfoButton" text="Store Client Bank info" />
+      <Button layoutX="407.0" layoutY="14.0" mnemonicParsing="false" onAction="#viewBankAccntInfoButton" text="View client bank info" />
+      <Label layoutX="71.0" layoutY="3.0" text="Client Bank Informattion:" textFill="#b10707">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

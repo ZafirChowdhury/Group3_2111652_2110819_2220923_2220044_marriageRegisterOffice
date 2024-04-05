@@ -10,37 +10,30 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextArea;
 
 /**
  * FXML Controller class
  *
  * @author HP 840 G6
  */
-public class Accountant_InvoiceSceneController implements Initializable {
+public class LgalAdvisor_MarriageGuidesceneController implements Initializable {
 
+    @FXML
+    private TextArea viewGuideTextArea;
+    @FXML
+    private ComboBox<?> guideListComboBx;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // invoice er controller will call its method that will be placed in the accountant class
+        // TODO
     }    
 
     @FXML
-    private void CreateandStoreInvoiceOnclick(ActionEvent event) {
-    }
-
-    @FXML
-    private void ViewInvoiceonTxtField(ActionEvent event) {
-    }
-
-    @FXML
-    private void UpdateInvoiceOnclick(ActionEvent event) {
-    }
-
-    @FXML
-    private void ViewUpdatedInvoiceOnclick(ActionEvent event) {
+    private void viewselectedGuidebutton(ActionEvent event) {
     }
     
 }
