@@ -9,7 +9,7 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 
 /**
@@ -17,12 +17,18 @@ import javafx.scene.control.TextField;
  *
  * @author HP 840 G6
  */
-public class Accountant_TaxCalculatorController implements Initializable {
+public class Accountant_ClineBankInfoStorageSceneController implements Initializable {
 
     @FXML
-    private TextField PaidinterestTextField;
+    private TextField clientnameTF;
     @FXML
-    private Label taxableIncomeResultTextlabel;
+    private TextField accntnumberTF;
+    @FXML
+    private TextField bankbranchTF;
+    @FXML
+    private ComboBox<String> banknameComboBox;
+    @FXML
+    private TextField clientContactno;
 
     /**
      * Initializes the controller class.
@@ -30,11 +36,17 @@ public class Accountant_TaxCalculatorController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
+        banknameComboBox.getItems().addAll("City Bank","Jamuna Bank","BRAC Bank");
+        
     }    
 
     @FXML
-    private void calculateTaxOnClickButton(ActionEvent event) {
-          
+    private void StoreBankAccntInfoButton(ActionEvent event) {
+        
+    }
+
+    @FXML
+    private void viewBankAccntInfoButton(ActionEvent event) {
     }
     
 }

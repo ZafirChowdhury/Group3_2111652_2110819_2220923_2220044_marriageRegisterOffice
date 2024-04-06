@@ -1,31 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group3_2111652_2110819_2220923_2220044_marriageregisteroffice.sadia.Accountant_InvoiceSceneController">
+<AnchorPane id="AnchorPane" prefHeight="424.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group3_2111652_2110819_2220923_2220044_marriageregisteroffice.sadia.Accountant_InvoiceSceneController">
    <children>
-      <TextField layoutX="131.0" layoutY="91.0" />
-      <TextField layoutX="131.0" layoutY="167.0" promptText="Paid amount" />
-      <Button layoutX="39.0" layoutY="276.0" mnemonicParsing="false" onAction="#CreateandStoreInvoiceOnclick" text="Create Invoice" />
-      <Button layoutX="393.0" layoutY="59.0" mnemonicParsing="false" onAction="#ViewInvoiceonTxtField" text="View Invoice" />
-      <TextArea layoutX="294.0" layoutY="91.0" prefHeight="286.0" prefWidth="293.0" />
-      <ComboBox fx:id="PaymenttypeComboBox" layoutX="125.0" layoutY="221.0" prefWidth="150.0" promptText="Paid for" />
-      <TextField layoutX="132.0" layoutY="129.0" promptText="Client conact no:" />
-      <Label layoutX="259.0" layoutY="24.0" text="INVOICE:" textFill="#1141e1">
+      <TextField fx:id="clientnameTF" layoutX="131.0" layoutY="59.0" />
+      <TextField fx:id="unpaidAmountTF" layoutX="131.0" layoutY="135.0" promptText="UnPaid amount" />
+      <Button layoutX="154.0" layoutY="173.0" mnemonicParsing="false" onAction="#CreateandStoreInvoiceOnclick" text="Create Invoice" />
+      <Button layoutX="14.0" layoutY="262.0" mnemonicParsing="false" onAction="#ViewInvoiceonTxtField" text="View Invoice" />
+      <TextArea layoutX="103.0" layoutY="211.0" prefHeight="177.0" prefWidth="190.0" />
+      <TextField fx:id="clientContactnoTF" layoutX="132.0" layoutY="97.0" promptText="Client conact no:" />
+      <Label layoutX="34.0" layoutY="13.0" text="INVOICE:" textFill="#1141e1">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <Label layoutX="39.0" layoutY="95.0" text="Client name" />
-      <Label layoutX="39.0" layoutY="171.0" text="Paid amount" />
-      <Label layoutX="25.0" layoutY="133.0" text="Client Contact no:" />
-      <Label layoutX="39.0" layoutY="213.0" prefHeight="42.0" prefWidth="68.0" text="Payment made for:" wrapText="true" />
-      <Button layoutX="168.0" layoutY="276.0" mnemonicParsing="false" onAction="#UpdateInvoiceOnclick" text="Update Invoice" />
+      <Label layoutX="39.0" layoutY="63.0" text="Client name" />
+      <Label layoutX="39.0" layoutY="139.0" text="UnPaid amount" />
+      <Label layoutX="25.0" layoutY="101.0" text="Client Contact no:" />
+      <Button layoutX="300.0" layoutY="28.0" mnemonicParsing="false" onAction="#UpdateInvoiceOnclick" text="Update invoice List" />
+      <TableView layoutX="300.0" layoutY="64.0" prefHeight="341.0" prefWidth="281.0">
+        <columns>
+          <TableColumn prefWidth="91.0" text="Client name" />
+          <TableColumn prefWidth="110.3333740234375" text="Contact no" />
+            <TableColumn prefWidth="78.6666259765625" text="Paid Status" />
+        </columns>
+      </TableView>
+      <Button layoutX="441.0" layoutY="28.0" mnemonicParsing="false" onAction="#ViewUpdatedInvoiceOnclick" prefHeight="25.0" prefWidth="139.0" text="View updated List" />
    </children>
 </AnchorPane>

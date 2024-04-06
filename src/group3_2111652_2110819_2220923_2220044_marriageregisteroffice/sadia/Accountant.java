@@ -24,5 +24,10 @@ public class Accountant extends User {
         return true;
 //        if fail return false
     } 
+    public boolean StorepurchaseInfo(String Deptname, String sellername, String itemname, String modelno){
+        PurchaseInfo purchInfo = new PurchaseInfo( Deptname, sellername, itemname, modelno);
+        //to do
+        return true;
+    } 
     
 }

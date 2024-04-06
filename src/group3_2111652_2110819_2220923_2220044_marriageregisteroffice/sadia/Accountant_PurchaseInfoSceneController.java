@@ -24,11 +24,11 @@ import javafx.scene.control.TextField;
 public class Accountant_PurchaseInfoSceneController implements Initializable {
 
     @FXML
-    private ComboBox<?> deptnameComboBox;
+    private ComboBox<String> deptnameComboBox;
     @FXML
     private DatePicker purchaseDate;
     @FXML
-    private TableView<?> ViewdetailsonTable;
+    private TableView<PurchaseInfo> ViewdetailsonTable;
     @FXML
     private TextField quantityofItemTF;
     @FXML
@@ -37,6 +37,10 @@ public class Accountant_PurchaseInfoSceneController implements Initializable {
     private RadioButton marriagedeptRadioButton;
     @FXML
     private RadioButton advisorsdeptRadioButton;
+    @FXML
+    private TextField itemnameTF;
+    @FXML
+    private TextField itempriceTF;
 
     /**
      * Initializes the controller class.
