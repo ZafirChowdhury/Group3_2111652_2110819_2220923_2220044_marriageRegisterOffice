@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="465.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="group3_2111652_2110819_2220923_2220044_marriageregisteroffice.sadia.Accountant_TaxCalculatorController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="465.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group3_2111652_2110819_2220923_2220044_marriageregisteroffice.sadia.Accountant_TaxCalculatorController">
     <stylesheets>
         <URL value="@accountant_taxcalculator.css" />
     </stylesheets>
@@ -22,8 +22,8 @@
       <Label layoutX="47.0" layoutY="164.0" prefHeight="25.0" prefWidth="112.0" text="Operating Expense:" wrapText="true" />
       <TextField fx:id="PaidinterestTextField" layoutX="136.0" layoutY="205.0" />
       <Label layoutX="49.0" layoutY="205.0" prefHeight="25.0" prefWidth="96.0" text="Paid interests:" wrapText="true" />
-      <Label layoutX="123.0" layoutY="249.0" prefHeight="25.0" prefWidth="96.0" text="Taxable Income:" wrapText="true" />
-      <Label fx:id="taxableIncomeResultTextlabel" layoutX="245.0" layoutY="249.0" prefHeight="25.0" prefWidth="191.0" style="-fx-background-color: white;" wrapText="true" />
+      <Label layoutX="136.0" layoutY="249.0" prefHeight="25.0" prefWidth="96.0" text="Taxable Income:" wrapText="true" />
+      <Label fx:id="taxableIncomeResultTextlabel" layoutX="245.0" layoutY="249.0" prefHeight="25.0" prefWidth="191.0" style="-fx-background-color: gray;" wrapText="true" />
       <Button layoutX="39.0" layoutY="249.0" mnemonicParsing="false" onAction="#calculateTaxOnClickButton" text="Calculate" />
       <Label layoutX="123.0" layoutY="12.0" prefHeight="25.0" prefWidth="255.0" text="Taxable Income Calculator:" textFill="#6c53db" wrapText="true">
          <font>

@@ -29,11 +29,12 @@ public class Accountant_TaxCalculatorController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        
     }    
 
     @FXML
     private void calculateTaxOnClickButton(ActionEvent event) {
+          
     }
     
 }
