@@ -9,7 +9,9 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.ComboBox;
+import javafx.scene.control.Alert;
+
+import javafx.scene.control.TextField;
 
 /**
  * FXML Controller class
@@ -19,11 +21,17 @@ import javafx.scene.control.ComboBox;
 public class Accountant_InvoiceSceneController implements Initializable {
 
     @FXML
-    private ComboBox<?> PaymenttypeComboBox;
-
-    /**
-     * Initializes the controller class.
-     */
+    private TextField clientnameTF;
+    @FXML
+    private TextField unpaidAmountTF;
+    @FXML
+    private TextField clientContactnoTF;
+    Alert blankinfo = new Alert(Alert.AlertType.WARNING,"Cannot keep blank");
+    Alert wrongphninfo = new Alert(Alert.AlertType.WARNING,"Put valid contact no");
+    Alert amount = new Alert(Alert.AlertType.WARNING,"Put valid amount");
+    
+    
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // invoice er controller will call its method that will be placed in the accountant class
@@ -31,6 +39,41 @@ public class Accountant_InvoiceSceneController implements Initializable {
 
     @FXML
     private void CreateandStoreInvoiceOnclick(ActionEvent event) {
+        String clientname = clientnameTF.getText();
+        if(clientname.isEmpty()){
+            blankinfo.show();
+            return;
+        }
+        /*try{
+        int unpaidamnt =  Integer.parseInt(unpaidAmountTF.getText());
+        if(unpaidamnt<=0){
+            Alert amount = new Alert(Alert.AlertType.WARNING,"Put valid amount");
+            amount.showAndWait();
+            return;
+        }
+        
+       
+        String clientnum = clientContactnoTF.getText();
+        Boolean equal = clientnum.contains("+");
+        if(clientnum.isEmpty()){
+         blankinfo.show();
+            return;  
+        }
+        else if(clientnum.length()>11 || equal!= true){
+          Alert wrongphninfo = new Alert(Alert.AlertType.WARNING,"Put valid contact no"); 
+           return;
+        }  
+        
+        
+        
+        
+        
+        
+        
+       
+        
+            
+    */    
     }
 
     @FXML
@@ -39,6 +82,10 @@ public class Accountant_InvoiceSceneController implements Initializable {
 
     @FXML
     private void UpdateInvoiceOnclick(ActionEvent event) {
+    }
+
+    @FXML
+    private void ViewUpdatedInvoiceOnclick(ActionEvent event) {
     }
     
 }

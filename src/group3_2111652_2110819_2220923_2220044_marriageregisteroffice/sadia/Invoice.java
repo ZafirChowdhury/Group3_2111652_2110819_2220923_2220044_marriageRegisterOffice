@@ -10,13 +10,13 @@ package group3_2111652_2110819_2220923_2220044_marriageregisteroffice.sadia;
  */
 public class Invoice {
     private String clientname;
-    private int paidamount;
+    private int Unpaidamount;
     private String clientnumbr;
 
 
-    public Invoice(String clientname, int paidamount, String clientnumbr) {
+    public Invoice(String clientname, int Unpaidamount, String clientnumbr) {
         this.clientname = clientname;
-        this.paidamount = paidamount;
+        this.Unpaidamount = Unpaidamount;
         this.clientnumbr = clientnumbr;
     }
 
@@ -29,11 +29,11 @@ public class Invoice {
     }
 
     public int getPaidamount() {
-        return paidamount;
+        return Unpaidamount;
     }
 
-    public void setPaidamount(int paidamount) {
-        this.paidamount = paidamount;
+    public void setPaidamount(int Unpaidamount) {
+        this.Unpaidamount = Unpaidamount;
     }
 
     public String getClientnumbr() {

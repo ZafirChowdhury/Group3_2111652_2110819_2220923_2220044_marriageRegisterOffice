@@ -10,31 +10,40 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 
 /**
  * FXML Controller class
  *
  * @author HP 840 G6
  */
-public class Accountant_TaxCalculatorController implements Initializable {
+public class Accountant_DashboardController implements Initializable {
 
     @FXML
-    private TextField PaidinterestTextField;
-    @FXML
-    private Label taxableIncomeResultTextlabel;
+    private Label noticeInfoLabel;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
+       
     }    
 
     @FXML
-    private void calculateTaxOnClickButton(ActionEvent event) {
-          
+    private void showInvoiceSceneOnclick(ActionEvent event) {
+        
+    }
+
+    @FXML
+    private void showPurchaseInfoSceneOnclick(ActionEvent event) {
+    }
+
+    @FXML
+    private void showClientBankInfoScene(ActionEvent event) {
+    }
+
+    @FXML
+    private void gotoChartSceneOnclick(ActionEvent event) {
     }
     
 }

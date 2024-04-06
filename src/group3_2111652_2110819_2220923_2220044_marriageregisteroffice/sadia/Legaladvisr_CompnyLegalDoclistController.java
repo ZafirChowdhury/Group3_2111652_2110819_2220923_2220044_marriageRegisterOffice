@@ -9,20 +9,20 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextArea;
 
 /**
  * FXML Controller class
  *
  * @author HP 840 G6
  */
-public class Accountant_TaxCalculatorController implements Initializable {
+public class Legaladvisr_CompnyLegalDoclistController implements Initializable {
 
     @FXML
-    private TextField PaidinterestTextField;
+    private ComboBox<String> documentListComboBox;
     @FXML
-    private Label taxableIncomeResultTextlabel;
+    private TextArea viewdocTextArea;
 
     /**
      * Initializes the controller class.
@@ -33,8 +33,7 @@ public class Accountant_TaxCalculatorController implements Initializable {
     }    
 
     @FXML
-    private void calculateTaxOnClickButton(ActionEvent event) {
-          
+    private void viewCompanyDocButton(ActionEvent event) {
     }
     
 }
