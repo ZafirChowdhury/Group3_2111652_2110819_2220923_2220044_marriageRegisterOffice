@@ -27,6 +27,8 @@ public class Accountant_ClineBankInfoStorageSceneController implements Initializ
     private TextField bankbranchTF;
     @FXML
     private ComboBox<String> banknameComboBox;
+    @FXML
+    private TextField clientContactno;
 
     /**
      * Initializes the controller class.
@@ -35,6 +37,7 @@ public class Accountant_ClineBankInfoStorageSceneController implements Initializ
     public void initialize(URL url, ResourceBundle rb) {
         
         banknameComboBox.getItems().addAll("City Bank","Jamuna Bank","BRAC Bank");
+        
     }    
 
     @FXML

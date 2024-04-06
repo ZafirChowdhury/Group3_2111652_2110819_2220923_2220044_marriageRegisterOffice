@@ -6,7 +6,10 @@ package group3_2111652_2110819_2220923_2220044_marriageregisteroffice.sadia;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 
 /**
  * FXML Controller class
@@ -15,12 +18,32 @@ import javafx.fxml.Initializable;
  */
 public class Accountant_DashboardController implements Initializable {
 
+    @FXML
+    private Label noticeInfoLabel;
+
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+       
     }    
+
+    @FXML
+    private void showInvoiceSceneOnclick(ActionEvent event) {
+        
+    }
+
+    @FXML
+    private void showPurchaseInfoSceneOnclick(ActionEvent event) {
+    }
+
+    @FXML
+    private void showClientBankInfoScene(ActionEvent event) {
+    }
+
+    @FXML
+    private void gotoChartSceneOnclick(ActionEvent event) {
+    }
     
 }

@@ -34,7 +34,7 @@ public class Accountant_TaxCalculatorController implements Initializable {
 
     @FXML
     private void calculateTaxOnClickButton(ActionEvent event) {
-        
+          
     }
     
 }
