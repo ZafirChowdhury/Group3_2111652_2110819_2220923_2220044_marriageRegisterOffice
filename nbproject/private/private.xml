@@ -2,20 +2,10 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-<<<<<<< HEAD
-        <group/>
-=======
         <group>
-            <file>file:/X:/MID_2110819_sec1/Group3_2111652_2110819_2220923_2220044_marriageRegisterOffice/src/group3_2111652_2110819_2220923_2220044_marriageregisteroffice/sadia/Accountant_InvoiceSceneController.java</file>
-            <file>file:/X:/MID_2110819_sec1/Group3_2111652_2110819_2220923_2220044_marriageRegisterOffice/src/group3_2111652_2110819_2220923_2220044_marriageregisteroffice/sadia/Accountant_TaxCalculatorController.java</file>
-            <file>file:/X:/MID_2110819_sec1/Group3_2111652_2110819_2220923_2220044_marriageRegisterOffice/src/group3_2111652_2110819_2220923_2220044_marriageregisteroffice/sadia/ClientBankInfo.java</file>
-            <file>file:/X:/MID_2110819_sec1/Group3_2111652_2110819_2220923_2220044_marriageRegisterOffice/src/group3_2111652_2110819_2220923_2220044_marriageregisteroffice/User.java</file>
-            <file>file:/X:/MID_2110819_sec1/Group3_2111652_2110819_2220923_2220044_marriageRegisterOffice/src/group3_2111652_2110819_2220923_2220044_marriageregisteroffice/sadia/Invoice.java</file>
-            <file>file:/X:/MID_2110819_sec1/Group3_2111652_2110819_2220923_2220044_marriageRegisterOffice/src/group3_2111652_2110819_2220923_2220044_marriageregisteroffice/sadia/Accountant.java</file>
-            <file>file:/X:/MID_2110819_sec1/Group3_2111652_2110819_2220923_2220044_marriageRegisterOffice/src/group3_2111652_2110819_2220923_2220044_marriageregisteroffice/sadia/Accountant_PurchaseInfoScene.fxml</file>
-            <file>file:/X:/MID_2110819_sec1/Group3_2111652_2110819_2220923_2220044_marriageRegisterOffice/src/group3_2111652_2110819_2220923_2220044_marriageregisteroffice/sadia/Accountant_PurchaseInfoSceneController.java</file>
-            <file>file:/X:/MID_2110819_sec1/Group3_2111652_2110819_2220923_2220044_marriageRegisterOffice/src/group3_2111652_2110819_2220923_2220044_marriageregisteroffice/sadia/Accountant_InvoiceScene.fxml</file>
+            <file>file:/home/zafir/Desktop/NetBeans%20Projets/Group3_2111652_2110819_2220923_2220044_marriageRegisterOffice/src/group3_2111652_2110819_2220923_2220044_marriageregisteroffice/sadia/Accountant.java</file>
+            <file>file:/home/zafir/Desktop/NetBeans%20Projets/Group3_2111652_2110819_2220923_2220044_marriageRegisterOffice/src/group3_2111652_2110819_2220923_2220044_marriageregisteroffice/LoginController.java</file>
+            <file>file:/home/zafir/Desktop/NetBeans%20Projets/Group3_2111652_2110819_2220923_2220044_marriageRegisterOffice/src/group3_2111652_2110819_2220923_2220044_marriageregisteroffice/RegisterController.java</file>
         </group>
->>>>>>> 3ca3b6cecfe2d39967290ff227db4659316281c4
     </open-files>
 </project-private>

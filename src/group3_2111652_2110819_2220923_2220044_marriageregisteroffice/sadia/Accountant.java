@@ -12,11 +12,11 @@ import java.time.LocalDate;
  * @author HP 840 G6
  */
 public class Accountant extends User {
-    
-    public Accountant(String username, String password, String name, String email, LocalDate DOB, LocalDate DOJ) {
-        super(username, password, name, email, DOB, DOJ);
+
+    public Accountant(String username, String password, String type) {
+        super(username, password, type);
     }
-    
+
     public boolean StoreClientBankInfo(String name, int phone, String bankName, int bankAccNo, String bankBranch){
         ClientBankInfo cbi = new ClientBankInfo(name, bankName, bankBranch, phone, bankAccNo);
         

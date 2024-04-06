@@ -12,24 +12,14 @@ import java.time.LocalDate;
  */
 
 public abstract class User {
-    protected String username, password, name, email;
-    protected LocalDate DOB, DOJ;
+    final String username;
+    String password;
+    final String type;
 
-    public User(String username, String password, String name, String email, LocalDate DOB, LocalDate DOJ) {
+    public User(String username, String password, String type) {
         this.username = username;
         this.password = password;
-        this.name = name;
-        this.email = email;
-        this.DOB = DOB;
-        this.DOJ = DOJ;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
+        this.type = type;
     }
 
     public String getPassword() {
@@ -40,43 +30,9 @@ public abstract class User {
         this.password = password;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public LocalDate getDOB() {
-        return DOB;
-    }
-
-    public void setDOB(LocalDate DOB) {
-        this.DOB = DOB;
-    }
-
-    public LocalDate getDOJ() {
-        return DOJ;
-    }
-
-    public void setDOJ(LocalDate DOJ) {
-        this.DOJ = DOJ;
-    }
-
     @Override
     public String toString() {
-        return "User{" + "username=" + username + ", password=" + password + ", name=" + name + ", email=" + email + ", DOB=" + DOB + ", DOJ=" + DOJ + '}';
+        return "User{" + "username=" + username + ", type=" + type + '}';
     }
-    
-    
-    
-}   
+
+}
