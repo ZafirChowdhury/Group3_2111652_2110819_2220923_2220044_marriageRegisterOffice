@@ -1,6 +1,9 @@
 package group3_2111652_2110819_2220923_2220044_marriageregisteroffice;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -35,7 +38,33 @@ public class RegisterController implements Initializable {
     @FXML
     private void registerButtonOnClick(ActionEvent event) throws IOException {
         // TODO CREATE USER
+        if (userTypeComboBox.getValue() != null) {
+            // Show alart
+            return;
+        }
         
+        if (passwordField.getText().length() < 6) {
+            // Show munimum password lenth alart
+            return;
+        }
+        
+        if (passwordField.getText() != passwordAgainFiled.getText()) {
+            // Show password dosent match alart
+            return;
+        }
+        
+        // Check username and save user instance 
+        File file;
+        FileOutputStream fos;
+        ObjectOutputStream oos;
+        
+        if (userTypeComboBox.getValue() == "Marriage Registrar"){
+            
+        }
+        else if (userTypeComboBox.getValue() == "IT Admin") {
+            file = new File("itAdmin.bin");
+            
+        }
         
         Parent root = FXMLLoader.load(getClass().getResource("login.fxml"));
         Scene loginScene = new Scene(root);
