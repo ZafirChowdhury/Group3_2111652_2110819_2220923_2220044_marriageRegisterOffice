@@ -69,8 +69,8 @@ public class Accountant extends User implements  Serializable{
             if(oos!=null){
                 try{oos.close();
                 } catch(IOException e){
-                     Alert numbrinfo = new Alert(Alert.AlertType.ERROR,"Invalid data type");
-     numbrinfo.showAndWait();
+                     Alert info = new Alert(Alert.AlertType.ERROR,"Oops");
+     info.showAndWait();
      
                 }
             
