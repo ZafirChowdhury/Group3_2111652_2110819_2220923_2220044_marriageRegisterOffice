@@ -29,12 +29,14 @@ public class Accountant_InvoiceSceneController implements Initializable {
     Alert blankinfo = new Alert(Alert.AlertType.WARNING,"Cannot keep blank");
     Alert wrongphninfo = new Alert(Alert.AlertType.WARNING,"Put valid contact no. Must be 11 digits with + sign ");
     Alert amount = new Alert(Alert.AlertType.WARNING,"Put valid amount. Amount cannot be 0tk");
+    private Accountant accountant;
     
     
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // invoice er controller will call its method that will be placed in the accountant class
+        
     }    
 
     @FXML
@@ -66,8 +68,7 @@ try{
         }
 
         
-        //Boolean inv = Accountant.CreateInvoice(clientname,unpaidamnt,numbr);
-       
+        accountant.CreateInvoice(clientname, unpaidamnt, clientname);
 
 
 

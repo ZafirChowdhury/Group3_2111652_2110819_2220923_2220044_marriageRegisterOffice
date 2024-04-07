@@ -5,7 +5,12 @@
 package group3_2111652_2110819_2220923_2220044_marriageregisteroffice.sadia;
 
 import group3_2111652_2110819_2220923_2220044_marriageregisteroffice.User;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.io.Serializable;
+import javafx.scene.control.Alert;
 
 
 /**
@@ -41,16 +46,47 @@ public class Accountant extends User implements  Serializable{
     }
 //goal 3
 
-    public boolean CreateInvoice(String clientname, int Unpaidamount, String clientnumbr,Boolean paidstatus) {
-        Invoice inv = new Invoice(clientname, Unpaidamount, clientnumbr,paidstatus);
+    public boolean CreateInvoice(String clientname, int Unpaidamount, String clientnumbr) {
+        Invoice inv = new Invoice(clientname, Unpaidamount, clientnumbr);
         System.out.println("Invoice made" + inv.toString());
-        //File i = 
-        return true;
+        File f = null;
+        FileOutputStream fos = null;
+        ObjectOutputStream oos = null;
+        try{
+            f = new File("Invoice.bin");
+            if(f.exists()){
+                fos = new FileOutputStream(f,true);
+                oos = new ObjectOutputStream(fos);
+            } else { fos = new FileOutputStream(f);
+                     oos = new ObjectOutputStream(fos);       
+            }
+            oos.writeObject(inv);
+            oos.close();
+            return true;
+            
+            
+        } catch(IOException i){
+            if(oos!=null){
+                try{oos.close();
+                } catch(IOException e){
+                     Alert numbrinfo = new Alert(Alert.AlertType.ERROR,"Invalid data type");
+     numbrinfo.showAndWait();
+     
+                }
+            
+            }  
+    }      
+         System.out.println("Failed to make bin");
+         return false;
+    }
+}
+             
+    
 
 //goal 4 Update Invoice
 //goal 5 Make financial chart spend vs income
 //goal 6 Make Calculate Tax
 // goal 7 sort dpetwise info
 // goal 8 sent notice/check notice
-    }
-}
+    
+
