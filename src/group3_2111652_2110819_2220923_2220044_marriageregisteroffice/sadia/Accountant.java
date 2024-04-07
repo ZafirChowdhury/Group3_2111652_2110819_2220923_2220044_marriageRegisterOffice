@@ -7,11 +7,14 @@ package group3_2111652_2110819_2220923_2220044_marriageregisteroffice.sadia;
 import group3_2111652_2110819_2220923_2220044_marriageregisteroffice.User;
 import java.io.Serializable;
 
+
 /**
  *
  * @author HP 840 G6
  */
-public class Accountant extends User implements Serializable {
+
+public class Accountant extends User implements  Serializable{
+
 
     public Accountant(String username, String password, String type) {
         super(username, password, type);

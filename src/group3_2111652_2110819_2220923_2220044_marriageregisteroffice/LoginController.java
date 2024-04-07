@@ -14,6 +14,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -55,9 +56,33 @@ public class LoginController implements Initializable {
 
     @FXML
     private void loginButtonOnClick(ActionEvent event) {
-        // VALIDATE 
+        // Validations and verifications
+        if (userTypeComboBox.getValue() == null) {
+            Alert a = new Alert(Alert.AlertType.ERROR);
+            a.setContentText("Please select a user type.");
+            a.showAndWait();
+            System.out.println("Please select a user type.");
+            return;
+        }
         
-        // SWITCH TO USER DASHBORD
+        if ((usernameTextFiled.getText().trim()).equals("") || usernameTextFiled.getText().equals(null)) {
+            Alert a = new Alert(Alert.AlertType.ERROR);
+            a.setContentText("Please enter a username.");
+            a.showAndWait();
+            System.out.println("Please enter a username.");
+            return;
+        }
+        
+        if (passwordField.getText().length() < 6) {
+            Alert a = new Alert(Alert.AlertType.ERROR);
+            a.setContentText("Password must be at least 6 characters long");
+            a.showAndWait();
+            System.err.println("Password must be at least 6 characters long");
+            return;
+        }
+        
+        // User.verifyUser("", "", "bin/itAdmin.bin");
+        
     }
     
 }
