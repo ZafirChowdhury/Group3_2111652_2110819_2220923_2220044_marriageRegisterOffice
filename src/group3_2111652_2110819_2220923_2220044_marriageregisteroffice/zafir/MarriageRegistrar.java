@@ -11,9 +11,9 @@ import java.io.Serializable;
  *
  * @author zafir
  */
-public class ItAdmin extends User implements Serializable{
-
-    public ItAdmin(String username, String password, String type) {
+public class MarriageRegistrar extends User implements Serializable{
+    
+    public MarriageRegistrar(String username, String password, String type) {
         super(username, password, type);
     }
     
