@@ -12,12 +12,30 @@ public class Invoice {
     private String clientname;
     private int Unpaidamount;
     private String clientnumbr;
+    private Boolean paidstatus;
+    
 
-
-    public Invoice(String clientname, int Unpaidamount, String clientnumbr) {
+    public Invoice(String clientname, int Unpaidamount, String clientnumbr,Boolean paidstatus) {
         this.clientname = clientname;
         this.Unpaidamount = Unpaidamount;
         this.clientnumbr = clientnumbr;
+        this.paidstatus = false;
+    }
+    
+    public int getUnpaidamount() {
+        return Unpaidamount;
+    }
+
+    public void setUnpaidamount(int Unpaidamount) {
+        this.Unpaidamount = Unpaidamount;
+    }
+
+    public Boolean getPaidstatus() {
+        return paidstatus;
+    }
+
+    public void setPaidstatus(Boolean paidstatus) {
+        this.paidstatus = paidstatus;
     }
 
     public String getClientname() {

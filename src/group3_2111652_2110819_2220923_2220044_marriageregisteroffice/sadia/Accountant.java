@@ -38,8 +38,8 @@ public class Accountant extends User implements Serializable {
     }
 //goal 3
 
-    public boolean CreateInvoice(String clientname, int Unpaidamount, String clientnumbr) {
-        Invoice inv = new Invoice(clientname, Unpaidamount, clientnumbr);
+    public boolean CreateInvoice(String clientname, int Unpaidamount, String clientnumbr,Boolean paidstatus) {
+        Invoice inv = new Invoice(clientname, Unpaidamount, clientnumbr,paidstatus);
         System.out.println("Invoice made" + inv.toString());
         //File i = 
         return true;
