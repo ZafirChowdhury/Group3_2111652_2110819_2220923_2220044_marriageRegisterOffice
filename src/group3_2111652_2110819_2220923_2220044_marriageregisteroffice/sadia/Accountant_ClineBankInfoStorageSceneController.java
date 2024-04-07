@@ -43,6 +43,7 @@ public class Accountant_ClineBankInfoStorageSceneController implements Initializ
     @FXML
     private void StoreBankAccntInfoButton(ActionEvent event) {
         
+        
     }
 
     @FXML

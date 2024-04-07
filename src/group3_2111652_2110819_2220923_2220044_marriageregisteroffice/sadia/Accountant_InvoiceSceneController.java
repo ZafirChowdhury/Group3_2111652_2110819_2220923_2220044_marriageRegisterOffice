@@ -42,22 +42,25 @@ public class Accountant_InvoiceSceneController implements Initializable {
         String clientname = clientnameTF.getText();
         if(clientname.isEmpty()){
             blankinfo.show();
-            return;
+        blankinfo.showAndWait();
+        return;
         }
+
 try{  
         int unpaidamnt = Integer.parseInt(unpaidAmountTF.getText());
         if(unpaidamnt<=0){
             amount.showAndWait();
             return;
-           
         }
+
+        
         String numbr = clientContactnoTF.getText();
         boolean sign = numbr.contains("+");
         if(numbr.isEmpty()){
             blankinfo.showAndWait();
             return;
         }
-        else if(numbr.length()>11 || sign!= true){
+        if(numbr.length()>11 || sign!= true){
             wrongphninfo.showAndWait();
             return;
         }
@@ -67,12 +70,17 @@ try{
        
 
 
+
+
 } catch(Exception e){
     Alert numbrinfo = new Alert(Alert.AlertType.ERROR,"Invalid data type");
      numbrinfo.showAndWait();
      return;
+
 }
         
+
+
     }
 
     @FXML
