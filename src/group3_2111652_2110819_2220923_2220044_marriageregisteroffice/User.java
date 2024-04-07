@@ -137,4 +137,35 @@ public abstract class User implements Serializable {
         
         return true;
     }
+    
+    // TODO : DOSE NOT WORK
+    // TRY : Use type to set path and ArrayList type
+    public static User verifyUser(String username, String password, String path) {
+        // Add all the obj instace in array list
+        ArrayList userList = new ArrayList();
+        
+        try {
+            File file = new File(path);
+            if (!file.exists()) {
+                System.out.println("File dose not exist");
+            }
+            FileInputStream fis = new FileInputStream(file);
+            ObjectInputStream ois = new ObjectInputStream(fis);
+            
+            try {
+                userList.add((User) ois.readObject());
+            } catch(EOFException e) {
+                
+            }
+            
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+        
+        for (Object u : userList) {
+            System.out.println(u.toString());
+        }
+        
+        return null;
+    }
 }

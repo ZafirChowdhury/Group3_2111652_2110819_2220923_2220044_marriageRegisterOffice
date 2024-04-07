@@ -1,6 +1,7 @@
 package group3_2111652_2110819_2220923_2220044_marriageregisteroffice;
 
 import group3_2111652_2110819_2220923_2220044_marriageregisteroffice.zafir.ItAdmin;
+import group3_2111652_2110819_2220923_2220044_marriageregisteroffice.zafir.MarriageRegistrar;
 import java.io.EOFException;
 import java.io.File;
 import java.io.FileInputStream;
@@ -90,7 +91,14 @@ public class RegisterController implements Initializable {
         
         // Create user depending on what is selected in comboboxs
         if (userTypeComboBox.getValue() == "Marriage Registrar"){
+            MarriageRegistrar marriageRegistrar = new MarriageRegistrar(usernameTextField.getText(),
+                                                                        passwordField.getText(),
+                                                                        userTypeComboBox.getValue());
             
+            if (marriageRegistrar.saveUser("bin/marriageRegistrar.bin"))
+            {
+                User.saveUsername(usernameTextField.getText().trim());
+            }
         }
         else if (userTypeComboBox.getValue() == "IT Admin") {
             ItAdmin itAdmin = new ItAdmin(usernameTextField.getText(),
