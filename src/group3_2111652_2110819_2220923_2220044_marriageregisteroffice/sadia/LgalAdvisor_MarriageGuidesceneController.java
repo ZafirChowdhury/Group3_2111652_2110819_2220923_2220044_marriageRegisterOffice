@@ -21,8 +21,6 @@ public class LgalAdvisor_MarriageGuidesceneController implements Initializable {
 
     @FXML
     private TextArea viewGuideTextArea;
-    @FXML
-    private ComboBox<?> guideListComboBx;
 
     /**
      * Initializes the controller class.
