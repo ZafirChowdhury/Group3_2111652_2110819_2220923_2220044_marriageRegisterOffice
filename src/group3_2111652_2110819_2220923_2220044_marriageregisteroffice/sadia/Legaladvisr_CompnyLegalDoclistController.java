@@ -20,8 +20,6 @@ import javafx.scene.control.TextArea;
 public class Legaladvisr_CompnyLegalDoclistController implements Initializable {
 
     @FXML
-    private ComboBox<String> documentListComboBox;
-    @FXML
     private TextArea viewdocTextArea;
 
     /**
