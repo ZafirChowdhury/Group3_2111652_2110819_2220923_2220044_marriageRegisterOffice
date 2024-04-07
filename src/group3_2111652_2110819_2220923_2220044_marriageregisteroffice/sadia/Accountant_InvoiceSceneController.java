@@ -10,6 +10,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 
 import javafx.scene.control.TextField;
 
@@ -30,12 +32,22 @@ public class Accountant_InvoiceSceneController implements Initializable {
     Alert wrongphninfo = new Alert(Alert.AlertType.WARNING,"Put valid contact no. Must be 11 digits with + sign ");
     Alert amount = new Alert(Alert.AlertType.WARNING,"Put valid amount. Amount cannot be 0tk");
     private Accountant accountant;
-    
+    @FXML
+    private TableView<Invoice> invoiceTable;
+    @FXML
+    private TableColumn<Invoice, String> clientnameColomn;
+    @FXML
+    private TableColumn<Invoice, String> contactnumbrColom;
+    @FXML
+    private TableColumn<Invoice, Boolean> paidstatusColomn;
+    public Accountant getAccountant(){
+        return accountant;
+    }
     
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // invoice er controller will call its method that will be placed in the accountant class
+        
         
     }    
 
