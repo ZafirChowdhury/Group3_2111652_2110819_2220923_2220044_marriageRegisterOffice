@@ -1,18 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="256.0" prefWidth="388.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="group3_2111652_2110819_2220923_2220044_marriageregisteroffice.sadia.LgalAdvisor_MarriageGuidesceneController">
+<AnchorPane id="AnchorPane" prefHeight="256.0" prefWidth="388.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group3_2111652_2110819_2220923_2220044_marriageregisteroffice.sadia.LgalAdvisor_MarriageGuidesceneController">
    <children>
-      <Label layoutX="38.0" layoutY="48.0" text="Guide List" />
       <TextArea fx:id="viewGuideTextArea" editable="false" layoutX="174.0" layoutY="49.0" prefHeight="200.0" prefWidth="200.0" promptText="VIEW DETAILS" />
-      <ComboBox fx:id="guideListComboBx" layoutX="36.0" layoutY="68.0" prefHeight="25.0" prefWidth="128.0" />
       <Button layoutX="38.0" layoutY="117.0" mnemonicParsing="false" onAction="#viewselectedGuidebutton" prefHeight="38.0" prefWidth="122.0" text="View selected guide" />
       <Button layoutX="34.0" layoutY="177.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="135.0" text="Download selected guide" wrapText="true" />
       <Label layoutX="45.0" layoutY="12.0" prefHeight="28.0" prefWidth="319.0" text="RELIGION WISE MARRIAGE GUIDE LIST:" textFill="#cc2020">

@@ -27,8 +27,8 @@ public class Accountant_InvoiceSceneController implements Initializable {
     @FXML
     private TextField clientContactnoTF;
     Alert blankinfo = new Alert(Alert.AlertType.WARNING,"Cannot keep blank");
-    Alert wrongphninfo = new Alert(Alert.AlertType.WARNING,"Put valid contact no");
-    Alert amount = new Alert(Alert.AlertType.WARNING,"Put valid amount");
+    Alert wrongphninfo = new Alert(Alert.AlertType.WARNING,"Put valid contact no. Must be 11 digits with + sign ");
+    Alert amount = new Alert(Alert.AlertType.WARNING,"Put valid amount. Amount cannot be 0tk");
     
     
     
@@ -42,38 +42,45 @@ public class Accountant_InvoiceSceneController implements Initializable {
         String clientname = clientnameTF.getText();
         if(clientname.isEmpty()){
             blankinfo.show();
-            return;
+        blankinfo.showAndWait();
+        return;
         }
-        /*try{
-        int unpaidamnt =  Integer.parseInt(unpaidAmountTF.getText());
+
+try{  
+        int unpaidamnt = Integer.parseInt(unpaidAmountTF.getText());
         if(unpaidamnt<=0){
-            Alert amount = new Alert(Alert.AlertType.WARNING,"Put valid amount");
             amount.showAndWait();
             return;
         }
+
         
-       
-        String clientnum = clientContactnoTF.getText();
-        Boolean equal = clientnum.contains("+");
-        if(clientnum.isEmpty()){
-         blankinfo.show();
-            return;  
+        String numbr = clientContactnoTF.getText();
+        boolean sign = numbr.contains("+");
+        if(numbr.isEmpty()){
+            blankinfo.showAndWait();
+            return;
         }
-        else if(clientnum.length()>11 || equal!= true){
-          Alert wrongphninfo = new Alert(Alert.AlertType.WARNING,"Put valid contact no"); 
-           return;
-        }  
+        if(numbr.length()>11 || sign!= true){
+            wrongphninfo.showAndWait();
+            return;
+        }
+
         
-        
-        
-        
-        
-        
-        
+        //Boolean inv = Accountant.CreateInvoice(clientname,unpaidamnt,numbr);
        
+
+
+
+
+} catch(Exception e){
+    Alert numbrinfo = new Alert(Alert.AlertType.ERROR,"Invalid data type");
+     numbrinfo.showAndWait();
+     return;
+
+}
         
-            
-    */    
+
+
     }
 
     @FXML
