@@ -5,12 +5,13 @@
 package group3_2111652_2110819_2220923_2220044_marriageregisteroffice.zafir;
 
 import group3_2111652_2110819_2220923_2220044_marriageregisteroffice.User;
+import java.io.Serializable;
 
 /**
  *
  * @author zafir
  */
-public class ItAdmin extends User{
+public class ItAdmin extends User implements Serializable{
 
     public ItAdmin(String username, String password, String type) {
         super(username, password, type);
