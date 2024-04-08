@@ -10,6 +10,9 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javafx.collections.ObservableList;
 import javafx.scene.control.Alert;
 
 
@@ -29,13 +32,40 @@ public class Accountant extends User implements  Serializable{
     
 
 //goal 1
-    public boolean StoreClientBankInfo(String name, int phone, String bankName, int bankAccNo, String bankBranch) {
+    public boolean StoreClientBankInfo(String name, String phone, String bankName, String bankAccNo, String bankBranch) {
         ClientBankInfo cbi = new ClientBankInfo(name, bankName, bankBranch, phone, bankAccNo);
 
-//        save to bin file here
-        return true;
-//        if fail return false
-    }
+System.out.println("Bank info made" + cbi.toString());
+        File f = null;
+        FileOutputStream fos = null;
+        ObjectOutputStream oos = null;
+        try{
+            f = new File("ClientBankInfo.bin");
+            if(f.exists()){
+                fos = new FileOutputStream(f,true);
+                oos = new ObjectOutputStream(fos);
+            } else { fos = new FileOutputStream(f);
+                     oos = new ObjectOutputStream(fos);       
+            }
+            oos.writeObject(cbi);
+            oos.close();
+            return true;
+            
+            
+        } catch(IOException i){
+            if(oos!=null){
+                try{oos.close();
+                } catch(IOException e){
+                    Logger.getLogger(Accountant.class.getName()).log(Level.SEVERE,null,e);
+     
+                }
+            
+            }  
+    }      
+         System.out.println("Failed to make bin");
+         return false;
+    }        
+    
 //goal 2
 
     public boolean StorepurchaseInfo(String Deptname, String sellername, String itemname, String modelno) {
@@ -69,8 +99,7 @@ public class Accountant extends User implements  Serializable{
             if(oos!=null){
                 try{oos.close();
                 } catch(IOException e){
-                     Alert info = new Alert(Alert.AlertType.ERROR,"Oops");
-     info.showAndWait();
+                     Logger.getLogger(Accountant.class.getName()).log(Level.SEVERE,null,e);
      
                 }
             
@@ -79,9 +108,23 @@ public class Accountant extends User implements  Serializable{
          System.out.println("Failed to make bin");
          return false;
     }
+
+//public void viewInvoiceOnTable(ObservableList<Invoice> invList){
+    
+
+
+
+
+    
+    
+    
+    
+    
+
+
 }
              
-    
+ 
 
 //goal 4 Update Invoice
 //goal 5 Make financial chart spend vs income
