@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" onMouseClicked="#submitCheckingStatus" prefHeight="636.0" prefWidth="901.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group3_2111652_2110819_2220923_2220044_marriageregisteroffice.sufi.VerifyMaritalStatusTableController">
+   <children>
+      <Label layoutX="349.0" layoutY="32.0" text="Marital Status">
+         <font>
+            <Font name="System Bold" size="31.0" />
+         </font>
+      </Label>
+      <Button layoutX="756.0" layoutY="24.0" mnemonicParsing="false" onMouseClicked="#logout" prefHeight="31.0" prefWidth="118.0" text="Log Out" />
+      <TableView fx:id="verifyMaritalStatusTable" layoutX="129.0" layoutY="167.0" prefHeight="428.0" prefWidth="645.0">
+        <columns>
+          <TableColumn fx:id="userIDCol" prefWidth="197.0" text="User ID" />
+          <TableColumn fx:id="userNameCol" prefWidth="447.0" text="User Name" />
+        </columns>
+      </TableView>
+      <Button layoutX="26.0" layoutY="24.0" mnemonicParsing="false" onMouseClicked="#dashboard" prefHeight="31.0" prefWidth="118.0" text="Dashboard" />
+      <TextField fx:id="searchCandidateL" layoutX="373.0" layoutY="111.0" prefHeight="25.0" prefWidth="206.0" />
+      <Button layoutX="589.0" layoutY="111.0" mnemonicParsing="false" onMouseClicked="#submitCheckingStatus" prefHeight="25.0" prefWidth="85.0" text="Submit" />
+      <Label layoutX="227.0" layoutY="111.0" prefHeight="25.0" prefWidth="133.0" text="Candidate Name:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
