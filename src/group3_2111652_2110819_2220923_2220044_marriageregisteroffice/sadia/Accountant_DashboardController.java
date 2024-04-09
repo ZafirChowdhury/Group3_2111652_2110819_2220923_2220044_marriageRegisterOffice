@@ -4,6 +4,8 @@
  */
 package group3_2111652_2110819_2220923_2220044_marriageregisteroffice.sadia;
 
+import group3_2111652_2110819_2220923_2220044_marriageregisteroffice.User;
+import group3_2111652_2110819_2220923_2220044_marriageregisteroffice.sufi.Archivist;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -26,6 +28,8 @@ public class Accountant_DashboardController implements Initializable {
 
     @FXML
     private Label noticeInfoLabel;
+    @FXML
+    private Label usernameLable;
 
     /**
      * Initializes the controller class.
@@ -33,7 +37,15 @@ public class Accountant_DashboardController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
        
-    }    
+    }
+
+    Archivist user;
+    public void receiveUserData(User user){
+        user = (Archivist) user;
+        usernameLable.setText("Welcome,  " + user.getUsername() + "!");
+        System.out.println("Logged in as: " + user.toString());
+        return;
+    }
 
     @FXML
     private void showInvoiceSceneOnclick(ActionEvent event) throws IOException {

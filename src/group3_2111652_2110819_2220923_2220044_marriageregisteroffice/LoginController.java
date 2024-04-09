@@ -86,7 +86,7 @@ public class LoginController implements Initializable {
             return;
         }
         
-<<<<<<< HEAD
+        // User Verification
         User user = User.verifyUser(usernameTextFiled.getText(), passwordField.getText(), User.getPath(userTypeComboBox.getValue()));
         if (user == null) {
             Alert a = new Alert(Alert.AlertType.ERROR);
@@ -171,23 +171,7 @@ public class LoginController implements Initializable {
             stage.show();
         }
         
-        // Legal Advisor - Sadia
-=======
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        FXMLLoader loader = null;
-        if(userTypeComboBox.getValue().equals("Marriage Candidate")) {
-            loader = new FXMLLoader(getClass().getResource("/Arpita/MarriageCandidateHomepage.fxml"));
-        }
-        Parent root = loader.load();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-        stage.setTitle("Marriage Candidate");
-
-        
-        
-        // User.verifyUser("", "", "bin/itAdmin.bin");
->>>>>>> 38ab7570023c5841e7709c20a999b75c4a75f4ca
+        // Legal Advisor - Sadia TODO
         
     }
     

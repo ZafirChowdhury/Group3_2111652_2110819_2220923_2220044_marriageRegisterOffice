@@ -4,6 +4,7 @@
  */
 package group3_2111652_2110819_2220923_2220044_marriageregisteroffice.sufi;
 
+import group3_2111652_2110819_2220923_2220044_marriageregisteroffice.User;
 import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
@@ -32,7 +33,15 @@ public class ArchivistDashboardController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+    }
+
+    Archivist user;
+    public void receiveUserData(User user){
+        user = (Archivist) user;
+        nameLabel.setText("Name: " + user.getUsername());
+        System.out.println("Logged in as: " + user.toString());
+        return;
+    }
 
     @FXML
     private void addMarriageRecord(MouseEvent event) throws IOException {

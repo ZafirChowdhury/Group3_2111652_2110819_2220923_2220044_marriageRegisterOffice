@@ -82,18 +82,6 @@ public class AddMarriageRecordController implements Initializable {
        a.addMarriageRecordToFile(event,Integer.parseInt(marriageIDL.getText()),candidate1L.getText(),Integer.parseInt(age1L.getText()),
                nationality1L.getText(),Integer.parseInt(NID1L.getText()),father1L.getText(),mother1L.getText(),witness1L.getText(),rel1L.getText(),
                candidate2L.getText(),Integer.parseInt(age2L.getText()),nationality2L.getText(),Integer.parseInt(NID2L.getText()),father2L.getText(),
-               mother2L.getText(),witness2L.getText(),rel2L.getText());
-
-    private void logout(MouseEvent event) {
-    }
-
-    @FXML
-    private void dashboard(MouseEvent event) {
-    }
-
-    @FXML
-    private void submitMarriageRecord(MouseEvent event) {
-
-    }
-    
+               mother2L.getText(),witness2L.getText(),rel2L.getText());    
+}
 }

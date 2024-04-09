@@ -7,7 +7,9 @@ package group3_2111652_2110819_2220923_2220044_marriageregisteroffice;
 import java.io.EOFException;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutput;
 import java.io.ObjectOutputStream;
@@ -67,21 +69,22 @@ public abstract class User implements Serializable {
     }
     
     // Returns true if username dose not exist
-    public static boolean isUniqueUsername(String username, String path){
+    public static boolean isUniqueUsername(String username){
         try {
-            File file = new File(path);
+            File file = new File("bin/username.bin");
             if (file.exists()) {
                 FileInputStream fis = new FileInputStream(file);
                 ObjectInputStream ois = new ObjectInputStream(fis);
                 
                 try {
                     while (true) {
-                       User user = (User) ois.readObject();
-                       if (user.getUsername().equals(username));
-                       return true;
+                       String user = (String) ois.readObject();
+                       if (user.equals(username));
+                       return false;
                     }
                 } catch (EOFException e) {
                     ois.close();
+                    return true;
                 }
                               
             } else {
@@ -96,8 +99,35 @@ public abstract class User implements Serializable {
         // Username dose not exist
         return true;
     }
-      
-    // Returns true if object is saved 
+    
+    // Returns true if username is saved
+    public static boolean saveUsername(String username) throws FileNotFoundException, IOException {
+        File file = new File("bin/username.bin");
+        FileOutputStream fos;
+        ObjectOutputStream oos;
+        
+        try {
+        if (file.exists()) {
+            fos = new FileOutputStream(file, true);
+            oos = new AppendableObjectOutputStream(fos);
+        } else {
+            fos = new FileOutputStream(file, true);
+            oos = new ObjectOutputStream(fos);
+        }
+        
+            oos.writeObject(username);
+            System.out.println(username + "saved to database.");
+            oos.close();
+            
+        } catch(Exception ex) {
+            System.out.println("There was a error while saving the username");
+            return false;
+        }
+        
+        return true;
+    }
+       
+    // Returns true if User object is saved 
     public boolean saveUser(String path){
         File file = new File(path);
         FileOutputStream fos;
@@ -114,6 +144,7 @@ public abstract class User implements Serializable {
         
         oos.writeObject(this);
         System.out.println(this.toString() + " Saved.");
+        User.saveUsername(username);
         oos.close();
         
         } catch(Exception ex) {
@@ -132,6 +163,7 @@ public abstract class User implements Serializable {
                 System.out.println("File dose not exist");
                 return null;
             }
+            
             FileInputStream fis = new FileInputStream(file);
             ObjectInputStream ois = new ObjectInputStream(fis);
             

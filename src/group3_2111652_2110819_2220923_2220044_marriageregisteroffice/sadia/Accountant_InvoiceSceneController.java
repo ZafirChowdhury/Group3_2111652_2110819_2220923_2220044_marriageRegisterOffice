@@ -7,13 +7,19 @@ package group3_2111652_2110819_2220923_2220044_marriageregisteroffice.sadia;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 /**
  * FXML Controller class
@@ -28,15 +34,34 @@ public class Accountant_InvoiceSceneController implements Initializable {
     private TextField unpaidAmountTF;
     @FXML
     private TextField clientContactnoTF;
+    @FXML
+    private TableView<Invoice> invoiceTable;
+    @FXML
+    private TableColumn<Invoice, String> clientnameColomn;
+    @FXML
+    private TableColumn<Invoice, String> contactnumbrColom;
+    @FXML
+    private TableColumn<Invoice, Boolean> paidstatusColomn;
+    
     Alert blankinfo = new Alert(Alert.AlertType.WARNING,"Cannot keep blank");
     Alert wrongphninfo = new Alert(Alert.AlertType.WARNING,"Put valid contact no. Must be 11 digits with + sign ");
     Alert amount = new Alert(Alert.AlertType.WARNING,"Put valid amount. Amount cannot be 0tk");
+    private Accountant accountant;
     
+    
+    public Accountant getAccountant(){
+        return accountant;
+    }
+   
+        //ObservableList<Invoice> invoiceList = FXCollections.observableArrayList(Invoice.bin);
+        //invoiceTable.setItems(invoiceList);
     
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // invoice er controller will call its method that will be placed in the accountant class
+        clientnameColomn.setCellValueFactory(new PropertyValueFactory<>("Clieantname"));
+        contactnumbrColom.setCellValueFactory(new PropertyValueFactory<>("Unpaidamount"));
+        paidstatusColomn.setCellValueFactory(new PropertyValueFactory<>("paidstatus"));
     }    
 
     @FXML
@@ -69,11 +94,15 @@ try{
         }
 
         
-        //Boolean inv = Accountant.CreateInvoice(clientname,unpaidamnt,numbr);
-       
+        accountant.CreateInvoice(clientname, unpaidamnt, clientname);
 
-
-
+        boolean madefile = accountant.CreateInvoice(clientname, unpaidamnt, clientname);
+        if (madefile){
+        Alert success = new Alert(Alert.AlertType.INFORMATION,"Bin file created");
+        success.showAndWait();
+        }
+        
+        
 
 } catch(Exception e){
     Alert numbrinfo = new Alert(Alert.AlertType.ERROR,"Invalid data type");
@@ -85,7 +114,6 @@ try{
 
 
     }
-
 //done
     
     @FXML
@@ -101,19 +129,6 @@ try{
         
         accountant.showinvoice(invoiceList);
         invoiceTable.setItems(invoiceList);
-
-
-    @FXML
-    private void ViewInvoiceonTxtField(ActionEvent event) {
-    }
-
-    @FXML
-    private void UpdateInvoiceOnclick(ActionEvent event) {
-    }
-
-    @FXML
-    private void ViewUpdatedInvoiceOnclick(ActionEvent event) {
-
     }
     
 }

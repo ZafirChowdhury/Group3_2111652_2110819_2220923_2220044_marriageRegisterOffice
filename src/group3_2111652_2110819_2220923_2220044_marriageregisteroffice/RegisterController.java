@@ -85,7 +85,7 @@ public class RegisterController implements Initializable {
         
         // Check if username exists
         // True means username is unique
-        if (!User.isUniqueUsername(usernameTextField.getText().trim(), User.getPath(userTypeComboBox.getValue()))) {
+        if (!User.isUniqueUsername(usernameTextField.getText().trim())) {
             // Username is not unique
             Alert a = new Alert(Alert.AlertType.ERROR);
             a.setContentText("Username taken, please use another one");
