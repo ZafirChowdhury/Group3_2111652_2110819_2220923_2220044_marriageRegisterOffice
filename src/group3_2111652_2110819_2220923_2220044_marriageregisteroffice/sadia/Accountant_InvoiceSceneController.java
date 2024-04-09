@@ -94,9 +94,9 @@ try{
         }
 
         
-        accountant.CreateInvoice(clientname, unpaidamnt, clientname);
+        accountant.CreateInvoice(clientname, unpaidamnt, numbr);
 
-        boolean madefile = accountant.CreateInvoice(clientname, unpaidamnt, clientname);
+        boolean madefile = accountant.CreateInvoice(clientname, unpaidamnt, numbr);
         if (madefile){
         Alert success = new Alert(Alert.AlertType.INFORMATION,"Bin file created");
         success.showAndWait();

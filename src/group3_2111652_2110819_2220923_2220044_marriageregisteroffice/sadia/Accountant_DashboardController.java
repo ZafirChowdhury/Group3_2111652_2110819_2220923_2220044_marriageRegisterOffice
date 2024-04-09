@@ -5,7 +5,6 @@
 package group3_2111652_2110819_2220923_2220044_marriageregisteroffice.sadia;
 
 import group3_2111652_2110819_2220923_2220044_marriageregisteroffice.User;
-import group3_2111652_2110819_2220923_2220044_marriageregisteroffice.sufi.Archivist;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -85,5 +84,11 @@ public class Accountant_DashboardController implements Initializable {
     @FXML
     private void gotoChartSceneOnclick(ActionEvent event) {
     }
+
+    @FXML
+    private void logoutOnclick(ActionEvent event) {
+         
+    }
+    
     
 }
