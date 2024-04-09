@@ -136,7 +136,9 @@ public class Witness extends User implements Serializable{
     
     public void logoutScene(MouseEvent event) throws IOException {
         FXMLLoader loader= new FXMLLoader();
-        loader.setLocation(getClass().getResource("login.fxml"));
+
+        loader.setLocation(getClass().getResource("/group3_2111652_2110819_2220923_2220044_marriageregisteroffice/login.fxml"));
+
         Parent parent= loader.load();
         Scene scene= new Scene(parent);
         Stage stage=(Stage)((Node) event.getSource()).getScene().getWindow();

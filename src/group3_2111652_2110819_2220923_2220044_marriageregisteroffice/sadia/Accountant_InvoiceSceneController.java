@@ -4,6 +4,8 @@
  */
 package group3_2111652_2110819_2220923_2220044_marriageregisteroffice.sadia;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -39,6 +41,7 @@ public class Accountant_InvoiceSceneController implements Initializable {
 
     @FXML
     private void CreateandStoreInvoiceOnclick(ActionEvent event) {
+        
         String clientname = clientnameTF.getText();
         if(clientname.isEmpty()){
             blankinfo.show();
@@ -83,6 +86,23 @@ try{
 
     }
 
+//done
+    
+    @FXML
+    private void UpdateInvoiceOnclick(ActionEvent event) {
+        
+    }
+
+    
+
+    @FXML
+    private void ViewInvoiceonTable(ActionEvent event) throws IOException, FileNotFoundException, ClassNotFoundException {
+        ObservableList<Invoice> invoiceList = FXCollections.observableArrayList();
+        
+        accountant.showinvoice(invoiceList);
+        invoiceTable.setItems(invoiceList);
+
+
     @FXML
     private void ViewInvoiceonTxtField(ActionEvent event) {
     }
@@ -93,6 +113,7 @@ try{
 
     @FXML
     private void ViewUpdatedInvoiceOnclick(ActionEvent event) {
+
     }
     
 }

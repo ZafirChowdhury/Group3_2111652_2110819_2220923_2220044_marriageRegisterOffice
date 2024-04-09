@@ -25,14 +25,16 @@
       <Label layoutX="39.0" layoutY="63.0" text="Client name" />
       <Label layoutX="39.0" layoutY="139.0" text="UnPaid amount" />
       <Label layoutX="25.0" layoutY="101.0" text="Client Contact no:" />
-      <Button layoutX="300.0" layoutY="28.0" mnemonicParsing="false" onAction="#UpdateInvoiceOnclick" text="Update invoice List" />
-      <TableView layoutX="300.0" layoutY="64.0" prefHeight="341.0" prefWidth="281.0">
+
+      <Button layoutX="87.0" layoutY="283.0" mnemonicParsing="false" onAction="#UpdateInvoiceOnclick" text="Delete an Invoice" />
+      <TableView fx:id="invoiceTable" layoutX="286.0" layoutY="24.0" prefHeight="381.0" prefWidth="306.0">
+
         <columns>
           <TableColumn prefWidth="91.0" text="Client name" />
           <TableColumn prefWidth="110.3333740234375" text="Contact no" />
             <TableColumn prefWidth="78.6666259765625" text="Paid Status" />
         </columns>
       </TableView>
-      <Button layoutX="441.0" layoutY="28.0" mnemonicParsing="false" onAction="#ViewUpdatedInvoiceOnclick" prefHeight="25.0" prefWidth="139.0" text="View updated List" />
+
    </children>
 </AnchorPane>

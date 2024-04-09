@@ -42,7 +42,66 @@ public class Accountant_ClineBankInfoStorageSceneController implements Initializ
 
     @FXML
     private void StoreBankAccntInfoButton(ActionEvent event) {
+
+        String clientname = clientnameTF.getText();
+        if(clientname.isEmpty()){
+            blankinfo.show();
+        blankinfo.showAndWait();
+        return;
+        }
+         String bankbranch = bankbranchTF.getText();
+         if(bankbranch.isEmpty()){
+            blankinfo.show();
+        blankinfo.showAndWait();
+        return;
+        }
         
+try{  
+        String bankname = banknameComboBox.getValue();
+        if(bankname == null || bankname.isEmpty()){
+        blankinfo.showAndWait();
+        return;}
+       
+
+        
+        String numbr = clientContactno.getText();
+        boolean sign = numbr.contains("+");
+        if(numbr.isEmpty()){
+            blankinfo.showAndWait();
+            return;
+        }
+        if(numbr.length()>11 || sign!= true){
+            wrongphninfo.showAndWait();
+            return;
+        }
+        String accnmbr = accntnumberTF.getText();
+        Boolean ptrn = accnmbr.contains("AccNo");
+        
+        if(accnmbr.isEmpty()){
+            blankinfo.showAndWait();
+            return;
+        }
+        if(accnmbr.length()>11 || ptrn!= true){
+            wrongaccno.showAndWait();
+            return;
+        
+        
+        }
+        
+        accountant.StoreClientBankInfo(numbr, numbr, bankname, bankname, bankbranch);
+        boolean madefile = accountant.StoreClientBankInfo(numbr, numbr, bankname, bankname, bankbranch);
+        if (madefile){
+        Alert success = new Alert(Alert.AlertType.INFORMATION,"Bin file created");
+        success.showAndWait();
+        }
+
+} catch(Exception e){
+    Alert numbrinfo = new Alert(Alert.AlertType.ERROR,"Invalid data type");
+     numbrinfo.showAndWait();
+     return;
+
+}
+
         
     }
 

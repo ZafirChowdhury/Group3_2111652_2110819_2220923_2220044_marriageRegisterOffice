@@ -4,13 +4,21 @@
  */
 package group3_2111652_2110819_2220923_2220044_marriageregisteroffice.sadia;
 
+import java.io.Serializable;
+
 /**
  *
  * @author HP 840 G6
  */
+
+public class ClientBankInfo implements Serializable{
+    private String clientName, bankName, bankBranch,phone,bankAccno;
+    
+
 public class ClientBankInfo {
     private String clientName, bankName, bankBranch;
     private int phone, bankAccNo;
+
 
     public ClientBankInfo(String clientName, String bankName, String bankBranch, int phone, int bankAccNo) {
         this.clientName = clientName;
