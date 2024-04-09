@@ -4,12 +4,18 @@
  */
 package group3_2111652_2110819_2220923_2220044_marriageregisteroffice.sadia;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -30,16 +36,38 @@ public class Accountant_DashboardController implements Initializable {
     }    
 
     @FXML
-    private void showInvoiceSceneOnclick(ActionEvent event) {
+    private void showInvoiceSceneOnclick(ActionEvent event) throws IOException {
+        Parent root = null;
+       FXMLLoader myLoader = new FXMLLoader(getClass().getResource("Accountant_InvoiceScene.fxml"));
+       root = (Parent) myLoader.load();
+       Scene myScene = new Scene(root); 
+       Stage myStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+       myStage.setScene(myScene);
+       myStage.show();
         
     }
 
     @FXML
-    private void showPurchaseInfoSceneOnclick(ActionEvent event) {
+    private void showPurchaseInfoSceneOnclick(ActionEvent event) throws IOException {
+        Parent root = null;
+       FXMLLoader myLoader = new FXMLLoader(getClass().getResource("Accountant_PurchaseInfoScene.fxml"));
+       root = (Parent) myLoader.load();
+       Scene myScene = new Scene(root); 
+       Stage myStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+       myStage.setScene(myScene);
+       myStage.show();
     }
 
     @FXML
-    private void showClientBankInfoScene(ActionEvent event) {
+    private void showClientBankInfoScene(ActionEvent event) throws IOException {
+        Parent root = null;
+       FXMLLoader myLoader = new FXMLLoader(getClass().getResource("Accountant_ClineBankInfoStorageScene.fxml"));
+       root = (Parent) myLoader.load();
+       Scene myScene = new Scene(root); 
+       Stage myStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+       myStage.setScene(myScene);
+       myStage.show();
+        
     }
 
     @FXML
