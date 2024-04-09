@@ -60,6 +60,7 @@ public class Accountant_ClineBankInfoStorageSceneController implements Initializ
         blankinfo.showAndWait();
         return;
         }
+        
 try{  
         String bankname = banknameComboBox.getValue();
         if(bankname == null || bankname.isEmpty()){
@@ -89,15 +90,15 @@ try{
             wrongaccno.showAndWait();
             return;
         
-        //accountant.StoreClientBankInfo(numbr, numbr, bankname, bankname, bankbranch);
-
-       // boolean madefile = accountant.StoreClientBankInfo(numbr, 0, bankname, 0, bankbranch);
-        //if (madefile){
-        //Alert success = new Alert(Alert.AlertType.INFORMATION,"Bin file created");
-        //success.showAndWait();
+        
         }
         
-        
+        accountant.StoreClientBankInfo(numbr, numbr, bankname, bankname, bankbranch);
+        boolean madefile = accountant.StoreClientBankInfo(numbr, numbr, bankname, bankname, bankbranch);
+        if (madefile){
+        Alert success = new Alert(Alert.AlertType.INFORMATION,"Bin file created");
+        success.showAndWait();
+        }
 
 } catch(Exception e){
     Alert numbrinfo = new Alert(Alert.AlertType.ERROR,"Invalid data type");
