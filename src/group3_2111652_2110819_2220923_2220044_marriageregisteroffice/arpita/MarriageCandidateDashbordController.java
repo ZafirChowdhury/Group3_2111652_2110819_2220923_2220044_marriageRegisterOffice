@@ -7,6 +7,7 @@ package group3_2111652_2110819_2220923_2220044_marriageregisteroffice.arpita;
 import group3_2111652_2110819_2220923_2220044_marriageregisteroffice.User;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
@@ -16,10 +17,10 @@ import javafx.scene.control.Label;
  *
  * @author zafir
  */
-public class MarriageCounselorDashbordController implements Initializable {
+public class MarriageCandidateDashbordController implements Initializable {
 
     @FXML
-    private Label userNameLable;
+    private Label usernameLable;
 
     /**
      * Initializes the controller class.
@@ -27,14 +28,18 @@ public class MarriageCounselorDashbordController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    } 
+    }  
     
-    MarriageCounselor user;
+    MarriageCandidate user;
     public void receiveUserData(User user){
-        user = (MarriageCounselor) user;
-        userNameLable.setText("You are logged in as: " + user.getUsername());
+        user = (MarriageCandidate) user;
+        usernameLable.setText("You are logged in as: " + user.getUsername());
         System.out.println(user.toString());
         return;
+    }
+
+    @FXML
+    private void submitMarriageApplicationOnClick(ActionEvent event) {
     }
     
 }
