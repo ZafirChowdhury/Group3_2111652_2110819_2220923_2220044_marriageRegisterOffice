@@ -9,7 +9,6 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 
@@ -30,15 +29,10 @@ public class Accountant_ClineBankInfoStorageSceneController implements Initializ
     private ComboBox<String> banknameComboBox;
     @FXML
     private TextField clientContactno;
-    Alert blankinfo = new Alert(Alert.AlertType.WARNING,"Cannot keep blank");
-    Alert wrongphninfo = new Alert(Alert.AlertType.WARNING,"Put valid contact no. Must be 11 digits with + sign ");
-    Alert wrongaccno = new Alert(Alert.AlertType.WARNING,"Put valid account no.Must contain AccNo at start and be 11 digits");
-    private Accountant accountant;
-     public Accountant getAccountant(){
-        return accountant;}
-        
 
-    
+    /**
+     * Initializes the controller class.
+     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
@@ -48,6 +42,7 @@ public class Accountant_ClineBankInfoStorageSceneController implements Initializ
 
     @FXML
     private void StoreBankAccntInfoButton(ActionEvent event) {
+
         String clientname = clientnameTF.getText();
         if(clientname.isEmpty()){
             blankinfo.show();
@@ -106,6 +101,7 @@ try{
      return;
 
 }
+
         
     }
 

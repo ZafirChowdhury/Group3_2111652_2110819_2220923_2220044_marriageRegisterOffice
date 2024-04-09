@@ -5,6 +5,7 @@
 package group3_2111652_2110819_2220923_2220044_marriageregisteroffice.sadia;
 
 import group3_2111652_2110819_2220923_2220044_marriageregisteroffice.User;
+
 import java.io.EOFException;
 import java.io.File;
 import java.io.FileInputStream;
@@ -14,10 +15,6 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javafx.collections.ObservableList;
-import javafx.scene.control.Alert;
 
 
 /**
@@ -36,8 +33,9 @@ public class Accountant extends User implements  Serializable{
     
 
 //goal 1
-    public boolean StoreClientBankInfo(String name, String phone, String bankName, String bankAccNo, String bankBranch) {
+    public boolean StoreClientBankInfo(String name, int phone, String bankName, int bankAccNo, String bankBranch) {
         ClientBankInfo cbi = new ClientBankInfo(name, bankName, bankBranch, phone, bankAccNo);
+
 
         System.out.println("Bank info made" + cbi.toString());
         
@@ -74,6 +72,12 @@ public class Accountant extends User implements  Serializable{
     
     
     
+
+//        save to bin file here
+        return true;
+//        if fail return false
+    }
+
 //goal 2
 
     public boolean StorepurchaseInfo(String Deptname, String sellername, String itemname, String modelno) {
@@ -115,6 +119,7 @@ public class Accountant extends User implements  Serializable{
     public boolean CreateInvoice(String clientname, int Unpaidamount, String clientnumbr) {
         Invoice inv = new Invoice(clientname, Unpaidamount, clientnumbr);
         System.out.println("Invoice made" + inv.toString());
+
         File f = null;
         FileOutputStream fos = null;
         ObjectOutputStream oos = null;
@@ -181,10 +186,14 @@ public class Accountant extends User implements  Serializable{
              
  
 
+        //File i = 
+        return true;
+
+
 //goal 4 Update Invoice
 //goal 5 Make financial chart spend vs income
 //goal 6 Make Calculate Tax
 // goal 7 sort dpetwise info
 // goal 8 sent notice/check notice
-    
-
+    }
+}

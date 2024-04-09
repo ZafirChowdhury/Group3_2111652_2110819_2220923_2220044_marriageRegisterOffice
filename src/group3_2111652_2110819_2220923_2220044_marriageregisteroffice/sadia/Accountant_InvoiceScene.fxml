@@ -4,6 +4,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
@@ -12,8 +13,9 @@
    <children>
       <TextField fx:id="clientnameTF" layoutX="131.0" layoutY="59.0" />
       <TextField fx:id="unpaidAmountTF" layoutX="131.0" layoutY="135.0" promptText="UnPaid amount" />
-      <Button layoutX="100.0" layoutY="200.0" mnemonicParsing="false" onAction="#CreateandStoreInvoiceOnclick" text="Create Invoice" />
-      <Button layoutX="81.0" layoutY="243.0" mnemonicParsing="false" onAction="#ViewInvoiceonTable" text="View Invoice on table" />
+      <Button layoutX="154.0" layoutY="173.0" mnemonicParsing="false" onAction="#CreateandStoreInvoiceOnclick" text="Create Invoice" />
+      <Button layoutX="14.0" layoutY="262.0" mnemonicParsing="false" onAction="#ViewInvoiceonTxtField" text="View Invoice" />
+      <TextArea layoutX="103.0" layoutY="211.0" prefHeight="177.0" prefWidth="190.0" />
       <TextField fx:id="clientContactnoTF" layoutX="132.0" layoutY="97.0" promptText="Client conact no:" />
       <Label layoutX="34.0" layoutY="13.0" text="INVOICE:" textFill="#1141e1">
          <font>
@@ -23,13 +25,16 @@
       <Label layoutX="39.0" layoutY="63.0" text="Client name" />
       <Label layoutX="39.0" layoutY="139.0" text="UnPaid amount" />
       <Label layoutX="25.0" layoutY="101.0" text="Client Contact no:" />
+
       <Button layoutX="87.0" layoutY="283.0" mnemonicParsing="false" onAction="#UpdateInvoiceOnclick" text="Delete an Invoice" />
       <TableView fx:id="invoiceTable" layoutX="286.0" layoutY="24.0" prefHeight="381.0" prefWidth="306.0">
+
         <columns>
-          <TableColumn fx:id="clientnameColomn" prefWidth="91.0" text="Client name" />
-          <TableColumn fx:id="contactnumbrColom" prefWidth="110.3333740234375" text="Contact no" />
-            <TableColumn fx:id="paidstatusColomn" prefWidth="103.0" text="Paid Status" />
+          <TableColumn prefWidth="91.0" text="Client name" />
+          <TableColumn prefWidth="110.3333740234375" text="Contact no" />
+            <TableColumn prefWidth="78.6666259765625" text="Paid Status" />
         </columns>
       </TableView>
+
    </children>
 </AnchorPane>

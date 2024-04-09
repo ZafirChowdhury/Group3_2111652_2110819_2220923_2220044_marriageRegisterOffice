@@ -10,16 +10,22 @@ import java.io.Serializable;
  *
  * @author HP 840 G6
  */
+
 public class ClientBankInfo implements Serializable{
     private String clientName, bankName, bankBranch,phone,bankAccno;
     
 
-    public ClientBankInfo(String clientName, String bankName, String bankBranch, String phone, String bankAccNo) {
+public class ClientBankInfo {
+    private String clientName, bankName, bankBranch;
+    private int phone, bankAccNo;
+
+
+    public ClientBankInfo(String clientName, String bankName, String bankBranch, int phone, int bankAccNo) {
         this.clientName = clientName;
         this.bankName = bankName;
         this.bankBranch = bankBranch;
         this.phone = phone;
-        this.bankAccno = bankAccno;
+        this.bankAccNo = bankAccNo;
     }
 
     public String getClientName() {
@@ -46,27 +52,25 @@ public class ClientBankInfo implements Serializable{
         this.bankBranch = bankBranch;
     }
 
-    public String getPhone() {
+    public int getPhone() {
         return phone;
     }
 
-    public void setPhone(String phone) {
+    public void setPhone(int phone) {
         this.phone = phone;
     }
 
-    public String getBankAccNo() {
-        return bankAccno;
+    public int getBankAccNo() {
+        return bankAccNo;
     }
 
-    public void setBankAccNo(String bankAccNo) {
-        this.bankAccno = bankAccNo;
+    public void setBankAccNo(int bankAccNo) {
+        this.bankAccNo = bankAccNo;
     }
 
-   
     @Override
     public String toString() {
-        return "ClientBankInfo{" + "clientName=" + clientName + ", bankName=" + bankName + ", bankBranch=" + bankBranch + ", phone=" + phone + ", bankAccno=" + bankAccno + '}';
+        return "ClientBankInfo{" + "clientName=" + clientName + ", bankName=" + bankName + ", bankBranch=" + bankBranch + ", phone=" + phone + ", bankAccNo=" + bankAccNo + '}';
     }
-    
     
 }

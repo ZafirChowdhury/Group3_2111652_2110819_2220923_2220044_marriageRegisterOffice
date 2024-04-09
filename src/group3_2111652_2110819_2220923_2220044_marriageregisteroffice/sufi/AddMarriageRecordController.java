@@ -4,6 +4,7 @@
  */
 package group3_2111652_2110819_2220923_2220044_marriageregisteroffice.sufi;
 
+
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -53,7 +54,9 @@ public class AddMarriageRecordController implements Initializable {
     private TextField rel2L;
     @FXML
     private TextField marriageIDL;
+
     private Archivist a = new Archivist("x","y","z");
+
 
     /**
      * Initializes the controller class.
@@ -64,6 +67,7 @@ public class AddMarriageRecordController implements Initializable {
     }    
 
     @FXML
+
     private void logout(MouseEvent event) throws IOException {
         a.logoutScene(event);
     }
@@ -79,6 +83,17 @@ public class AddMarriageRecordController implements Initializable {
                nationality1L.getText(),Integer.parseInt(NID1L.getText()),father1L.getText(),mother1L.getText(),witness1L.getText(),rel1L.getText(),
                candidate2L.getText(),Integer.parseInt(age2L.getText()),nationality2L.getText(),Integer.parseInt(NID2L.getText()),father2L.getText(),
                mother2L.getText(),witness2L.getText(),rel2L.getText());
+
+    private void logout(MouseEvent event) {
+    }
+
+    @FXML
+    private void dashboard(MouseEvent event) {
+    }
+
+    @FXML
+    private void submitMarriageRecord(MouseEvent event) {
+
     }
     
 }
