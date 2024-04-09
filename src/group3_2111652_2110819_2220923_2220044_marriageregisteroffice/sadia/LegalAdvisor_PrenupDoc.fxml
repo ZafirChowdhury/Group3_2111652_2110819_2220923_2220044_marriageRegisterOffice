@@ -24,5 +24,7 @@
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
+      <Button layoutX="435.0" layoutY="232.0" mnemonicParsing="false" onAction="#returnButton" text="Back button" />
+      <Button layoutX="363.0" layoutY="113.0" mnemonicParsing="false" onAction="#saveDraftOnclick" text="Save draft" />
    </children>
 </AnchorPane>
