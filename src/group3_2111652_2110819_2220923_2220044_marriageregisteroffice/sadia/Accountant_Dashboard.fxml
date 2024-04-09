@@ -15,6 +15,7 @@
             <Button layoutX="21.0" layoutY="184.0" mnemonicParsing="false" onAction="#showClientBankInfoScene" prefHeight="51.0" prefWidth="145.0" text="STORE CLIENT BANK INFORMATION" wrapText="true" />
             <Button layoutX="20.0" layoutY="251.0" mnemonicParsing="false" onAction="#gotoChartSceneOnclick" prefHeight="51.0" prefWidth="145.0" text="GENERATE CHART" wrapText="true" />
             <Label fx:id="usernameLable" layoutX="30.0" layoutY="45.0" text="Welcome,  Accountant!" />
+            <Button layoutX="58.0" layoutY="350.0" mnemonicParsing="false" onAction="#logoutOnclick" text="LOG OUT" />
          </children>
       </AnchorPane>
       <Label layoutX="334.0" layoutY="45.0" text="NOTICES:" textFill="#e41818" />

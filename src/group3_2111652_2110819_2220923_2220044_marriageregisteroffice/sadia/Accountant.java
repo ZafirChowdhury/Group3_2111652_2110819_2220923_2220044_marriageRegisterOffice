@@ -36,9 +36,8 @@ public class Accountant extends User implements  Serializable{
     
 
 //goal 1
-    public boolean StoreClientBankInfo(String name, String phone, String bankName, String bankAccNo, String bankBranch) {
-        ClientBankInfo cbi = new ClientBankInfo(name, bankName, bankBranch, phone, bankAccNo);
-
+    public boolean StoreClientBankInfo(String clientName, String bankName, String bankBranch, int phone, String bankAccNo) {
+        ClientBankInfo cbi = new ClientBankInfo(clientName, bankName, bankBranch, phone,  bankAccNo);
         System.out.println("Bank info made" + cbi.toString());
         
         

@@ -69,16 +69,10 @@ try{
        
 
         
-        String numbr = clientContactno.getText();
-        boolean sign = numbr.contains("+");
-        if(numbr.isEmpty()){
-            blankinfo.showAndWait();
-            return;
-        }
-        if(numbr.length()>11 || sign!= true){
-            wrongphninfo.showAndWait();
-            return;
-        }
+        int numbr = Integer.parseInt(clientContactno.getText());
+        
+        
+        
         String accnmbr = accntnumberTF.getText();
         Boolean ptrn = accnmbr.contains("AccNo");
         
@@ -93,8 +87,8 @@ try{
         
         }
         
-        accountant.StoreClientBankInfo(numbr, numbr, bankname, bankname, bankbranch);
-        boolean madefile = accountant.StoreClientBankInfo(numbr, numbr, bankname, bankname, bankbranch);
+        accountant.StoreClientBankInfo(clientname, bankname, bankbranch,numbr,accnmbr);
+        boolean madefile =  accountant.StoreClientBankInfo(clientname, bankname, bankbranch,numbr,accnmbr);
         if (madefile){
         Alert success = new Alert(Alert.AlertType.INFORMATION,"Bin file created");
         success.showAndWait();

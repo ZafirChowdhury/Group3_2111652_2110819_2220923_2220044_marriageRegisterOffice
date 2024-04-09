@@ -11,10 +11,10 @@ import java.io.Serializable;
  * @author HP 840 G6
  */
 public class ClientBankInfo implements Serializable{
-    private String clientName, bankName, bankBranch,phone,bankAccno;
-    
+    private String clientName, bankName, bankBranch,bankAccno;
+    private int phone;
 
-    public ClientBankInfo(String clientName, String bankName, String bankBranch, String phone, String bankAccNo) {
+    public ClientBankInfo(String clientName, String bankName, String bankBranch, int phone, String bankAccNo) {
         this.clientName = clientName;
         this.bankName = bankName;
         this.bankBranch = bankBranch;
@@ -46,11 +46,11 @@ public class ClientBankInfo implements Serializable{
         this.bankBranch = bankBranch;
     }
 
-    public String getPhone() {
+    public int getPhone() {
         return phone;
     }
 
-    public void setPhone(String phone) {
+    public void setPhone(int phone) {
         this.phone = phone;
     }
 
