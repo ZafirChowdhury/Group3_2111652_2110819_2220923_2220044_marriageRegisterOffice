@@ -55,7 +55,7 @@ public class LoginController implements Initializable {
     }
 
     @FXML
-    private void loginButtonOnClick(ActionEvent event) {
+    private void loginButtonOnClick(ActionEvent event) throws IOException {
         // Validations and verifications
         if (userTypeComboBox.getValue() == null) {
             Alert a = new Alert(Alert.AlertType.ERROR);
@@ -80,6 +80,19 @@ public class LoginController implements Initializable {
             System.err.println("Password must be at least 6 characters long");
             return;
         }
+        
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        FXMLLoader loader = null;
+        if(userTypeComboBox.getValue().equals("Marriage Candidate")) {
+            loader = new FXMLLoader(getClass().getResource("/Arpita/MarriageCandidateHomepage.fxml"));
+        }
+        Parent root = loader.load();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+        stage.setTitle("Marriage Candidate");
+
+        
         
         // User.verifyUser("", "", "bin/itAdmin.bin");
         
