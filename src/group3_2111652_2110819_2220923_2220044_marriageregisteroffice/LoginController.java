@@ -5,6 +5,7 @@
 package group3_2111652_2110819_2220923_2220044_marriageregisteroffice;
 
 import group3_2111652_2110819_2220923_2220044_marriageregisteroffice.sadia.Accountant_DashboardController;
+import group3_2111652_2110819_2220923_2220044_marriageregisteroffice.sadia.LegalAdvisor_DashboardController;
 import group3_2111652_2110819_2220923_2220044_marriageregisteroffice.sufi.ArchivistDashboardController;
 import group3_2111652_2110819_2220923_2220044_marriageregisteroffice.sufi.WitnessDashboardController;
 import group3_2111652_2110819_2220923_2220044_marriageregisteroffice.zafir.AdminDashbordController;
@@ -172,7 +173,19 @@ public class LoginController implements Initializable {
         }
         
         // Legal Advisor - Sadia TODO
-        
+        else if (userTypeComboBox.getValue().equals("Legal Advisor")) {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("sadia/LegalAdvisor_Dashboard.fxml"));
+            Parent root = loader.load(); 
+            
+            LegalAdvisor_DashboardController legalAdvisor_DashboardController = loader.getController();
+            legalAdvisor_DashboardController.receiveUserData(user);
+            
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        }
     }
     
     

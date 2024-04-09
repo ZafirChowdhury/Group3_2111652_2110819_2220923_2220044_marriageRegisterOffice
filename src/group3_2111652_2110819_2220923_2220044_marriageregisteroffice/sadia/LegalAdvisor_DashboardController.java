@@ -4,6 +4,7 @@
  */
 package group3_2111652_2110819_2220923_2220044_marriageregisteroffice.sadia;
 
+import group3_2111652_2110819_2220923_2220044_marriageregisteroffice.User;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -14,6 +15,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 /**
@@ -23,13 +25,24 @@ import javafx.stage.Stage;
  */
 public class LegalAdvisor_DashboardController implements Initializable {
 
+    @FXML
+    private Label usernameLable;
+
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+    } 
+    
+    LegalAdvisor user;
+    public void receiveUserData(User user){
+        user = (LegalAdvisor) user;
+        usernameLable.setText("Welcome,  " + user.getUsername() + "!");
+        System.out.println("Logged in as: " + user.toString());
+        return;
+    }
 
     @FXML
     private void gotoPrenupSceneOnclick(ActionEvent event) throws IOException {

@@ -11,7 +11,7 @@
       <Button layoutX="20.0" layoutY="124.0" mnemonicParsing="false" onAction="#ViewGuidesOnclick" prefHeight="51.0" prefWidth="145.0" text="Marriage Guidelist Viewer" wrapText="true" />
       <Button layoutX="21.0" layoutY="187.0" mnemonicParsing="false" onAction="#viewLegalDocumentOnclick" prefHeight="51.0" prefWidth="145.0" text="Company LegalDoc Viewer" wrapText="true" />
       <Button layoutX="20.0" layoutY="254.0" mnemonicParsing="false" onAction="#gotoChartSceneOnclick" prefHeight="51.0" prefWidth="145.0" text="GENERATE CHART" wrapText="true" />
-      <Label layoutX="28.0" layoutY="24.0" text="Welcome,  Legal Advisor" />
+      <Label fx:id="usernameLable" layoutX="28.0" layoutY="24.0" text="Welcome,  Legal Advisor" />
       <Label layoutX="327.0" layoutY="57.0" text="View Guide" textFill="#e41818" />
       <Label layoutX="305.0" layoutY="204.0" text="View Company Document" textFill="#e41818" />
       <TextArea layoutX="181.0" layoutY="87.0" prefHeight="111.0" prefWidth="411.0" />
