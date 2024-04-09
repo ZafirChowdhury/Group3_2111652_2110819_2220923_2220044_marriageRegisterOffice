@@ -1,6 +1,5 @@
 /dist/
 /build/
-
-/nbproject/
-/lib/
-
+nbproject
+lib
+bin
