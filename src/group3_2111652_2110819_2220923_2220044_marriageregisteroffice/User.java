@@ -79,9 +79,9 @@ public abstract class User implements Serializable {
                 try {
                     while (true) {
                        String user = (String) ois.readObject();
-                       if (user.equals(username));
-                       return false;
+                       if (user.equals(username)) return false;
                     }
+                    
                 } catch (EOFException e) {
                     ois.close();
                     return true;

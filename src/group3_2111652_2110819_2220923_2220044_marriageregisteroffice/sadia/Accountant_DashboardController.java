@@ -39,9 +39,9 @@ public class Accountant_DashboardController implements Initializable {
        
     }
 
-    Archivist user;
+    Accountant user;
     public void receiveUserData(User user){
-        user = (Archivist) user;
+        user = (Accountant) user;
         usernameLable.setText("Welcome,  " + user.getUsername() + "!");
         System.out.println("Logged in as: " + user.toString());
         return;
