@@ -9,15 +9,15 @@ package group3_2111652_2110819_2220923_2220044_marriageregisteroffice.sadia;
  * @author HP 840 G6
  */
 public class ClientBankInfo {
-    private String clientName, bankName, bankBranch;
-    private int phone, bankAccNo;
+    private String clientName, bankName, bankBranch,phone,bankAccno;
+    
 
-    public ClientBankInfo(String clientName, String bankName, String bankBranch, int phone, int bankAccNo) {
+    public ClientBankInfo(String clientName, String bankName, String bankBranch, String phone, String bankAccNo) {
         this.clientName = clientName;
         this.bankName = bankName;
         this.bankBranch = bankBranch;
         this.phone = phone;
-        this.bankAccNo = bankAccNo;
+        this.bankAccno = bankAccno;
     }
 
     public String getClientName() {
@@ -44,25 +44,27 @@ public class ClientBankInfo {
         this.bankBranch = bankBranch;
     }
 
-    public int getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(int phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 
-    public int getBankAccNo() {
-        return bankAccNo;
+    public String getBankAccNo() {
+        return bankAccno;
     }
 
-    public void setBankAccNo(int bankAccNo) {
-        this.bankAccNo = bankAccNo;
+    public void setBankAccNo(String bankAccNo) {
+        this.bankAccno = bankAccNo;
     }
 
+   
     @Override
     public String toString() {
-        return "ClientBankInfo{" + "clientName=" + clientName + ", bankName=" + bankName + ", bankBranch=" + bankBranch + ", phone=" + phone + ", bankAccNo=" + bankAccNo + '}';
+        return "ClientBankInfo{" + "clientName=" + clientName + ", bankName=" + bankName + ", bankBranch=" + bankBranch + ", phone=" + phone + ", bankAccno=" + bankAccno + '}';
     }
+    
     
 }
