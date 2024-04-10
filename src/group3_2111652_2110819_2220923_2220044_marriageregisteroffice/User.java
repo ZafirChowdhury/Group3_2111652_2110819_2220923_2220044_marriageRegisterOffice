@@ -171,14 +171,15 @@ public abstract class User implements Serializable {
             ObjectInputStream ois = new ObjectInputStream(fis);
             
             try {
+                while (true) {
                 User user = (User) ois.readObject();
                 userList.add(user);
                 System.out.println("All users added to the ArrayList");
-            
+            }
+                
             } catch(EOFException e) {
                 System.out.println("End of file reached.");
                 ois.close();
-                return null;
             }
             
         } catch(Exception e) {
@@ -186,9 +187,7 @@ public abstract class User implements Serializable {
             return null;
         }
         
-        System.err.println("Scanning ArrayList");
         for (User u : userList) {
-            System.out.println(u.toString() + " " + u.getPassword());
             if (u.getUsername().equals(username)) {
                 System.out.println("User found, checking password");
                 if (u.getPassword().equals(password)) {
