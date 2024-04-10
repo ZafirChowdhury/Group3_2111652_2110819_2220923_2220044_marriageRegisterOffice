@@ -41,7 +41,6 @@ public abstract class User implements Serializable {
         return type;
     }
     
-    
     public String getPassword() {
         return password;
     }

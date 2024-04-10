@@ -19,7 +19,7 @@ import javafx.scene.control.Label;
 public class MarriageRegistrarDashbordController implements Initializable {
 
     @FXML
-    private Label userNameLable;
+    private Label usernameLable;
 
     /**
      * Initializes the controller class.
@@ -29,8 +29,10 @@ public class MarriageRegistrarDashbordController implements Initializable {
         // TODO
     }
 
+    User currentUser;
     public void receiveUserData(User user){
-        System.out.println(user.toString());
+        currentUser = user;
+        usernameLable.setText("Welcome, " + currentUser.getUsername() + ".");
         return;
     }
     

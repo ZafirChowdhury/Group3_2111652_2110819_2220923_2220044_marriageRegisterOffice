@@ -29,12 +29,13 @@ public class AdminDashbordController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        usernameLable.setText("Welcome, " + currentUser.getUsername());
+        
     }  
     
     User currentUser;
     public void receiveUserData(User user){
         currentUser = user;
+        usernameLable.setText("Welcome, " + currentUser.getUsername() + ".");
         return;
     }
 
