@@ -58,7 +58,7 @@ public abstract class User implements Serializable {
     // Returns path to bin file according to the user type given
     public static String getPath(String type) {
         if (type.equals("Marriage Registrar")) return "bin/marriageRegistrar.bin";
-        if (type.equals("IT Admin")) return "bin/iTadmin.bin";
+        if (type.equals("IT Admin")) return "bin/itAdmin.bin";
         if (type.equals("Marriage Candidate")) return "bin/marriageCandidate.bin";
         if (type.equals("Legal Advisor")) return "bin/legalAdvisor.bin";
         if (type.equals("Accountant")) return "bin/accountant.bin";
@@ -143,7 +143,7 @@ public abstract class User implements Serializable {
         }
         
         oos.writeObject(this);
-        System.out.println(this.toString() + " Saved.");
+        System.out.println(this.toString() + "  Saved.");
         User.saveUsername(username);
         oos.close();
         
@@ -156,11 +156,14 @@ public abstract class User implements Serializable {
     }
     
     // Bit finiky, Test out the return null parts
+    // Try suing a array list
     public static User verifyUser(String username, String password, String path) {
+        ArrayList<User> userList = new ArrayList<>();
+        
         try {
             File file = new File(path);
             if (!file.exists()) {
-                System.out.println("File dose not exist");
+                System.out.println("File dose not exist, No user of that type exists");
                 return null;
             }
             
@@ -169,19 +172,37 @@ public abstract class User implements Serializable {
             
             try {
                 User user = (User) ois.readObject();
-                if (user.getUsername().equals(username) && user.getPassword().equals(password)) {
-                    return user;
-                }
+                userList.add(user);
+                System.out.println("All users added to the ArrayList");
+            
             } catch(EOFException e) {
-                // Not sure tho
+                System.out.println("End of file reached.");
+                ois.close();
                 return null;
             }
             
         } catch(Exception e) {
-            e.printStackTrace();
+            System.out.println("Error while reading file");            
             return null;
         }
-              
+        
+        System.err.println("Scanning ArrayList");
+        for (User u : userList) {
+            System.out.println(u.toString() + " " + u.getPassword());
+            if (u.getUsername().equals(username)) {
+                System.out.println("User found, checking password");
+                if (u.getPassword().equals(password)) {
+                    System.out.println("Password matched, loggin in user: " + u.toString());
+                    return u;
+                }
+                else {
+                    System.out.println("Password dose not match.");
+                    return null;
+                }
+            }
+        }
+                
+        System.out.println("End of method, User not found");
         return null;
     }
 }

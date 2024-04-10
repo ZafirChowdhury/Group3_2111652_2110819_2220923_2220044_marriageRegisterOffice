@@ -90,7 +90,7 @@ public class LoginController implements Initializable {
         }
         
         // User Verification
-        User user = User.verifyUser(usernameTextFiled.getText(), passwordField.getText(), User.getPath(userTypeComboBox.getValue()));
+        User user = User.verifyUser(usernameTextFiled.getText().trim(), ((String) passwordField.getText()).trim(), User.getPath(userTypeComboBox.getValue()));
         if (user == null) {
             Alert a = new Alert(Alert.AlertType.ERROR);
             a.setContentText("Incorrect passowrd or username, please try again");
