@@ -7,6 +7,7 @@ package group3_2111652_2110819_2220923_2220044_marriageregisteroffice.sadia;
 import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
+import java.util.InputMismatchException;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -43,6 +44,7 @@ public class LegalAdvisor_PrenupDocController implements Initializable {
     public LegalAdvisor getAdvisor(){
         return advisor;
     }
+    
     /**
      * Initializes the controller class.
      */
@@ -71,7 +73,10 @@ public class LegalAdvisor_PrenupDocController implements Initializable {
     @FXML
     private void saveDraftOnclick(ActionEvent event) {
         String clientname = client1TF.getText();
-        if(clientname.isEmpty()){
+       
+            
+        
+            if(clientname.isEmpty()){
             blankinfo.show();
         blankinfo.showAndWait();
         return;
@@ -95,19 +100,21 @@ public class LegalAdvisor_PrenupDocController implements Initializable {
             amount.showAndWait();
             return;
         }
-
+        try {
+            clientname.toString();
+            clientname2.toString();
+            text.toString();
         
         
-
-        
-        
-
+       
         boolean madefile = advisor.MakePrenupDoc(clientname2, clientname2, date, text);
         if (madefile){
         Alert success = new Alert(Alert.AlertType.INFORMATION,"Bin file created");
         success.showAndWait();
         }
-        
+        }catch(InputMismatchException e) {
+            System.err.println("Input mismatch: " + e.getMessage());
+        };
         
 
 
