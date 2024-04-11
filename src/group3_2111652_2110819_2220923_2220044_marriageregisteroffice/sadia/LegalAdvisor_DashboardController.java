@@ -24,7 +24,7 @@ import javafx.stage.Stage;
  * @author HP 840 G6
  */
 public class LegalAdvisor_DashboardController implements Initializable {
-    private LegalAdvisor adv;
+    private LegalAdvisor adv = new LegalAdvisor("c","x","y");
     public LegalAdvisor getLegalAdvisor(){
     return adv;
     }
