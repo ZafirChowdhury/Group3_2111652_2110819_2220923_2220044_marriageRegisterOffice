@@ -85,7 +85,7 @@ public class LegalAdvisor_DashboardController implements Initializable {
        root = (Parent) myLoader.load();
        Scene myScene = new Scene(root); 
        
-       LegalAdvisor_PrenupDocController y = myLoader.getController();
+       ContactLogController y = myLoader.getController();
         
         y.setLegalAdvisor(adv);
        

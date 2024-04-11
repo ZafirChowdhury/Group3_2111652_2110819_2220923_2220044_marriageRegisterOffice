@@ -25,7 +25,13 @@ import javafx.stage.Stage;
  * @author HP 840 G6
  */
 public class ContactLogController implements Initializable {
-
+   private LegalAdvisor adv = new LegalAdvisor("c","x","y");
+    public LegalAdvisor getLegalAdvisor(){
+    return adv;
+    }
+    public void setLegalAdvisor(LegalAdvisor adv){
+    this.adv = adv;
+    }
     @FXML
     private TextField clientname;
     @FXML
