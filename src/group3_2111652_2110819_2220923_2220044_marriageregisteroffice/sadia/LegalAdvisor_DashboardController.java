@@ -79,7 +79,19 @@ public class LegalAdvisor_DashboardController implements Initializable {
     }
 
     @FXML
-    private void gotoContactLogScene(ActionEvent event) {
+    private void gotoContactLogScene(ActionEvent event) throws IOException {
+        Parent root = null;
+       FXMLLoader myLoader = new FXMLLoader(getClass().getResource("ContactLog.fxml"));
+       root = (Parent) myLoader.load();
+       Scene myScene = new Scene(root); 
+       
+       LegalAdvisor_PrenupDocController y = myLoader.getController();
+        
+        y.setLegalAdvisor(adv);
+       
+       Stage myStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+       myStage.setScene(myScene);
+       myStage.show();
     }
 
     @FXML
