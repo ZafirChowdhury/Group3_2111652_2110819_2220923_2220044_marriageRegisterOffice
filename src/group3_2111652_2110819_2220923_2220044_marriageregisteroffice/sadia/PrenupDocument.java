@@ -12,7 +12,7 @@ import java.time.LocalDate;
  * @author HP 840 G6
  */
 public class PrenupDocument implements Serializable{
-      
+    
     private String Clientname1;
     private String Clientname2;
     private LocalDate documadeDate;
