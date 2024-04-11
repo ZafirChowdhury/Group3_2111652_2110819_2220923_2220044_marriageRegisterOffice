@@ -24,7 +24,13 @@ import javafx.stage.Stage;
  * @author HP 840 G6
  */
 public class LegalAdvisor_DashboardController implements Initializable {
-
+    private LegalAdvisor adv;
+    public LegalAdvisor getLegalAdvisor(){
+    return adv;
+    }
+    public void setLegalAdvisor(LegalAdvisor adv){
+    this.adv = adv;
+    }
     @FXML
     private Label usernameLable;
 
@@ -36,7 +42,7 @@ public class LegalAdvisor_DashboardController implements Initializable {
         // TODO
     } 
     
-    LegalAdvisor user;
+    
     public void receiveUserData(User user){
         user = (LegalAdvisor) user;
         usernameLable.setText("Welcome,  " + user.getUsername() + "!");
@@ -50,6 +56,11 @@ public class LegalAdvisor_DashboardController implements Initializable {
        FXMLLoader myLoader = new FXMLLoader(getClass().getResource("LegalAdvisor_PrenupDoc.fxml"));
        root = (Parent) myLoader.load();
        Scene myScene = new Scene(root); 
+       
+       LegalAdvisor_PrenupDocController x = myLoader.getController();
+        
+        x.setLegalAdvisor(adv);
+       
        Stage myStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
        myStage.setScene(myScene);
        myStage.show();
