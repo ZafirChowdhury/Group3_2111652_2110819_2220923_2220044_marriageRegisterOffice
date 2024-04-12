@@ -61,5 +61,41 @@ public class LegalAdvisor extends User implements Serializable {
          return false;
     
     }
-    //public void viewGuides
+    public boolean Add_contact_toContactlog(String clientname,String phnnumber,String address){
+        ContactLog contact = new ContactLog(clientname,phnnumber,address);
+      System.out.println("Contact info stored in bin" + contact.toString());
+        
+        
+        File f = null;
+        FileOutputStream fos = null;
+        ObjectOutputStream oos = null;
+        try{
+            f = new File("NewContacts.bin");
+            if(f.exists()){
+                fos = new FileOutputStream(f,true);
+                oos = new ObjectOutputStream(fos);
+            } else { fos = new FileOutputStream(f);
+                     oos = new ObjectOutputStream(fos);       
+            }
+            oos.writeObject(contact);
+            oos.close();
+            return true;
+            
+            
+        } catch(IOException i){
+            if(oos!=null){
+                try{oos.close();
+                } catch(IOException e){
+                    Logger.getLogger(LegalAdvisor.class.getName()).log(Level.SEVERE,null,e);
+     
+                }
+            
+            }  
+    }      
+         System.out.println("Failed to make bin");
+         return false;
+    }
+   
+    
+    
 }
