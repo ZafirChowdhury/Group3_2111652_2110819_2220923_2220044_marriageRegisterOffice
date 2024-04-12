@@ -1,6 +1,10 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
+ */
 package group3_2111652_2110819_2220923_2220044_marriageregisteroffice;
 
-import group3_2111652_2110819_2220923_2220044_marriageregisteroffice.arpita.MarriageCandidateDashboardController;
+import group3_2111652_2110819_2220923_2220044_marriageregisteroffice.arpita.MarriageCandidateDashbordController;
 import group3_2111652_2110819_2220923_2220044_marriageregisteroffice.arpita.MarriageCounselorDashbordController;
 import group3_2111652_2110819_2220923_2220044_marriageregisteroffice.sadia.Accountant_DashboardController;
 import group3_2111652_2110819_2220923_2220044_marriageregisteroffice.sadia.LegalAdvisor_DashboardController;
@@ -23,6 +27,11 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+/**
+ * FXML Controller class
+ *
+ * @author zafir
+ */
 public class LoginController implements Initializable {
 
     @FXML
@@ -32,6 +41,9 @@ public class LoginController implements Initializable {
     @FXML
     private ComboBox<String> userTypeComboBox;
 
+    /**
+     * Initializes the controller class.
+     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         userTypeComboBox.getItems().addAll("Marriage Registrar", "IT Admin", "Marriage Candidate", "Marriage Counselor",
@@ -180,10 +192,10 @@ public class LoginController implements Initializable {
         // Marriage Candidate - Arpita
         else if (userTypeComboBox.getValue().equals("Marriage Candidate")) {
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("arpita/MarriageCandidateDashboard.fxml"));
+            loader.setLocation(getClass().getResource("arpita/marriageCandidateDashbord.fxml"));
             Parent root = loader.load(); 
             
-            MarriageCandidateDashboardController marriageCandidateDashbordController = loader.getController();
+            MarriageCandidateDashbordController marriageCandidateDashbordController = loader.getController();
             marriageCandidateDashbordController.receiveUserData(user);
             
             Scene scene = new Scene(root);

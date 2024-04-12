@@ -1,19 +1,13 @@
-package group3_2111652_2110819_2220923_2220044_marriageregisteroffice.arpita;
+package Arpita;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-
-
 
 public class MarriageApplication implements Serializable {
     private String applicationID;
@@ -30,11 +24,8 @@ public class MarriageApplication implements Serializable {
     private LocalDate pefferredMarriageDate;
     private String MobileNumber;
     private String WitnessName;
-    private boolean granted;
-    private MarriageCandidate mc;
 
-
-    public MarriageApplication(String applicationID, String groomName, String brideName, String groomNID, String brideNID, String groomReligion, String brideReligion, LocalDate groomDOB, LocalDate brideDOB, String presentAddress, String permanentAddress, LocalDate pefferredMarriageDate, String MobileNumber, String WitnessName, MarriageCandidate mc) {
+    public MarriageApplication(String applicationID, String groomName, String brideName, String groomNID, String brideNID, String groomReligion, String brideReligion, LocalDate groomDOB, LocalDate brideDOB, String presentAddress, String permanentAddress, LocalDate pefferredMarriageDate, String MobileNumber, String WitnessName) {
         this.applicationID = applicationID;
         this.groomName = groomName;
         this.brideName = brideName;
@@ -49,49 +40,7 @@ public class MarriageApplication implements Serializable {
         this.pefferredMarriageDate = pefferredMarriageDate;
         this.MobileNumber = MobileNumber;
         this.WitnessName = WitnessName;
-        this.mc = mc;
-        granted = false;
     }
-
-    public MarriageCandidate getMc() {
-        return mc;
-    }
-
-    public void setMc(MarriageCandidate mc) {
-        this.mc = mc;
-    }
-
-    public boolean isGranted() {
-        return granted;
-    }
-
-    public void setGranted(boolean granted) {
-        this.granted = granted;
-    }
-    
-    public static ObservableList <MarriageApplication> getMarriageApplicationList() {
-        ObjectInputStream ois = null;
-        ObservableList <MarriageApplication> list = FXCollections.observableArrayList();
-        try {
-             MarriageApplication ma;
-             ois = new ObjectInputStream(new FileInputStream("bin/MarriageApplication.bin"));
-             
-            while(true){
-                ma = (MarriageApplication) ois.readObject();
-                list.add(ma);
-            }
-        }
-        catch(RuntimeException e){
-            e.printStackTrace();
-        }
-        catch (Exception ex) {
-            try {
-                if(ois!=null)
-                    ois.close();
-            } catch (IOException ex1) {  }           
-        }
-        return list;
-    } 
     
     public static void CreateNewMarriageApplication(MarriageApplication ma) {
         File f = null;
@@ -99,7 +48,7 @@ public class MarriageApplication implements Serializable {
         ObjectOutputStream oos = null;
 
         try {
-            f = new File("bin/MarriageApplication.bin");
+            f = new File("MarriageApplication.bin");
             if(f.exists()){
                 fos = new FileOutputStream(f,true);
                 oos = new AppendableObjectOutputStream(fos);                
@@ -232,4 +181,7 @@ public class MarriageApplication implements Serializable {
     public void setWitnessName(String WitnessName) {
         this.WitnessName = WitnessName;
     }
+    
+
+    
 }
