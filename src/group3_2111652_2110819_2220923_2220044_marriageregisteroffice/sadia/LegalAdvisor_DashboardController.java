@@ -12,7 +12,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
+import javafx.scene.Node; 
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
@@ -24,7 +24,13 @@ import javafx.stage.Stage;
  * @author HP 840 G6
  */
 public class LegalAdvisor_DashboardController implements Initializable {
-
+    private LegalAdvisor adv = new LegalAdvisor("c","x","y");
+    public LegalAdvisor getLegalAdvisor(){
+    return adv;
+    }
+    public void setLegalAdvisor(LegalAdvisor adv){
+    this.adv = adv;
+    }
     @FXML
     private Label usernameLable;
 
@@ -36,7 +42,7 @@ public class LegalAdvisor_DashboardController implements Initializable {
         // TODO
     } 
     
-    LegalAdvisor user;
+    
     public void receiveUserData(User user){
         user = (LegalAdvisor) user;
         usernameLable.setText("Welcome,  " + user.getUsername() + "!");
@@ -50,6 +56,11 @@ public class LegalAdvisor_DashboardController implements Initializable {
        FXMLLoader myLoader = new FXMLLoader(getClass().getResource("LegalAdvisor_PrenupDoc.fxml"));
        root = (Parent) myLoader.load();
        Scene myScene = new Scene(root); 
+       
+       LegalAdvisor_PrenupDocController x = myLoader.getController();
+        
+        x.setLegalAdvisor(adv);
+       
        Stage myStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
        myStage.setScene(myScene);
        myStage.show();
@@ -68,7 +79,19 @@ public class LegalAdvisor_DashboardController implements Initializable {
     }
 
     @FXML
-    private void gotoContactLogScene(ActionEvent event) {
+    private void gotoContactLogScene(ActionEvent event) throws IOException {
+        Parent root = null;
+       FXMLLoader myLoader = new FXMLLoader(getClass().getResource("ContactLog.fxml"));
+       root = (Parent) myLoader.load();
+       Scene myScene = new Scene(root); 
+       
+       ContactLogController y = myLoader.getController();
+        
+        y.setLegalAdvisor(adv);
+       
+       Stage myStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+       myStage.setScene(myScene);
+       myStage.show();
     }
 
     @FXML

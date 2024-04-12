@@ -11,6 +11,7 @@ import java.io.Serializable;
  * @author HP 840 G6
  */
 public class ClientBankInfo implements Serializable{
+    
     private String clientName, bankName, bankBranch,bankAccno;
     private int phone;
 

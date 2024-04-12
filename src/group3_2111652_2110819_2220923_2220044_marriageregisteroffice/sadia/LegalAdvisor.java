@@ -22,11 +22,13 @@ public class LegalAdvisor extends User implements Serializable {
 
     public LegalAdvisor(String username, String password, String type) {
         super(username, password, type);
+        
     }
+   
     //goal 1
     public Boolean MakePrenupDoc(String Clientname1, String Clientname2, LocalDate documadeDate, String texts){
       PrenupDocument doc = new PrenupDocument(Clientname1,Clientname2,documadeDate,texts);
-      System.out.println("Bank info made" + doc.toString());
+      System.out.println("Prenup info stored in bin" + doc.toString());
         
         
         File f = null;
