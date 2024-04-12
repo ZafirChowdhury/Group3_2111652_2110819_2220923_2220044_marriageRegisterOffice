@@ -11,6 +11,8 @@ import java.io.Serializable;
  *
  * @author zafir
  */
+
+// Not actual candidate, a user acc to submit and do stuff in the program
 public class MarriageCandidate extends User implements Serializable{
 
     public MarriageCandidate(String username, String password, String type) {
