@@ -41,6 +41,7 @@ public class LegalAdvisor_PrenupDocController implements Initializable {
     Alert wrongphninfo = new Alert(Alert.AlertType.WARNING,"Put valid contact no. Must be 11 digits with + sign ");
     Alert amount = new Alert(Alert.AlertType.WARNING,"Put valid amount. Amount cannot be 0tk");
      private LegalAdvisor adv;
+     
     public LegalAdvisor getLegalAdvisor(){
     return adv;
     }

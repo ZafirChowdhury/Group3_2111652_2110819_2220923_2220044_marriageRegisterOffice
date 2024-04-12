@@ -20,6 +20,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 /**
@@ -59,7 +60,12 @@ public class ContactLogController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        clientnameColom.setCellValueFactory(new PropertyValueFactory<ContactLog,String>("clientname"));
+        phonenumbrColom.setCellValueFactory(new PropertyValueFactory<ContactLog,String>("phnnumber"));
+       addressColom.setCellValueFactory(new PropertyValueFactory<ContactLog,String>("address"));
+        
+        
+        
     }    
 
     @FXML
