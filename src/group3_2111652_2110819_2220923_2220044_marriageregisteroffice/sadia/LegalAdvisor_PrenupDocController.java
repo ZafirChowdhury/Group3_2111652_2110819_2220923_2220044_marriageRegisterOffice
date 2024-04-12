@@ -109,8 +109,6 @@ public class LegalAdvisor_PrenupDocController implements Initializable {
             clientname2.toString();
             text.toString();
         
-        
-       
         boolean madefile = adv.MakePrenupDoc(clientname, clientname2, date, text);
         if (madefile){
         Alert success = new Alert(Alert.AlertType.INFORMATION,"Bin file created");
