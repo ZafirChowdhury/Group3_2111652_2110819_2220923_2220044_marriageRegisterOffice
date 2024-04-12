@@ -1,4 +1,4 @@
-package group3_2111652_2110819_2220923_2220044_marriageregisteroffice.arpita;
+package Arpita;
 
 import java.io.IOException;
 import java.io.ObjectOutputStream;
