@@ -1,4 +1,3 @@
-
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
@@ -42,7 +41,6 @@ public class LegalAdvisor_PrenupDocController implements Initializable {
     Alert wrongphninfo = new Alert(Alert.AlertType.WARNING,"Put valid contact no. Must be 11 digits with + sign ");
     Alert amount = new Alert(Alert.AlertType.WARNING,"Put valid amount. Amount cannot be 0tk");
      private LegalAdvisor adv;
-     
     public LegalAdvisor getLegalAdvisor(){
     return adv;
     }
@@ -110,6 +108,8 @@ public class LegalAdvisor_PrenupDocController implements Initializable {
             clientname2.toString();
             text.toString();
         
+        
+       
         boolean madefile = adv.MakePrenupDoc(clientname, clientname2, date, text);
         if (madefile){
         Alert success = new Alert(Alert.AlertType.INFORMATION,"Bin file created");
@@ -126,4 +126,3 @@ public class LegalAdvisor_PrenupDocController implements Initializable {
     
     
 }
-

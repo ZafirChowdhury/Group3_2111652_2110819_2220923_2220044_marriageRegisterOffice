@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group3_2111652_2110819_2220923_2220044_marriageregisteroffice.arpita.CheckApplicationStatusSceneController">
+
+<AnchorPane id="AnchorPane" prefHeight="685.0" prefWidth="1125.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171">
    <children>
-      <Label layoutX="77.0" layoutY="131.0" prefHeight="21.0" prefWidth="133.0" text="Application Status:" />
-      <TextField fx:id="applicationStatusTextfield" layoutX="216.0" layoutY="129.0" />
-      <Button layoutX="246.0" layoutY="225.0" mnemonicParsing="false" text="Schedule Meeting" />
+      <TextArea fx:id="showstatusOnClick" layoutX="28.0" layoutY="96.0" prefHeight="554.0" prefWidth="1076.0" />
+      <Label layoutX="66.0" layoutY="37.0" prefHeight="21.0" prefWidth="200.0" text="Check Application Status:" />
    </children>
 </AnchorPane>

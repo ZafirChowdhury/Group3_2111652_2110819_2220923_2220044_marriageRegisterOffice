@@ -1,4 +1,3 @@
-
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
@@ -25,9 +24,7 @@ import javafx.stage.Stage;
  * @author HP 840 G6
  */
 public class LegalAdvisor_DashboardController implements Initializable {
-    
-  private LegalAdvisor adv = new LegalAdvisor("c","x","y");
-    
+    private LegalAdvisor adv = new LegalAdvisor("c","x","y");
     public LegalAdvisor getLegalAdvisor(){
     return adv;
     }
@@ -52,7 +49,7 @@ public class LegalAdvisor_DashboardController implements Initializable {
         System.out.println("Logged in as: " + user.toString());
         return;
     }
-     
+
     @FXML
     private void gotoPrenupSceneOnclick(ActionEvent event) throws IOException {
         Parent root = null;
