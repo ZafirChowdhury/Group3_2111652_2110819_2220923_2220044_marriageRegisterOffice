@@ -1,4 +1,4 @@
-package Arpita;
+package group3_2111652_2110819_2220923_2220044_marriageregisteroffice.arpita;
 
 import java.net.URL;
 import java.time.LocalDate;
@@ -39,10 +39,14 @@ public class SubmitMarriageApplicationSceneController implements Initializable {
     private DatePicker groomDOBDatePicker;
     @FXML
     private DatePicker brideDOBDatePicker;
+    
+    MarriageCandidate mc;
+    public void receiveUserData(MarriageCandidate mc){
+        this.mc = mc;
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
     }    
 
     @FXML
@@ -61,9 +65,8 @@ public class SubmitMarriageApplicationSceneController implements Initializable {
         String witnessName = witnessNameTExtField.getText();
         LocalDate groomDOB = groomDOBDatePicker.getValue();
         LocalDate brideDOB = brideDOBDatePicker.getValue();
-        MarriageApplication ma = new MarriageApplication(applicationID, groomName, brideName, groomNID, brideNID, groomReligion, brideReligion, groomDOB, brideDOB, presentAddress, permanentAddress, pefferredMarriageDate, mobileNumber, witnessName);
+        MarriageApplication ma = new MarriageApplication(applicationID, groomName, brideName, groomNID, brideNID, groomReligion, brideReligion, groomDOB, brideDOB, presentAddress, permanentAddress, pefferredMarriageDate, mobileNumber, witnessName, mc);
         MarriageApplication.CreateNewMarriageApplication(ma);
         PopUp.Message("Marriage Application has been submitted successfully");
     }
-    
 }
