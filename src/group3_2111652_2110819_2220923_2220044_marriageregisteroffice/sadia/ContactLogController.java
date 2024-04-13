@@ -9,6 +9,8 @@ import java.net.URL;
 import java.time.LocalDate;
 import java.util.InputMismatchException;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -58,6 +60,7 @@ public class ContactLogController implements Initializable {
     /**
      * Initializes the controller class.
      */
+    ObservableList<ContactLog> ContactList = FXCollections.observableArrayList();
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         clientnameColom.setCellValueFactory(new PropertyValueFactory<ContactLog,String>("clientname"));
@@ -99,11 +102,11 @@ public class ContactLogController implements Initializable {
         if(sign==true && number.length()>11){
             wrongphninfo.showAndWait();
         }
-        boolean madefile = adv.Add_contact_toContactlog(name, number, addrs);
-        
+        boolean madefile = adv.Addcontact_tocontactlog(name,number,addrs);
         if (madefile){
-        Alert success = new Alert(Alert.AlertType.INFORMATION,"Bin file created");
+       Alert success = new Alert(Alert.AlertType.INFORMATION,"Bin file created");
         success.showAndWait();
+         //contacrLogTableView.setItems.(ContactList);
         }
         }catch(InputMismatchException e) {
             System.err.println("Error: " + e.getMessage());
