@@ -115,11 +115,12 @@ public class LegalAdvisor_PrenupDocController implements Initializable {
         Alert success = new Alert(Alert.AlertType.INFORMATION,"Bin file created");
         success.showAndWait();
         }
+        
         }catch(InputMismatchException e) {
             System.err.println("Error: " + e.getMessage());
         }
         
-
+        
 
     }
 
