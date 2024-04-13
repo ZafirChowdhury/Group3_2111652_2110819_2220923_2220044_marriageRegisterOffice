@@ -57,6 +57,7 @@ public class AdminDashbordController implements Initializable {
         Scene scene = new Scene(root);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);
+        stage.setTitle("All User View");
         stage.show();
     }
 
@@ -72,6 +73,7 @@ public class AdminDashbordController implements Initializable {
         Scene scene = new Scene(root);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);
+        stage.setTitle("Add New User");
         stage.show();
     }
     
@@ -82,12 +84,13 @@ public class AdminDashbordController implements Initializable {
         loader.setLocation(getClass().getResource("earlyPayment.fxml"));
         Parent root = loader.load(); 
 
-        AllTIcketsController allTIcketsController = loader.getController();
-        allTIcketsController.receiveUserData(currentUser);
+        EarlyPaymentController earlyPaymentController = loader.getController();
+        earlyPaymentController.receiveUserData(currentUser);
 
         Scene scene = new Scene(root);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);
+        stage.setTitle("Early Payment");
         stage.show();
     }
     
@@ -95,15 +98,16 @@ public class AdminDashbordController implements Initializable {
     @FXML // AllTicketsController.java // allTicketsController.fxml
     private void supportTicketOnClick(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("allTicketsController.fxml"));
+        loader.setLocation(getClass().getResource("allTIckets.fxml"));
         Parent root = loader.load(); 
 
-        EarlyPaymentController earlyPaymentController = loader.getController();
-        earlyPaymentController.receiveUserData(currentUser);
+        AllTIcketsController allTIcketsController = loader.getController();
+        allTIcketsController.receiveUserData(currentUser);
 
         Scene scene = new Scene(root);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);
+        stage.setTitle("Support");
         stage.show();
     }
     

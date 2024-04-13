@@ -18,10 +18,11 @@
       </TableView>
       <ComboBox layoutX="84.0" layoutY="10.0" prefWidth="150.0" />
       <Label layoutX="16.0" layoutY="15.0" text="Filter by:" />
-      <Button layoutX="530.0" layoutY="296.0" mnemonicParsing="false" text="View " />
+      <Button layoutX="473.0" layoutY="291.0" mnemonicParsing="false" text="View " />
       <Label layoutX="14.0" layoutY="288.0" text="Select a user and click the &quot;View&quot; button to see in details" />
       <Label layoutX="242.0" layoutY="15.0" text="Sort by:" />
       <ComboBox layoutX="300.0" layoutY="10.0" prefWidth="150.0" />
       <Button layoutX="473.0" layoutY="10.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="112.0" text="Sort" />
+      <Button layoutX="536.0" layoutY="291.0" mnemonicParsing="false" onAction="#backButtonOnClick" text="Back" />
    </children>
 </AnchorPane>
