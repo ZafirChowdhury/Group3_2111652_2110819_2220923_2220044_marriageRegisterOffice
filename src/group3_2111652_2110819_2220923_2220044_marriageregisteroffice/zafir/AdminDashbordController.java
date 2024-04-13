@@ -98,7 +98,7 @@ public class AdminDashbordController implements Initializable {
     @FXML // AllTicketsController.java // allTicketsController.fxml
     private void supportTicketOnClick(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("allTIckets.fxml"));
+        loader.setLocation(getClass().getResource(".fxml"));
         Parent root = loader.load(); 
 
         AllTIcketsController allTIcketsController = loader.getController();
