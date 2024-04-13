@@ -42,7 +42,7 @@ public class TestReadObj {
         
         System.out.println("Reading User Bin files.");
         try {
-            File file = new File("bin/witness.bin");
+            File file = new File("bin/earlyPayment.bin");
             if (file.exists()) {
                 FileInputStream fis = new FileInputStream(file);
                 ObjectInputStream ois = new ObjectInputStream(fis);
@@ -50,7 +50,7 @@ public class TestReadObj {
                 try {
                     while (true) {
                        User user = (User) ois.readObject();
-                        System.out.println(user.toString());
+                       System.out.println(user.toString());
                     }
                 } catch (EOFException e) {
                     System.out.println("End of file reached");
@@ -60,9 +60,10 @@ public class TestReadObj {
             } else {
                 System.out.println("File dose not exist");
             }
-    } catch (Exception ex) {
-        System.out.println("Error wile reading file.");
-    }
-    }
+            
+        } catch (Exception ex) {
+            System.out.println("Error wile reading file.");
+        }
+}
     
 }

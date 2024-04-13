@@ -4,8 +4,14 @@
  */
 package group3_2111652_2110819_2220923_2220044_marriageregisteroffice.zafir;
 
+
 import group3_2111652_2110819_2220923_2220044_marriageregisteroffice.User;
+import group3_2111652_2110819_2220923_2220044_marriageregisteroffice.sufi.AppendableObjectOutputStream;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -15,6 +21,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 /**
@@ -23,6 +31,11 @@ import javafx.stage.Stage;
  * @author zafir
  */
 public class EarlyPaymentController implements Initializable {
+
+    @FXML
+    private TextField subjectTextFiled;
+    @FXML
+    private TextArea descriptionTextFiled;
 
     /**
      * Initializes the controller class.
@@ -52,6 +65,44 @@ public class EarlyPaymentController implements Initializable {
         stage.setTitle("Admin Dashbord");
         stage.setScene(scene);
         stage.show();
+    }
+
+    @FXML
+    private void submitButtonOnClick(ActionEvent event) throws FileNotFoundException, IOException {
+        String subject = subjectTextFiled.getText();
+        String description = descriptionTextFiled.getText();
+        
+        if (subject == null || description == null) {
+            System.out.println("Please fill all the requred filds");
+            // Add alart
+            return;
+        }
+        
+        EarlyPayment newEarlyPayment = new EarlyPayment(currentUser.getUsername(),
+                                                                  subject,
+                                                                  description);
+        
+        File file = new File("bin/earlyPayment.bin");
+        FileOutputStream fos;
+        ObjectOutputStream oos;
+        
+        try {
+            if (file.exists()) {
+                fos = new FileOutputStream(file, true);
+                oos = new AppendableObjectOutputStream(fos);
+            } else {
+                fos = new FileOutputStream(file, true);
+                oos = new ObjectOutputStream(fos);
+            }
+            
+            oos.writeObject(newEarlyPayment);
+            System.out.println("Early payment saved succesfully");
+            oos.close();
+            
+        } catch (Exception e) {
+            System.out.println("There was a error while saving early payment");
+            e.printStackTrace();
+        }
     }
     
 }

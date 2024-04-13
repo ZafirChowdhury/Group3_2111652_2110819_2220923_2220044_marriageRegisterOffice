@@ -35,16 +35,24 @@ public class UserViewController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        usernameLable.setText("Username: " + selectedUser.getUsername());
-        typeLable.setText("Type: " + selectedUser.getType());
+        
     }
 
     User currentUser;
-    User selectedUser;
+    User showUser;
     public void receiveUserData(User user, User selectedUser){
         currentUser = (ItAdmin) user;
-        selectedUser = selectedUser;
-        return;
+        showUser = selectedUser;
+        
+        String name = "";
+        String type = "";
+        if (!(showUser == null)) {
+            name = showUser.getUsername();
+            type = showUser.getType();
+        }
+        
+        usernameLable.setText("Username: " + name);
+        typeLable.setText("Type: " + type);
     }
 
     @FXML
@@ -62,7 +70,5 @@ public class UserViewController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
-    
-    
-    
 }
+

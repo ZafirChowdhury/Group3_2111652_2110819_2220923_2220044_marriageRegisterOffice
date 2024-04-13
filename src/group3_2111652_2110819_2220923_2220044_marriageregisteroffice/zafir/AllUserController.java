@@ -159,6 +159,7 @@ public class AllUserController implements Initializable {
     private void viewUserOnClick(ActionEvent event) throws IOException {
         DummyUserView dummySelected = userViewTable.getSelectionModel().getSelectedItem();
         User selectedUser = null;
+        
         for (User u : realUser) {
             if (u.getUsername().equals(dummySelected.username)) {
                 selectedUser = u;
@@ -181,7 +182,7 @@ public class AllUserController implements Initializable {
 
         Scene scene = new Scene(root);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setTitle("User view ");
+        stage.setTitle("User View");
         stage.setScene(scene);
         stage.show();
     }
