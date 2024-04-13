@@ -21,6 +21,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -36,6 +37,8 @@ public class EarlyPaymentController implements Initializable {
     private TextField subjectTextFiled;
     @FXML
     private TextArea descriptionTextFiled;
+    @FXML
+    private Label massageLable;
 
     /**
      * Initializes the controller class.
@@ -106,6 +109,7 @@ public class EarlyPaymentController implements Initializable {
         
         subjectTextFiled.clear();
         descriptionTextFiled.clear();
+        massageLable.setText("Payment request sent.");
     }
     
 }

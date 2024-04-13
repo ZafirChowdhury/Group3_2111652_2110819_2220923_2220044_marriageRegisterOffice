@@ -15,11 +15,13 @@ public class EarlyPayment implements Serializable{
     final String submittedBy;
     String subject;
     String description;
+    boolean isGranted;
 
     public EarlyPayment(String submittedBy, String subject, String description) {
         this.submittedBy = submittedBy;
         this.subject = subject;
         this.description = description;
+        this.isGranted = false;
     }
 
     public String getSubject() {
