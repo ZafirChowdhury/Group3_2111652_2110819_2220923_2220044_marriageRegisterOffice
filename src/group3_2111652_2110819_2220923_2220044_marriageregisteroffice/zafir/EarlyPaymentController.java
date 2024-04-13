@@ -103,6 +103,9 @@ public class EarlyPaymentController implements Initializable {
             System.out.println("There was a error while saving early payment");
             e.printStackTrace();
         }
+        
+        subjectTextFiled.clear();
+        descriptionTextFiled.clear();
     }
     
 }

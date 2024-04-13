@@ -4,6 +4,7 @@
  */
 package group3_2111652_2110819_2220923_2220044_marriageregisteroffice;
 
+import group3_2111652_2110819_2220923_2220044_marriageregisteroffice.zafir.EarlyPayment;
 import java.io.EOFException;
 import java.io.File;
 import java.io.FileInputStream;
@@ -49,7 +50,7 @@ public class TestReadObj {
                 
                 try {
                     while (true) {
-                       User user = (User) ois.readObject();
+                       EarlyPayment user = (EarlyPayment) ois.readObject();
                        System.out.println(user.toString());
                     }
                 } catch (EOFException e) {

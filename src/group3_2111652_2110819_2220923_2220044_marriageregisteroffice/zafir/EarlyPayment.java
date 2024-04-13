@@ -5,12 +5,13 @@
 package group3_2111652_2110819_2220923_2220044_marriageregisteroffice.zafir;
 
 import java.io.File;
+import java.io.Serializable;
 
 /**
  *
  * @author zafir
  */
-public class EarlyPayment {
+public class EarlyPayment implements Serializable{
     final String submittedBy;
     String subject;
     String description;
@@ -36,4 +37,11 @@ public class EarlyPayment {
     public void setDescription(String description) {
         this.description = description;
     }    
+
+    @Override
+    public String toString() {
+        return "EarlyPayment{" + "submittedBy=" + submittedBy + ", subject=" + subject + ", description=" + description + '}';
+    }
+    
+    
 }
