@@ -14,17 +14,19 @@
       <Label layoutX="29.0" layoutY="87.0" text="Client name 2:" />
       <Label layoutX="30.0" layoutY="117.0" text="Document created date:" />
       <Label layoutX="29.0" layoutY="144.0" text="Aggrement Text:" />
-      <TextArea fx:id="aggremencontentTextArea" layoutX="27.0" layoutY="170.0" prefHeight="200.0" prefWidth="363.0" />
+      <TextArea fx:id="aggremencontentTextArea" layoutX="27.0" layoutY="165.0" prefHeight="205.0" prefWidth="303.0" />
       <TextField fx:id="client1TF" layoutX="117.0" layoutY="54.0" />
       <TextField fx:id="client2TF" layoutX="117.0" layoutY="83.0" />
-      <DatePicker fx:id="documentmakingDate" layoutX="163.0" layoutY="113.0" />
-      <Button layoutX="435.0" layoutY="187.0" mnemonicParsing="false" onAction="#generatePrenupDocPdfButton" text="Generate PDF" />
+      <DatePicker fx:id="documentmakingDate" layoutX="163.0" layoutY="113.0" prefHeight="25.0" prefWidth="103.0" />
+      <Button layoutX="293.0" layoutY="77.0" mnemonicParsing="false" onAction="#generatePrenupDocPdfButton" text="Generate PDF" />
       <Label layoutX="222.0" layoutY="8.0" text="Draft Prenup Document" textFill="#b10851">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <Button layoutX="435.0" layoutY="232.0" mnemonicParsing="false" onAction="#returnButton" text="Back button" />
-      <Button layoutX="363.0" layoutY="113.0" mnemonicParsing="false" onAction="#saveDraftOnclick" text="Save draft" />
+      <Button layoutX="468.0" layoutY="29.0" mnemonicParsing="false" onAction="#returnButton" text="Back button" />
+      <Button layoutX="293.0" layoutY="48.0" mnemonicParsing="false" onAction="#saveDraftOnclick" text="Save draft" />
+      <Label fx:id="viewdraftLabel" layoutX="347.0" layoutY="165.0" prefHeight="205.0" prefWidth="224.0" text="VIEW DRAFT" wrapText="true" />
+      <Button layoutX="293.0" layoutY="113.0" mnemonicParsing="false" onAction="#viewDraftonClick" text="View draft" />
    </children>
 </AnchorPane>

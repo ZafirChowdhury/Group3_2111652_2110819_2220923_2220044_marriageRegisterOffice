@@ -34,7 +34,6 @@ public class LegalAdvisor extends User implements Serializable {
       PrenupDocument doc = new PrenupDocument(Clientname1,Clientname2,documadeDate,texts);
       System.out.println("Prenup info stored in bin" + doc.toString());
         
-        
         File f = null;
         FileOutputStream fos = null;
         ObjectOutputStream oos = null;
@@ -69,17 +68,15 @@ public class LegalAdvisor extends User implements Serializable {
     public Boolean Addcontact_tocontactlog(String Clientname,String phnnumber,String address){
      ContactLog contact = new ContactLog(Clientname,phnnumber,address);
       System.out.println("new Contact info stored in bin" + contact.toString());
-        
-        
-        File f = null;
+   File x = null;
         FileOutputStream fos = null;
         ObjectOutputStream oos = null;
         try{
-            f = new File("ContactLog.bin");
-            if(f.exists()){
-                fos = new FileOutputStream(f,true);
+            x = new File("ContactLog.bin");
+            if(x.exists()){
+                fos = new FileOutputStream(x,true);
                 oos = new ObjectOutputStream(fos);
-            } else { fos = new FileOutputStream(f);
+            } else { fos = new FileOutputStream(x);
                      oos = new ObjectOutputStream(fos);       
             }
             oos.writeObject(contact);
@@ -102,23 +99,27 @@ public class LegalAdvisor extends User implements Serializable {
     
     }
     //helper method not goal;
-   /*public static ObservableList<ContactLog> getcontactlist(){
+   public ObservableList<ContactLog> getcontactlist(){
         ObservableList<ContactLog> ContactList = FXCollections.observableArrayList();
-        ContactLog c;
+        
         ObjectInputStream ois = null;
-        try {
+        try { ContactLog c;
             ois = new ObjectInputStream(new FileInputStream("ContactLog.bin"));
             while (true) {
                 c = (ContactLog) ois.readObject();
-                System.out.println("contact dets: " + c.toString());
+                
                 ContactList.add(c);
-            }
+                System.out.println("contact dets added to list: " + c.toString());
+            } //IOEXCEPTION,CLASSNOTFOUNDEXCEPTION,runtime
         } catch (IOException | ClassNotFoundException e) {
             System.out.println("File reading done");
         }
-        System.out.println();
+        catch(Exception ex){
+           System.out.println("error" +ex.getMessage()); 
+        }
+        
         return ContactList ;
-    }*/
+    }
    
 }
 
