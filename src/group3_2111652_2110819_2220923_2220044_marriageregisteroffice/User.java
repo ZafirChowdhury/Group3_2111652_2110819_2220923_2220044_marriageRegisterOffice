@@ -203,4 +203,8 @@ public abstract class User implements Serializable {
         System.out.println("End of method, User not found");
         return null;
     }
+    
+    public void deleteUser() {
+        // TODO
+    }
 }
