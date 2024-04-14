@@ -1,5 +1,9 @@
-/dist/
-/build/
-nbproject
-lib
-bin
+**/nbproject/private/
+**/nbproject/Makefile-*.mk
+**/nbproject/Package-*.bash
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+nbproject/project.properties
