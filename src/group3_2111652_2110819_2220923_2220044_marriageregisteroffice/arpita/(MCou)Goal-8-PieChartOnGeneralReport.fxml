@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="751.0" prefWidth="1157.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ComboBox layoutX="154.0" layoutY="86.0" prefHeight="31.0" prefWidth="163.0" />
+      <Label layoutX="34.0" layoutY="91.0" prefHeight="21.0" prefWidth="120.0" text="Generate Report:" />
+      <Label layoutX="374.0" layoutY="91.0" prefHeight="21.0" prefWidth="84.0" text="Enter Year:" />
+      <TextField layoutX="449.0" layoutY="86.0" />
+      <Button layoutX="316.0" layoutY="136.0" mnemonicParsing="false" text="load" />
+      <PieChart layoutX="43.0" layoutY="203.0" />
+   </children>
+</AnchorPane>
