@@ -39,6 +39,8 @@ public class EarlyPaymentController implements Initializable {
     private TextArea descriptionTextFiled;
     @FXML
     private Label massageLable;
+    @FXML
+    private TextField ammout;
 
     /**
      * Initializes the controller class.
@@ -75,7 +77,7 @@ public class EarlyPaymentController implements Initializable {
         String subject = subjectTextFiled.getText();
         String description = descriptionTextFiled.getText();
         
-        if (subject == null || description == null) {
+        if (subject == null || description == null || ammout == null) {
             System.out.println("Please fill all the requred filds");
             // Add alart
             return;
@@ -83,7 +85,8 @@ public class EarlyPaymentController implements Initializable {
         
         EarlyPayment newEarlyPayment = new EarlyPayment(currentUser.getUsername(),
                                                                   subject,
-                                                                  description);
+                                                                  description,
+                                                                  Float.parseFloat(ammout.getText()));
         
         File file = new File("bin/earlyPayment.bin");
         FileOutputStream fos;
@@ -109,6 +112,7 @@ public class EarlyPaymentController implements Initializable {
         
         subjectTextFiled.clear();
         descriptionTextFiled.clear();
+        ammout.clear();
         massageLable.setText("Payment request sent.");
     }
     

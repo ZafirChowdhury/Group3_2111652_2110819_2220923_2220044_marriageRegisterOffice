@@ -16,12 +16,34 @@ public class EarlyPayment implements Serializable{
     String subject;
     String description;
     boolean isGranted;
+    float ammount;
 
-    public EarlyPayment(String submittedBy, String subject, String description) {
+    public EarlyPayment(String submittedBy, String subject, String description, float ammount) {
         this.submittedBy = submittedBy;
         this.subject = subject;
         this.description = description;
         this.isGranted = false;
+        this.ammount = ammount;        
+    }
+
+    public float getAmmount() {
+        return ammount;
+    }
+
+    public void setAmmount(float ammount) {
+        this.ammount = ammount;
+    }
+
+    public void setIsGranted(boolean isGranted) {
+        this.isGranted = isGranted;
+    }
+
+    public String getSubmittedBy() {
+        return submittedBy;
+    }
+
+    public boolean isIsGranted() {
+        return isGranted;
     }
 
     public String getSubject() {

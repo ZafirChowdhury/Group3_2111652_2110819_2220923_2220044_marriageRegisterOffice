@@ -140,7 +140,5 @@ public class AdminDashbordController implements Initializable {
         stage.setScene(scene);
         stage.setTitle("Marriage Register Office");
         stage.show();
-    }
-    
-    
+    }    
 }
