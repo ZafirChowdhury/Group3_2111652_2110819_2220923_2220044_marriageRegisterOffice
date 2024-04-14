@@ -61,8 +61,8 @@ public class AdminDashbordController implements Initializable {
         stage.show();
     }
 
-    @FXML // AddUserController.java // addUser.fxml
-    private void addNewUserOnClick(ActionEvent event) throws IOException {
+    /* Goal Change
+        private void addNewUserOnClick(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("addUser.fxml"));
         Parent root = loader.load(); 
@@ -76,6 +76,7 @@ public class AdminDashbordController implements Initializable {
         stage.setTitle("Add New User");
         stage.show();
     }
+    */
     
 
     @FXML // EarlyPaymentController.java // earlyPayment.java
@@ -98,7 +99,7 @@ public class AdminDashbordController implements Initializable {
     @FXML // AllTicketsController.java // allTicketsController.fxml
     private void supportTicketOnClick(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource(".fxml"));
+        loader.setLocation(getClass().getResource("allTIckets.fxml"));
         Parent root = loader.load(); 
 
         AllTIcketsController allTIcketsController = loader.getController();
@@ -108,6 +109,36 @@ public class AdminDashbordController implements Initializable {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);
         stage.setTitle("Support");
+        stage.show();
+    }
+
+    @FXML
+    private void viewRequestedPayments(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("allRequestedPayment.fxml"));
+        Parent root = loader.load(); 
+
+        AllRequestedPaymentController allRequestedPaymentController = loader.getController();
+        allRequestedPaymentController.receiveUserData(currentUser);
+
+        Scene scene = new Scene(root);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.setTitle("Payment Requests");
+        stage.show();
+    }
+
+    @FXML
+    private void logoutButtonButtonOnClick(ActionEvent event) throws IOException {
+        FXMLLoader loader= new FXMLLoader();
+
+        loader.setLocation(getClass().getResource("/group3_2111652_2110819_2220923_2220044_marriageregisteroffice/login.fxml"));
+
+        Parent parent= loader.load();
+        Scene scene= new Scene(parent);
+        Stage stage=(Stage)((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.setTitle("Marriage Register Office");
         stage.show();
     }
     

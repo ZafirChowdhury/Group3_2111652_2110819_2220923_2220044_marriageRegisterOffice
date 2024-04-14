@@ -4,7 +4,7 @@
  */
 package group3_2111652_2110819_2220923_2220044_marriageregisteroffice;
 
-import group3_2111652_2110819_2220923_2220044_marriageregisteroffice.arpita.MarriageCandidateDashbordController;
+import group3_2111652_2110819_2220923_2220044_marriageregisteroffice.arpita.MarriageCandidateDashboardController;
 import group3_2111652_2110819_2220923_2220044_marriageregisteroffice.arpita.MarriageCounselorDashbordController;
 import group3_2111652_2110819_2220923_2220044_marriageregisteroffice.sadia.Accountant_DashboardController;
 import group3_2111652_2110819_2220923_2220044_marriageregisteroffice.sadia.LegalAdvisor_DashboardController;
@@ -195,7 +195,7 @@ public class LoginController implements Initializable {
             loader.setLocation(getClass().getResource("arpita/marriageCandidateDashbord.fxml"));
             Parent root = loader.load(); 
             
-            MarriageCandidateDashbordController marriageCandidateDashbordController = loader.getController();
+            MarriageCandidateDashboardController marriageCandidateDashbordController = loader.getController();
             marriageCandidateDashbordController.receiveUserData(user);
             
             Scene scene = new Scene(root);

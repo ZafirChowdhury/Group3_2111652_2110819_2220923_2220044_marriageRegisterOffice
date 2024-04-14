@@ -8,8 +8,7 @@
    <children>
       <Label fx:id="usernameLable" layoutX="33.0" layoutY="38.0" text="Username:" />
       <Label fx:id="typeLable" layoutX="33.0" layoutY="60.0" text="Type: " />
-      <Button layoutX="184.0" layoutY="170.0" mnemonicParsing="false" text="Edit" />
-      <Button layoutX="113.0" layoutY="170.0" mnemonicParsing="false" text="Delete" />
+      <Button layoutX="14.0" layoutY="170.0" mnemonicParsing="false" onAction="#deleteButtonOnClick" text="Delete User" />
       <Button layoutX="241.0" layoutY="170.0" mnemonicParsing="false" onAction="#backButtonOnClick" text="Back" />
    </children>
 </AnchorPane>

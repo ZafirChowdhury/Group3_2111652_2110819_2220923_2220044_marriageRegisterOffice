@@ -70,5 +70,9 @@ public class UserViewController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
+
+    @FXML
+    private void deleteButtonOnClick(ActionEvent event) {
+    }
 }
 
