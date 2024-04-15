@@ -32,6 +32,7 @@ import javafx.stage.Stage;
  */
 public class LegalAdvisor_DashboardController implements Initializable {
     private LegalAdvisor adv = new LegalAdvisor("c","x","y");
+    
     @FXML
     private TextArea viewGuideTextArea;
     @FXML
@@ -64,7 +65,7 @@ public class LegalAdvisor_DashboardController implements Initializable {
     
     
     public void receiveUserData(User user){
-        user = (LegalAdvisor) user;
+        adv = (LegalAdvisor) user;
         usernameLable.setText("Welcome,  " + user.getUsername() + "!");
         System.out.println("Logged in as: " + user.toString());
         return;
@@ -100,7 +101,7 @@ public class LegalAdvisor_DashboardController implements Initializable {
                 while(sc.hasNextLine()){
                     str+=sc.nextLine()+"\n";
                 }
-               viewGuideTextArea.setText(str);
+               viewdocTextArea.setText(str);
             } catch (FileNotFoundException ex) {
                 //Logger.getLogger(FileChooserViewController.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -109,7 +110,23 @@ public class LegalAdvisor_DashboardController implements Initializable {
 
     @FXML
     private void viewLegalDocumentOnclick(ActionEvent event) {
-        //viewdocTextArea;
+         FileChooser fc = new FileChooser();
+        fc.getExtensionFilters().add(new ExtensionFilter("Text files", fileTypeList));
+        fc.getExtensionFilters().add(new ExtensionFilter("All files", fileTypeList2));
+        //File f2 = fc.showSaveDialog(null);
+        File f = fc.showOpenDialog(null);
+        if(f != null){
+            try {
+                Scanner sc = new Scanner(f);
+                String str="";
+                while(sc.hasNextLine()){
+                    str+=sc.nextLine()+"\n";
+                }
+               viewGuideTextArea.setText(str);
+            } catch (FileNotFoundException ex) {
+                //Logger.getLogger(FileChooserViewController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
     }
 
     @FXML
@@ -133,7 +150,19 @@ public class LegalAdvisor_DashboardController implements Initializable {
     }
 
     @FXML
-    private void gotoConsultationListSceneOnclick(ActionEvent event) {
+    private void gotoConsultationListSceneOnclick(ActionEvent event) throws IOException {
+        Parent root = null;
+       FXMLLoader myLoader = new FXMLLoader(getClass().getResource("ConsultationListScene.fxml"));
+       root = (Parent) myLoader.load();
+       Scene myScene = new Scene(root); 
+       
+       ConsultationListSceneController y = myLoader.getController();
+        y.setLegalAdvisor(adv);
+       
+       
+       Stage myStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+       myStage.setScene(myScene);
+       myStage.show();
     }
 
     @FXML

@@ -81,13 +81,18 @@ public class ContactLogController implements Initializable {
        
        
         
-        
+         
         //isnt working yet
       
     
 
     @FXML
     private void deletefromTableView(ActionEvent event) {
+        
+        ContactLog c = contacrLogTableView.getSelectionModel().getSelectedItem();
+        if (c!=null);
+        ContactList.remove(c);
+       
     }
 
     @FXML
@@ -118,6 +123,7 @@ public class ContactLogController implements Initializable {
         blankinfo.showAndWait();
         return;
         }
+        
         String addrs = addressTextField.getText();
         if(addrs.isEmpty()){
             blankinfo.show();
@@ -129,7 +135,7 @@ public class ContactLogController implements Initializable {
             number.toString();
             addrs.toString();
         boolean sign = number.contains("+");
-        if(sign==false && number.length()>11){
+        if(!sign==true && number.length()>11){
             wrongphninfo.showAndWait();
         }
         adv.Addcontact_tocontactlog(name,number,addrs);
@@ -141,8 +147,10 @@ public class ContactLogController implements Initializable {
         
         }catch(Exception e) {
             System.err.println("Error: " + e.getMessage());
+            
         }
     
     }
 }
+
 
