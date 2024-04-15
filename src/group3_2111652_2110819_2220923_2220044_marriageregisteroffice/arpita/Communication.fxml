@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group3_2111652_2110819_2220923_2220044_marriageregisteroffice.arpita.CommunicationController">
+   <children>
+      <ComboBox fx:id="legalAdvisorComboBox" layoutX="172.0" layoutY="51.0" prefWidth="150.0" />
+      <Label layoutX="54.0" layoutY="55.0" text="Select Legal Advisor" />
+      <TextArea fx:id="textTextField" layoutX="60.0" layoutY="100.0" prefHeight="200.0" prefWidth="400.0" />
+      <Button layoutX="388.0" layoutY="329.0" mnemonicParsing="false" onMouseClicked="#submitButtonOnClick" text="Submit" />
+   </children>
+</AnchorPane>

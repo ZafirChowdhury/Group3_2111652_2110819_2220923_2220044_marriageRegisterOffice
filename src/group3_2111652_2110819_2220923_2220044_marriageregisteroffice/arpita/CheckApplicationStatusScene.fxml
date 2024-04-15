@@ -9,6 +9,8 @@
    <children>
       <Label layoutX="77.0" layoutY="131.0" prefHeight="21.0" prefWidth="133.0" text="Application Status:" />
       <TextField fx:id="applicationStatusTextfield" layoutX="216.0" layoutY="129.0" />
-      <Button layoutX="246.0" layoutY="225.0" mnemonicParsing="false" text="Schedule Meeting" />
+
+      <Button fx:id="scheduleMeetingButton" layoutX="246.0" layoutY="217.0" mnemonicParsing="false" onMouseClicked="#scheduleMeetingButtonOnClick" text="Schedule Meeting" />
+
    </children>
 </AnchorPane>

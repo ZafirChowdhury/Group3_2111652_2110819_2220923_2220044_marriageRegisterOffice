@@ -20,24 +20,23 @@ public class MarriageCandidateDashboardController implements Initializable {
     MarriageCandidate mc;
     public void receiveUserData(User user){
         this.mc =(MarriageCandidate) user;
+
+                System.out.println(this.mc.getUsername());
+
     }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
     }    
 
-    private void marriageApplicationsSubmitOnClick(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("SubmitMarriageApplicationScene.fxml"));
-        Parent root = loader.load();
-        borderPane.setCenter(root);
-    }
 
     @FXML
     private void marriageApplicationOnClick(ActionEvent event) throws IOException {
         ObservableList <MarriageApplication> list = FXCollections.observableArrayList();
+        list = MarriageApplication.getMarriageApplicationList();
         MarriageApplication ma = null;
         for (int i = 0; i < list.size(); i ++) {
-            if (list.get(i).getMc() == this.mc) {
+            if (list.get(i).getMc().getUsername().equals(this.mc.getUsername())) {
                 ma = list.get(i);
                 break;
             }
@@ -56,5 +55,12 @@ public class MarriageCandidateDashboardController implements Initializable {
             cassc.receiveUserData(mc, ma);
             borderPane.setCenter(root);
         }
+    }
+
+    @FXML
+    private void requestForCounseling(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("SchedulePremaritalCounseling.fxml"));
+        Parent root = loader.load();
+        borderPane.setCenter(root);
     }
 }

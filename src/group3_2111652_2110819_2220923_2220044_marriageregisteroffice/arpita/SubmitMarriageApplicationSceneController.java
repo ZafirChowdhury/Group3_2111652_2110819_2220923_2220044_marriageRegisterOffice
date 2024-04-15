@@ -1,13 +1,19 @@
 package group3_2111652_2110819_2220923_2220044_marriageregisteroffice.arpita;
 
+import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 
 public class SubmitMarriageApplicationSceneController implements Initializable {
 
@@ -50,7 +56,7 @@ public class SubmitMarriageApplicationSceneController implements Initializable {
     }    
 
     @FXML
-    private void SubmitButtonOnClick(MouseEvent event) {
+    private void SubmitButtonOnClick(MouseEvent event) throws IOException {
         String applicationID = applicationIDTextField.getText();
         String groomName = groomNameTextField.getText();
         String brideName = brideNameTextField.getText();
@@ -68,5 +74,16 @@ public class SubmitMarriageApplicationSceneController implements Initializable {
         MarriageApplication ma = new MarriageApplication(applicationID, groomName, brideName, groomNID, brideNID, groomReligion, brideReligion, groomDOB, brideDOB, presentAddress, permanentAddress, pefferredMarriageDate, mobileNumber, witnessName, mc);
         MarriageApplication.CreateNewMarriageApplication(ma);
         PopUp.Message("Marriage Application has been submitted successfully");
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("MarriageCandidateDashbord.fxml"));
+        Parent root = loader.load(); 
+
+        MarriageCandidateDashboardController marriageCandidateDashbordController = loader.getController();
+        marriageCandidateDashbordController.receiveUserData(mc);
+
+        Scene scene = new Scene(root);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
     }
 }

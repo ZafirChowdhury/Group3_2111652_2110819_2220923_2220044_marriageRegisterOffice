@@ -1,29 +1,22 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
- */
 package group3_2111652_2110819_2220923_2220044_marriageregisteroffice.arpita;
 
 import group3_2111652_2110819_2220923_2220044_marriageregisteroffice.User;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.control.Label;
+import javafx.scene.layout.BorderPane;
 
-/**
- * FXML Controller class
- *
- * @author zafir
- */
 public class MarriageCounselorDashbordController implements Initializable {
 
     @FXML
-    private Label userNameLable;
+    private BorderPane borderPane;
 
-    /**
-     * Initializes the controller class.
-     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
@@ -32,9 +25,36 @@ public class MarriageCounselorDashbordController implements Initializable {
     MarriageCounselor user;
     public void receiveUserData(User user){
         user = (MarriageCounselor) user;
-        userNameLable.setText("You are logged in as: " + user.getUsername());
         System.out.println(user.toString());
         return;
+    }
+
+    @FXML
+    private void viewPendingCounselingApplicationOnClick(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Application.fxml"));
+        Parent root = loader.load();
+        borderPane.setCenter(root);
+    }
+
+    @FXML
+    private void inboxLegalAdvisorOnClick(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Communication.fxml"));
+        Parent root = loader.load();
+        borderPane.setCenter(root);
+    }
+
+    @FXML
+    private void counselingDateOnClick(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("CounselingDate.fxml"));
+        Parent root = loader.load();
+        borderPane.setCenter(root);
+    }
+
+    @FXML
+    private void marriageRecordOnClick(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("MarriageRecord.fxml"));
+        Parent root = loader.load();
+        borderPane.setCenter(root);
     }
     
 }

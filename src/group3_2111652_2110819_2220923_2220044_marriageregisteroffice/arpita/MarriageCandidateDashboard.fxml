@@ -12,16 +12,9 @@
           <Menu mnemonicParsing="false" text="Select Action">
             <items>
               <MenuItem mnemonicParsing="false" onAction="#marriageApplicationOnClick" text="Marriage Application" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Help">
-            <items>
-              <MenuItem mnemonicParsing="false" text="About" />
+
+                  <MenuItem mnemonicParsing="false" onAction="#requestForCounseling" text="Request for Counseling" />
+
             </items>
           </Menu>
         </menus>

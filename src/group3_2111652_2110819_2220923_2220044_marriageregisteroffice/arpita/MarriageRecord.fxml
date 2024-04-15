@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/20.0.1">
+   <children>
+      <TableView fx:id="tableView" layoutX="43.0" layoutY="69.0" prefHeight="200.0" prefWidth="467.0">
+        <columns>
+          <TableColumn prefWidth="117.33331298828125" text="Bride Name" />
+          <TableColumn prefWidth="102.00003051757812" text="Groom Name" />
+            <TableColumn prefWidth="98.0" text="Marriage Date" />
+            <TableColumn prefWidth="150.0" text="Witness Name" />
+        </columns>
+      </TableView>
+      <Label layoutX="43.0" layoutY="25.0" text="Marriage Records:" />
+   </children>
+</AnchorPane>
