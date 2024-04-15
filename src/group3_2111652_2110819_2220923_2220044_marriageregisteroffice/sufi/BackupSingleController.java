@@ -52,6 +52,9 @@ public class BackupSingleController implements Initializable {
     private Label rel2L;
     @FXML
     private Label marriageIDL;
+    
+    MarriageRecord x;
+    private Archivist a = new Archivist("x","y","z");
 
     /**
      * Initializes the controller class.
@@ -61,16 +64,31 @@ public class BackupSingleController implements Initializable {
         // TODO
     }    
 
-    @FXML
-    private void logout(MouseEvent event) {
-    }
-
-    @FXML
-    private void dashboard(MouseEvent event) {
-    }
 
     @FXML
     private void downloadRecord(MouseEvent event) {
+        a.downloadSingleRecord(event,x);
+    }
+
+    void init(MarriageRecord m) {
+        x=m;
+        marriageIDL.setText("Marriage ID: "+Integer.toString(m.getMarriageID()));
+        candidate1L.setText("Candidate Name 1: "+m.getCandidateName1());
+        age1L.setText("Age: "+Integer.toString(m.getAge1()));
+        NID1L.setText("NID: "+Integer.toString(m.getNID1()));
+        nationality1L.setText("Nationality: "+m.getNationality1());
+        father1L.setText("Father's Name: "+m.getFather1());
+        mother1L.setText("Mother's Name: "+m.getMother1());
+        witness1L.setText("Witness Name: "+m.getWitness1());
+        rel1L.setText("Witness Relationship: "+m.getRel1());
+        candidate2L.setText("Candidate Name 2: "+m.getCandidateName2());
+        age2L.setText("Age: "+Integer.toString(m.getAge2()));
+        NID2L.setText("NID: "+Integer.toString(m.getNID2()));
+        nationality2L.setText("Nationality: "+m.getNationality2());
+        father2L.setText("Father's Name: "+m.getFather2());
+        mother2L.setText("Mother's Name: "+m.getMother2());
+        witness2L.setText("Witness Name: "+m.getWitness2());
+        rel2L.setText("Witness Relationship: "+m.getRel2());
     }
     
 }

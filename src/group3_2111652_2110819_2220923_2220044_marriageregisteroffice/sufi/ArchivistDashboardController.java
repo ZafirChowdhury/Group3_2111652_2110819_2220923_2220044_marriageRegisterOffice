@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
@@ -26,6 +27,7 @@ public class ArchivistDashboardController implements Initializable {
     @FXML
     private Label idLabel;
     private Archivist archivist=new Archivist("abc","abc","abc");
+    private String username, pass, type;
 
     /**
      * Initializes the controller class.
@@ -35,27 +37,36 @@ public class ArchivistDashboardController implements Initializable {
         // TODO
     }
 
-    Archivist user;
     public void receiveUserData(User user){
-        user = (Archivist) user;
-        nameLabel.setText("Name: " + user.getUsername());
-        System.out.println("Logged in as: " + user.toString());
-        return;
+        username = user.getUsername();
+        pass = user.getPassword();
+        type = user.getType();
+        ObservableList<Archivist> al = null;
+        try {
+            al = archivist.getArchivistRecords();
+            for(Archivist ax: al){
+                if(ax.getUsername().equals(username)){
+                    nameLabel.setText("Name: " + ax.getName());
+                    idLabel.setText("ID: "+ax.getArchivistID());
+                }
+            }
+        } catch (IOException ex) {
+        }
     }
 
     @FXML
     private void addMarriageRecord(MouseEvent event) throws IOException {
-        archivist.addMarriageRecordScene(event);
+        archivist.addMarriageRecordScene(event, username, pass, type);
     }
 
     @FXML
-    private void verifyMarriageRecords(MouseEvent event) throws IOException {
-        archivist.verifyMarriageRecordsScene(event);
+    private void updateProfile(MouseEvent event) throws IOException {
+        archivist.updateProfileScene(event, username, pass, type);
     }
 
     @FXML
     private void updateMarriageRecords(MouseEvent event) throws IOException {
-        archivist.updateMarriageRecordsScene(event);
+        archivist.updateMarriageRecordsScene(event, username, pass, type);
     }
 
     @FXML
@@ -75,17 +86,34 @@ public class ArchivistDashboardController implements Initializable {
 
     @FXML
     private void viewFeedback(MouseEvent event) throws IOException {
-        archivist.viewFeedbackScene(event);
+        archivist.viewFeedbackScene(event, username, pass, type);
     }
 
     @FXML
     private void backupRecords(MouseEvent event) throws IOException {
-        archivist.backupRecords(event);
+        archivist.backupRecords(event, username, pass, type);
     }
 
     @FXML
     private void logout(MouseEvent event) throws IOException {
         archivist.logoutScene(event);
+    }
+
+    void init(String a, String b, String c) {
+        username = a;
+        pass = b;
+        type = c;
+        ObservableList<Archivist> al = null;
+        try {
+            al = archivist.getArchivistRecords();
+            for(Archivist ax: al){
+                if(ax.getUsername().equals(username)){
+                    nameLabel.setText("Name: " + ax.getName());
+                    idLabel.setText("ID: "+ax.getArchivistID());
+                }
+            }
+        } catch (IOException ex) {
+        }
     }
     
 }
