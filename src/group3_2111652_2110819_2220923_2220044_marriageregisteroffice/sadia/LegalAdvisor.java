@@ -2,17 +2,22 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
+
 package group3_2111652_2110819_2220923_2220044_marriageregisteroffice.sadia;
 
 import group3_2111652_2110819_2220923_2220044_marriageregisteroffice.User;
+import group3_2111652_2110819_2220923_2220044_marriageregisteroffice.sufi.AppendableObjectOutputStream;
+import java.io.EOFException;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.collections.FXCollections;
@@ -41,7 +46,7 @@ public class LegalAdvisor extends User implements Serializable {
             f = new File("PrenupDocument.bin");
             if(f.exists()){
                 fos = new FileOutputStream(f,true);
-                oos = new ObjectOutputStream(fos);
+                oos = new AppendableObjectOutputStream(fos);
             } else { fos = new FileOutputStream(f);
                      oos = new ObjectOutputStream(fos);       
             }
@@ -75,7 +80,7 @@ public class LegalAdvisor extends User implements Serializable {
             x = new File("ContactLog.bin");
             if(x.exists()){
                 fos = new FileOutputStream(x,true);
-                oos = new ObjectOutputStream(fos);
+                oos = new AppendableObjectOutputStream(fos);
             } else { fos = new FileOutputStream(x);
                      oos = new ObjectOutputStream(fos);       
             }
@@ -99,27 +104,38 @@ public class LegalAdvisor extends User implements Serializable {
     
     }
     //helper method not goal;
-   public ObservableList<ContactLog> getcontactlist(){
+   public  ObservableList<ContactLog> getcontactlist() {
         ObservableList<ContactLog> ContactList = FXCollections.observableArrayList();
-        
+        ContactLog c;
         ObjectInputStream ois = null;
-        try { ContactLog c;
-            ois = new ObjectInputStream(new FileInputStream("ContactLog.bin"));
-            while (true) {
-                c = (ContactLog) ois.readObject();
-                
-                ContactList.add(c);
-                System.out.println("contact dets added to list: " + c.toString());
-            } //IOEXCEPTION,CLASSNOTFOUNDEXCEPTION,runtime
-        } catch (IOException | ClassNotFoundException e) {
-            System.out.println("File reading done");
+        try { ois = new ObjectInputStream( new FileInputStream("ContactLog.bin"));
+        while (true){
+        c = (ContactLog)ois.readObject();
+         System.out.println("u read" + c.toString());
+        ContactList.add(c);
         }
-        catch(Exception ex){
-           System.out.println("error" +ex.getMessage()); 
+        } catch( IOException | ClassNotFoundException e) {
+            System.out.println("Read bin");
         }
-        
-        return ContactList ;
+        System.out.println(ContactList);
+       
+        return ContactList;
+       
     }
-   
+   public ArrayList<PrenupDocument> getDocList(){
+       ArrayList<PrenupDocument> listn = new ArrayList();
+       PrenupDocument p;
+        ObjectInputStream ois = null;
+        try { ois = new ObjectInputStream( new FileInputStream("PrenupDocument.bin"));
+        while (true){
+        p = (PrenupDocument)ois.readObject();
+        listn.add(p);
+        }
+        } catch( IOException | ClassNotFoundException e) {
+            System.out.println("Read bin");
+        }
+        System.out.println(listn);
+        return listn ;
+   }
 }
 

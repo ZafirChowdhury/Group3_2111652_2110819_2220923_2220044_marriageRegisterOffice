@@ -3,15 +3,21 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
  */
 package group3_2111652_2110819_2220923_2220044_marriageregisteroffice.sadia;
-
+import group3_2111652_2110819_2220923_2220044_marriageregisteroffice.User;
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
+import static java.lang.System.load;
 import java.net.URL;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import static javafx.fxml.FXMLLoader.load;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -29,7 +35,7 @@ import javafx.stage.Stage;
  * @author HP 840 G6
  */
 public class LegalAdvisor_PrenupDocController implements Initializable {
-
+    ArrayList<PrenupDocument> listn;
     @FXML
     private TextArea aggremencontentTextArea;
     @FXML
@@ -43,14 +49,15 @@ public class LegalAdvisor_PrenupDocController implements Initializable {
     Alert amount = new Alert(Alert.AlertType.WARNING,"Put valid amount. Amount cannot be 0tk");
      private LegalAdvisor adv;
     @FXML
-    private Label viewdraftLabel;
+    private TextArea viewdraftTextArea;
     public LegalAdvisor getLegalAdvisor(){
     return adv;
     }
     public void setLegalAdvisor(LegalAdvisor adv){
     this.adv = adv;
+     
     }
-    
+   
     /**
      * Initializes the controller class.
      */
@@ -126,8 +133,22 @@ public class LegalAdvisor_PrenupDocController implements Initializable {
 
     @FXML
     private void viewDraftonClick(ActionEvent event) {
+      
+     ArrayList<PrenupDocument> pd = adv.getDocList();
+    for( PrenupDocument c: pd){
+        //viewdraftTextArea.setText("aggrement: " + c.getTexts());
+      viewdraftTextArea.appendText("aggrement: \n" + c.getTexts());
+       }
+    }
+       
+      
+       
+        
+        
+        
+        
     }
 
+
     
-    
-}
+

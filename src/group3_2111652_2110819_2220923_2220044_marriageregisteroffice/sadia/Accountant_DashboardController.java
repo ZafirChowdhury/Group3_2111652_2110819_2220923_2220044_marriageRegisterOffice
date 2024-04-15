@@ -86,8 +86,16 @@ public class Accountant_DashboardController implements Initializable {
     }
 
     @FXML
-    private void logoutOnclick(ActionEvent event) {
-         
+    private void logoutOnclick(ActionEvent event) throws IOException {
+         FXMLLoader loader= new FXMLLoader();
+
+        loader.setLocation(getClass().getResource("/group3_2111652_2110819_2220923_2220044_marriageregisteroffice/login.fxml"));
+
+        Parent parent= loader.load();
+        Scene scene= new Scene(parent);
+        Stage stage=(Stage)((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
     }
     
     

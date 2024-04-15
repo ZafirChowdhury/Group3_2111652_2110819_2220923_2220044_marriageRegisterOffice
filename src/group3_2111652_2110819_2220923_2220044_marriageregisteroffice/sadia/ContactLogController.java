@@ -66,18 +66,25 @@ public class ContactLogController implements Initializable {
         clientnameColom.setCellValueFactory(new PropertyValueFactory<ContactLog,String>("clientname"));
         phonenumbrColom.setCellValueFactory(new PropertyValueFactory<ContactLog,String>("phnnumber"));
        addressColom.setCellValueFactory(new PropertyValueFactory<ContactLog,String>("address"));
-        
+        contacrLogTableView.setItems(ContactList);
         
     }    
 
     @FXML
     private void addtoTableView(ActionEvent event) {
-        ObservableList<ContactLog> ContactList = FXCollections.observableArrayList();
-        contacrLogTableView.getItems().addAll(adv.getcontactlist());
+        ObservableList<ContactLog> contactList = adv.getcontactlist();
+        for(ContactLog c:contactList){
+        contacrLogTableView.getItems().addAll(c);
+        }
+        }
+           
+       
+       
+        
         
         //isnt working yet
       
-    }
+    
 
     @FXML
     private void deletefromTableView(ActionEvent event) {
