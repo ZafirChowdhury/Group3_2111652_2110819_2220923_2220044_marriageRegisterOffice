@@ -24,7 +24,13 @@ import javafx.stage.Stage;
  * @author HP 840 G6
  */
 public class Accountant_DashboardController implements Initializable {
-
+    private Accountant acc = new Accountant("c","x","y");
+    public Accountant getAccountant(){
+    return acc;
+    }
+    public void setAccountant(Accountant acc){
+    this.acc = acc;
+    }
     @FXML
     private Label noticeInfoLabel;
     @FXML
@@ -38,7 +44,7 @@ public class Accountant_DashboardController implements Initializable {
        
     }
 
-    Accountant user;
+    //Accountant user;
     public void receiveUserData(User user){
         user = (Accountant) user;
         usernameLable.setText("Welcome,  " + user.getUsername() + "!");
@@ -72,12 +78,18 @@ public class Accountant_DashboardController implements Initializable {
     @FXML
     private void showClientBankInfoScene(ActionEvent event) throws IOException {
         Parent root = null;
-       FXMLLoader myLoader = new FXMLLoader(getClass().getResource("Accountant_ClineBankInfoStorageScene.fxml"));
+       FXMLLoader myLoader = new FXMLLoader(getClass().getResource("Accountant_ClientBankInfoStorage.fxml"));
        root = (Parent) myLoader.load();
        Scene myScene = new Scene(root); 
+       
+          Accountant_ClineBankInfoStorageSceneController y = myLoader.getController();
+        
+        y.setAccountant(acc);
+       
        Stage myStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
        myStage.setScene(myScene);
        myStage.show();
+      
         
     }
 
@@ -86,8 +98,16 @@ public class Accountant_DashboardController implements Initializable {
     }
 
     @FXML
-    private void logoutOnclick(ActionEvent event) {
-         
+    private void logoutOnclick(ActionEvent event) throws IOException {
+         FXMLLoader loader= new FXMLLoader();
+
+        loader.setLocation(getClass().getResource("/group3_2111652_2110819_2220923_2220044_marriageregisteroffice/login.fxml"));
+
+        Parent parent= loader.load();
+        Scene scene= new Scene(parent);
+        Stage stage=(Stage)((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
     }
     
     
