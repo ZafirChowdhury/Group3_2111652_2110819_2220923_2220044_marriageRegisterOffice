@@ -90,27 +90,7 @@ public class MarriageViewController implements Initializable {
                                                         ma.getWitnessName(), 
                                                         ma.getMc().getUsername());
         
-        File file = new File("bin/marriageCertificate.bin");
-        FileOutputStream fos;
-        ObjectOutputStream oos;
-        
-        try {
-            if (file.exists()) {
-                fos = new FileOutputStream(file, true);
-                oos = new AppendableObjectOutputStream(fos);
-            } else {
-                fos = new FileOutputStream(file, true);
-                oos = new ObjectOutputStream(fos);
-            }
-            
-            oos.writeObject(mc);
-            System.out.println("Marriage certificate saved succesfully");
-            oos.close();
-            
-        } catch (Exception e) {
-            System.out.println("There was a error while saving Marriage");
-            e.printStackTrace();
-        }
+        mc.saveAsBin();        
     }
     
 }

@@ -4,6 +4,10 @@
  */
 package group3_2111652_2110819_2220923_2220044_marriageregisteroffice.zafir;
 
+import group3_2111652_2110819_2220923_2220044_marriageregisteroffice.sufi.AppendableObjectOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
 /**
@@ -65,5 +69,27 @@ public class MarriageCertificate implements Serializable {
         return "MarriageCertificate{" + "bride=" + bride + ", groom=" + groom + ", location=" + location + ", date=" + date + ", officiatedBy=" + officiatedBy + ", witnessedBy=" + witnessedBy + '}';
     }
     
-    
+    public void saveAsBin() {
+        File file = new File("bin/marriageCertificate.bin");
+        FileOutputStream fos;
+        ObjectOutputStream oos;
+        
+        try {
+            if (file.exists()) {
+                fos = new FileOutputStream(file, true);
+                oos = new AppendableObjectOutputStream(fos);
+            } else {
+                fos = new FileOutputStream(file, true);
+                oos = new ObjectOutputStream(fos);
+            }
+            
+            oos.writeObject(this);
+            System.out.println("Marriage certificate saved succesfully");
+            oos.close();
+            
+        } catch (Exception e) {
+            System.out.println("There was a error while saving Marriage");
+            e.printStackTrace();
+    }
+}
 }

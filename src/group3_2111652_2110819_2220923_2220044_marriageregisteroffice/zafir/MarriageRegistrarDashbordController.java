@@ -94,5 +94,13 @@ public class MarriageRegistrarDashbordController implements Initializable {
     @FXML
     private void viewComplitedMarrage(ActionEvent event) {
     }
+
+    @FXML
+    private void schedualConsultationOnClick(ActionEvent event) {
+    }
+
+    @FXML
+    private void viewConsultaionOnClck(ActionEvent event) {
+    }
     
 }
