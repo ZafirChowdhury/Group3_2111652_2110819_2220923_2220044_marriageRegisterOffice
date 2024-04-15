@@ -10,5 +10,6 @@
       <Label fx:id="typeLable" layoutX="33.0" layoutY="60.0" text="Type: " />
       <Button layoutX="14.0" layoutY="170.0" mnemonicParsing="false" onAction="#deleteButtonOnClick" text="Delete User" />
       <Button layoutX="241.0" layoutY="170.0" mnemonicParsing="false" onAction="#backButtonOnClick" text="Back" />
+      <Label fx:id="outputLable" layoutX="36.0" layoutY="105.0" />
    </children>
 </AnchorPane>

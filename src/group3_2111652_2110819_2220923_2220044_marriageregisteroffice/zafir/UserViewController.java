@@ -29,6 +29,8 @@ public class UserViewController implements Initializable {
     private Label usernameLable;
     @FXML
     private Label typeLable;
+    @FXML
+    private Label outputLable;
 
     /**
      * Initializes the controller class.
@@ -73,6 +75,20 @@ public class UserViewController implements Initializable {
 
     @FXML
     private void deleteButtonOnClick(ActionEvent event) {
+        if (showUser.getType().equals("IT Admin")) {
+            System.out.println("We dont allow admin account be deleted.");
+            outputLable.setText("Admin cannot be deleated by design!");
+            return;
+        }
+        
+        if (showUser.deleteUser()) {
+            System.out.println("User deleted!");
+            outputLable.setText("User Deleted!");
+        }
+        else {
+            System.out.println("There was a error deleting user");
+            outputLable.setText("There was a error deleting user!");
+        }
     }
 }
 

@@ -5,14 +5,6 @@
         <group>
             <file>file:/home/zafir/Downloads/Group3_2111652_2110819_2220923_2220044_marriageRegisterOffice/src/group3_2111652_2110819_2220923_2220044_marriageregisteroffice/User.java</file>
             <file>file:/home/zafir/Downloads/Group3_2111652_2110819_2220923_2220044_marriageRegisterOffice/src/group3_2111652_2110819_2220923_2220044_marriageregisteroffice/zafir/AdminDashbordController.java</file>
-            <file>file:/home/zafir/Downloads/Group3_2111652_2110819_2220923_2220044_marriageRegisterOffice/src/group3_2111652_2110819_2220923_2220044_marriageregisteroffice/zafir/AllUserController.java</file>
-            <file>file:/home/zafir/Downloads/Group3_2111652_2110819_2220923_2220044_marriageRegisterOffice/src/group3_2111652_2110819_2220923_2220044_marriageregisteroffice/zafir/UserViewController.java</file>
-            <file>file:/home/zafir/Downloads/Group3_2111652_2110819_2220923_2220044_marriageRegisterOffice/src/group3_2111652_2110819_2220923_2220044_marriageregisteroffice/RegisterController.java</file>
-            <file>file:/home/zafir/Downloads/Group3_2111652_2110819_2220923_2220044_marriageRegisterOffice/src/group3_2111652_2110819_2220923_2220044_marriageregisteroffice/LoginController.java</file>
-        </group>
-        <group>
-            <file>file:/home/zafir/Downloads/Group3_2111652_2110819_2220923_2220044_marriageRegisterOffice/src/group3_2111652_2110819_2220923_2220044_marriageregisteroffice/User.java</file>
-            <file>file:/home/zafir/Downloads/Group3_2111652_2110819_2220923_2220044_marriageRegisterOffice/src/group3_2111652_2110819_2220923_2220044_marriageregisteroffice/zafir/AdminDashbordController.java</file>
             <file>file:/home/zafir/Downloads/Group3_2111652_2110819_2220923_2220044_marriageRegisterOffice/src/group3_2111652_2110819_2220923_2220044_marriageregisteroffice/zafir/EarlyPayment.java</file>
             <file>file:/home/zafir/Downloads/Group3_2111652_2110819_2220923_2220044_marriageRegisterOffice/src/group3_2111652_2110819_2220923_2220044_marriageregisteroffice/zafir/AllUserController.java</file>
             <file>file:/home/zafir/Downloads/Group3_2111652_2110819_2220923_2220044_marriageRegisterOffice/src/group3_2111652_2110819_2220923_2220044_marriageregisteroffice/zafir/AllRequestedPaymentController.java</file>
@@ -23,5 +15,6 @@
             <file>file:/home/zafir/Downloads/Group3_2111652_2110819_2220923_2220044_marriageRegisterOffice/src/group3_2111652_2110819_2220923_2220044_marriageregisteroffice/zafir/EarlyPayment.java</file>
             <file>file:/home/zafir/Downloads/Group3_2111652_2110819_2220923_2220044_marriageRegisterOffice/src/group3_2111652_2110819_2220923_2220044_marriageregisteroffice/zafir/AllRequestedPaymentController.java</file>
         </group>
+        <group/>
     </open-files>
 </project-private>

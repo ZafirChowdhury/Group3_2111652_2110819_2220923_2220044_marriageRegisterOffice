@@ -7,6 +7,7 @@ package group3_2111652_2110819_2220923_2220044_marriageregisteroffice.zafir;
 import group3_2111652_2110819_2220923_2220044_marriageregisteroffice.User;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
@@ -17,9 +18,6 @@ import javafx.scene.control.Label;
  * @author zafir
  */
 public class MarriageRegistrarDashbordController implements Initializable {
-
-    @FXML
-    private Label usernameLable;
 
     /**
      * Initializes the controller class.
@@ -32,8 +30,15 @@ public class MarriageRegistrarDashbordController implements Initializable {
     User currentUser;
     public void receiveUserData(User user){
         currentUser = user;
-        usernameLable.setText("Welcome, " + currentUser.getUsername() + ".");
         return;
+    }
+
+    @FXML
+    private void submitSipportTicketOnClick(ActionEvent event) {
+    }
+
+    @FXML
+    private void viewSubmittedTicketsOnClick(ActionEvent event) {
     }
     
 }

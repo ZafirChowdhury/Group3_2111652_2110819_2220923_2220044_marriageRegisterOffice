@@ -155,7 +155,7 @@ public abstract class User implements Serializable {
     }
     
     // Bit finiky, Test out the return null parts
-    // Try suing a array list
+    // Try suing a array liArrayListst
     public static User verifyUser(String username, String password, String path) {
         ArrayList<User> userList = new ArrayList<>();
         
@@ -204,7 +204,90 @@ public abstract class User implements Serializable {
         return null;
     }
     
-    public void deleteUser() {
-        // TODO
+    public boolean deleteUser() {
+        // Read all user obj of that type and save it in a array
+        // Read all username obj and save in in a array
+        ArrayList<User> userList = new ArrayList<>();
+        ArrayList<String> usernameList = new ArrayList<>();
+        
+        // Reading all the user obj to userList
+        try {
+            File file = new File(User.getPath(this.type));
+            if (!file.exists()) {
+                System.out.println("File dose not exist, No user of that type exists");
+                return false;
+            }
+            
+            FileInputStream fis = new FileInputStream(file);
+            ObjectInputStream ois = new ObjectInputStream(fis);
+            
+            try {
+                while (true) {
+                User user = (User) ois.readObject();
+                userList.add(user);
+            }
+                
+            } catch(EOFException e) {
+                System.out.println("End of file reached.");
+                ois.close();
+            }
+            
+        } catch(Exception e) {
+            System.out.println("Error while reading file");            
+            return false;
+        }
+        
+        try {
+            File file = new File("bin/username.bin");
+            if (file.exists()) {
+                FileInputStream fis = new FileInputStream(file);
+                ObjectInputStream ois = new ObjectInputStream(fis);
+                
+                try {
+                    while (true) {
+                       String username = (String) ois.readObject();
+                       usernameList.add(username);
+                    }
+                    
+                } catch (EOFException e) {
+                    ois.close();
+                    System.out.println("All username read");
+                }
+                              
+            } else {
+                System.out.println("No user exists");
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        
+        
+        // TODO REMOVING USER PART NOT WORKING
+        // Removing user obj
+        usernameList.remove(this.username);
+        // Removing username obj
+        userList.remove(this);
+        
+        // Deleting file
+        File usernameFile = new File("bin/username.bin");
+        File userObjFile = new File(User.getPath(this.type));
+        
+        // Saving all the old user obj intance
+        for (User u : userList) {
+            u.saveUser(User.getPath(this.type));
+        }
+        
+        return true;
+        
+        // Test then remove username part, it isnt needed
+        
+        
+        // Reading all the username to usrnameList
+        
+        
+        // Remove the user obj from the array
+        // Remove the username string from the array
+        
+        // Rewrite all obj from bin file with the objects from array
     }
 }
