@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
@@ -26,21 +27,31 @@ public class WitnessDashboardController implements Initializable {
     @FXML
     private Label idLabel;
     private Witness witness=new Witness("abc","abc","abc");
+    private String username, pass, type;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
     }
     
-    Witness user;
+   
     public void receiveUserData(User user){
-        user = (Witness) user;
-        nameLabel.setText("Name: " + user.getUsername());
-        System.out.println("Logged in as: " + user.toString());
-        return;
+        username = user.getUsername();
+        pass = user.getPassword();
+        type = user.getType();
+        ObservableList<Witness> wl = null;
+        try {
+            wl = witness.getWitnessRecords();
+            for(Witness w: wl){
+            if(w.getUsername().equals(username)){
+                nameLabel.setText("Name: " + w.getName());
+                idLabel.setText("ID: "+w.getWitnessID());
+            }
+        }
+        } catch (IOException ex) {
+        }
     }
 
     @FXML
@@ -50,22 +61,22 @@ public class WitnessDashboardController implements Initializable {
 
     @FXML
     private void updateProfile(MouseEvent event) throws IOException {
-        witness.updateProfileScene(event);
+        witness.updateProfileScene(event,username, pass, type);
     }
 
     @FXML
     private void signWitnessForm(MouseEvent event) throws IOException {
-        witness.signWitnessFormScene(event);
+        witness.signWitnessFormScene(event, username, pass, type);
     }
 
     @FXML
     private void viewMarriageCertificates(MouseEvent event) throws IOException {
-        witness.viewMarriageCertificatesScene(event);
+        witness.viewMarriageCertificatesScene(event, username, pass, type);
     }
 
     @FXML
     private void viewWeddingDetails(MouseEvent event) throws IOException {
-        witness.viewWeddingDetailsScene(event);
+        witness.viewWeddingDetailsScene(event, username, pass, type);
     }
 
     @FXML
@@ -80,12 +91,29 @@ public class WitnessDashboardController implements Initializable {
 
     @FXML
     private void provideFeedback(MouseEvent event) throws IOException {
-        witness.provideFeedbackScene(event);
+        witness.provideFeedbackScene(event, username, pass, type);
     }
 
     @FXML
     private void logout(MouseEvent event) throws IOException {
         witness.logoutScene(event);
+    }
+    
+    public void init(String a, String b, String c){
+        username = a;
+        pass = b;
+        type = c;
+        ObservableList<Witness> wl = null;
+        try {
+            wl = witness.getWitnessRecords();
+            for(Witness w: wl){
+            if(w.getUsername().equals(username)){
+                nameLabel.setText("Name: " + w.getName());
+                idLabel.setText("ID: "+w.getWitnessID());
+            }
+        }
+        } catch (IOException ex) {
+        }
     }
     
 }

@@ -13,8 +13,7 @@
             <Font name="System Bold" size="31.0" />
          </font>
       </Label>
-      <Button layoutX="649.0" layoutY="24.0" mnemonicParsing="false" onMouseClicked="#closeWindow" prefHeight="31.0" prefWidth="118.0" text="Close" />
-      <Label fx:id="userIDL" layoutX="156.0" layoutY="124.0" prefHeight="31.0" prefWidth="196.0" text="User ID:">
+      <Label fx:id="marriageIDL" layoutX="156.0" layoutY="124.0" prefHeight="31.0" prefWidth="196.0" text="Marriage ID:">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>

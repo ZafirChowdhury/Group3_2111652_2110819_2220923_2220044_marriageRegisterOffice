@@ -4,6 +4,7 @@
  */
 package group3_2111652_2110819_2220923_2220044_marriageregisteroffice.sufi;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
@@ -20,11 +21,14 @@ import javafx.scene.input.MouseEvent;
 public class ProvideFeedbackController implements Initializable {
 
     @FXML
-    private Label userIDL;
-    @FXML
     private Label userNameL;
     @FXML
     private TextArea feedbackTA;
+    @FXML
+    private Label marriageIDL;
+    private String marriageID;
+    private String username, pass, type;
+    private Witness w = new Witness("x", "y", "z");
 
     /**
      * Initializes the controller class.
@@ -35,11 +39,19 @@ public class ProvideFeedbackController implements Initializable {
     }    
 
     @FXML
-    private void closeWindow(MouseEvent event) {
+    private void submitFeedback(MouseEvent event) throws IOException {
+        w.confirmFeedback(marriageID, username, feedbackTA.getText());
+        w.dashboardScene(event, username, pass, type);
     }
 
-    @FXML
-    private void submitFeedback(MouseEvent event) {
+    void init(DummyMarriageSufi m, String b, String c, String d) {
+        String a = m.getMarriageID();
+        marriageIDL.setText("Marriage ID: "+a);
+        userNameL.setText("User Name: "+b);
+        marriageID = a;
+        username = b;
+        pass = c;
+        type = d;
     }
     
 }
