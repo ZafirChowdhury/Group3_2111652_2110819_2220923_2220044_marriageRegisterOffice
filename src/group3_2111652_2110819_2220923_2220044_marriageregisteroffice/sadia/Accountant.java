@@ -14,6 +14,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.collections.ObservableList;
@@ -71,7 +72,21 @@ public class Accountant extends User implements  Serializable{
          return false;
     }        
     
-    
+    public  ArrayList<ClientBankInfo> getList(){
+       ArrayList<ClientBankInfo> listn = new ArrayList();
+       ClientBankInfo p;
+        ObjectInputStream ois = null;
+        try { ois = new ObjectInputStream( new FileInputStream("ClientBankInfo.bin"));
+        while (true){
+        p = (ClientBankInfo)ois.readObject();
+        listn.add(p);
+        }
+        } catch( IOException | ClassNotFoundException e) {
+            System.out.println("Read bin");
+        }
+        System.out.println(listn);
+        return listn ;
+   }
     
 //goal 2
 
@@ -145,23 +160,7 @@ public class Accountant extends User implements  Serializable{
     }
 
 //public void viewInvoiceOnTable(ObservableList<Invoice> invList){
-    public void showinvoice(ObservableList<Invoice> invoiceList) throws FileNotFoundException, IOException, ClassNotFoundException{
-        try(ObjectInputStream ois = new ObjectInputStream(new FileInputStream("Invoice.bin"))){
-            while(true){ Invoice inv = (Invoice) ois.readObject();
-            System.out.println(inv);
-            if (inv.getPaidstatus()){
-                invoiceList.add(inv);
-            }
-            else{
-                Alert faild = new Alert(Alert.AlertType.ERROR,"Something went wrong");
-                faild.showAndWait();
-                
-            }
-            }
-        } catch(FileNotFoundException | EOFException e){
-        }catch(IOException | ClassNotFoundException e ){ System.out.println("Could not show on table");
-                }
-        //return invoiceList
+   
     }
         
     
@@ -176,7 +175,7 @@ public class Accountant extends User implements  Serializable{
     
 
 
-}
+
              
  
 
