@@ -4,11 +4,13 @@
  */
 package group3_2111652_2110819_2220923_2220044_marriageregisteroffice.sadia;
 
+import java.io.Serializable;
+
 /**
  *
  * @author HP 840 G6
  */
-public class PurchaseInfo {
+public class PurchaseInfo implements Serializable{
     private String Deptname,sellername,itemname,modelno;
 
     public PurchaseInfo(String Deptname, String sellername, String itemname, String modelno) {

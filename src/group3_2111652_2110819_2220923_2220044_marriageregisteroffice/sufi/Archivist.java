@@ -197,7 +197,11 @@ public class Archivist extends User implements Serializable {
     
     public void logoutScene(MouseEvent event) throws IOException {
         FXMLLoader loader= new FXMLLoader();
+
         loader.setLocation(getClass().getResource("/group3_2111652_2110819_2220923_2220044_marriageregisteroffice/login.fxml"));
+
+        loader.setLocation(getClass().getResource("login.fxml"));
+
         Parent parent= loader.load();
         Scene scene= new Scene(parent);
         Stage stage=(Stage)((Node) event.getSource()).getScene().getWindow();
@@ -207,7 +211,7 @@ public class Archivist extends User implements Serializable {
     }
     
 
-     public void dashboardScene(MouseEvent event, String username, String pass, String type) throws IOException {
+    public void dashboardScene(MouseEvent event, String username, String pass, String type) throws IOException {
         FXMLLoader loader= new FXMLLoader();
         loader.setLocation(getClass().getResource("archivistDashboard.fxml"));
         Parent parent= loader.load();
@@ -291,7 +295,7 @@ public class Archivist extends User implements Serializable {
          
          return mr;
      }
-     
+
      public void downloadAllRecords(MouseEvent event){
          ObservableList<MarriageRecord> mrd = FXCollections.observableArrayList();
          mrd = getMarriageRecord();

@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group3_2111652_2110819_2220923_2220044_marriageregisteroffice.zafir.MarriageRegistrarDashbordController">
+<AnchorPane id="AnchorPane" prefHeight="390.0" prefWidth="324.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group3_2111652_2110819_2220923_2220044_marriageregisteroffice.zafir.MarriageRegistrarDashbordController">
    <children>
-      <Label layoutX="208.0" layoutY="14.0" text="Marrage Registrar Dashbord" />
-      <Label fx:id="userNameLable" layoutX="78.0" layoutY="89.0" text="Username: " />
+      <Button layoutX="69.0" layoutY="112.0" mnemonicParsing="false" onAction="#submitSipportTicketOnClick" text="Submit Support Ticket" />
+      <Button layoutX="56.0" layoutY="169.0" mnemonicParsing="false" onAction="#viewSubmittedTicketsOnClick" text="View Submitted Tickets" />
+      <Label fx:id="usernameLable" layoutX="115.0" layoutY="57.0" />
+      <Button layoutX="111.0" layoutY="232.0" mnemonicParsing="false" onAction="#viewPendingMarrage" text="Pending Marriage" />
+      <Button layoutX="120.0" layoutY="286.0" mnemonicParsing="false" onAction="#viewComplitedMarrage" text="Completed Marriage" />
    </children>
 </AnchorPane>

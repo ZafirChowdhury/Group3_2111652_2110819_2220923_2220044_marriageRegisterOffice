@@ -1,11 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group3_2111652_2110819_2220923_2220044_marriageregisteroffice.zafir.AdminDashbordController">
+<AnchorPane id="AnchorPane" prefHeight="435.0" prefWidth="338.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group3_2111652_2110819_2220923_2220044_marriageregisteroffice.zafir.AdminDashbordController">
    <children>
-      <Label layoutX="246.0" layoutY="14.0" text="Admin Dashbord" />
-      <Label fx:id="usernameLable" layoutX="117.0" layoutY="86.0" text="Username: " />
+      <Label layoutX="104.0" layoutY="24.0" text="Admin Dashbord">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <Label fx:id="usernameLable" layoutX="28.0" layoutY="52.0" text="Welcome," />
+      <Button layoutX="13.0" layoutY="106.0" mnemonicParsing="false" onAction="#viewAllUserOnClick" prefHeight="59.0" prefWidth="313.0" text="View all User" />
+      <Button layoutX="14.0" layoutY="246.0" mnemonicParsing="false" onAction="#viewRequestedPayments" prefHeight="59.0" prefWidth="313.0" text="View Requested Payments" />
+      <Button layoutX="13.0" layoutY="174.0" mnemonicParsing="false" onAction="#paymentRequestOnClick" prefHeight="59.0" prefWidth="313.0" text="Request Payment" />
+      <Button layoutX="15.0" layoutY="313.0" mnemonicParsing="false" onAction="#supportTicketOnClick" prefHeight="59.0" prefWidth="313.0" text="Support Tickets" />
+      <Label fx:id="supportTicketCounterLable" layoutX="28.0" layoutY="77.0" text="Open Support Tickets: " />
+      <Button layoutX="138.0" layoutY="395.0" mnemonicParsing="false" onAction="#logoutButtonButtonOnClick" text="Logout" />
    </children>
 </AnchorPane>

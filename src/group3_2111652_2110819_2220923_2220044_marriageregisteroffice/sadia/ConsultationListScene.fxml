@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="475.0" prefWidth="679.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group3_2111652_2110819_2220923_2220044_marriageregisteroffice.sadia.ConsultationListSceneController">
+   <children>
+      <Button layoutX="363.0" layoutY="66.0" mnemonicParsing="false" onAction="#addtobin" text="Store" />
+      <TableView fx:id="ConsultationListTableView" layoutX="14.0" layoutY="152.0" prefHeight="312.0" prefWidth="297.0">
+         <columns>
+            <TableColumn fx:id="clientnameColom" prefWidth="83.33334350585938" text="Client name" />
+            <TableColumn fx:id="phonenumbrColom" prefWidth="115.66665649414062" text="Phone num" />
+            <TableColumn fx:id="consultationDateColom" prefWidth="95.0" text="Consult.Date" />
+         </columns>
+      </TableView>
+      <Button layoutX="318.0" layoutY="290.0" mnemonicParsing="false" onAction="#markAsDoneOnclick" prefHeight="67.0" prefWidth="52.0" text="Mark as Done" textAlignment="CENTER" textFill="#4595b7" wrapText="true">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Label layoutX="34.0" layoutY="30.0" text="Client name:" />
+      <Label layoutX="34.0" layoutY="64.0" text="Phone number:" />
+      <TextField fx:id="clientname" layoutX="122.0" layoutY="26.0" />
+      <TextField fx:id="phonenumbrTextField" layoutX="129.0" layoutY="60.0" />
+      <Label layoutX="34.0" layoutY="100.0" text="Consultation Date:" />
+      <Button layoutX="562.0" layoutY="35.0" mnemonicParsing="false" onAction="#BacktoDashOnClick" text="Back to dash" />
+      <Label layoutX="303.0" layoutY="16.0" text="Consultations List:" textFill="#e91616">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <Button layoutX="363.0" layoutY="104.0" mnemonicParsing="false" onAction="#addtoTableView" text="View List" />
+      <DatePicker fx:id="consultDate" layoutX="134.0" layoutY="96.0" prefHeight="25.0" prefWidth="149.0" />
+      <TableView fx:id="consultationDoneTableView" layoutX="376.0" layoutY="154.0" prefHeight="312.0" prefWidth="287.0">
+         <columns>
+            <TableColumn fx:id="cnameColom" prefWidth="122.33334350585938" text="Clientname" />
+            <TableColumn fx:id="doneStatusColom" prefWidth="163.0" text="Done Status" />
+         </columns>
+      </TableView>
+      <Label layoutX="498.0" layoutY="131.0" text="Done LIST:" textFill="#e91616">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="113.0" layoutY="131.0" text="Pending LIST:" textFill="#e91616">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
