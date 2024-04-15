@@ -111,6 +111,7 @@ public class LoginController implements Initializable {
             Scene scene = new Scene(root);
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(scene);
+            stage.setTitle("It Admin Dashbord");
             stage.show(); 
         }
         
@@ -126,6 +127,7 @@ public class LoginController implements Initializable {
             Scene scene = new Scene(root);
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(scene);
+            stage.setTitle("Marriage Registarar");
             stage.show();
         }
         
@@ -141,6 +143,7 @@ public class LoginController implements Initializable {
             Scene scene = new Scene(root);
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(scene);
+            stage.setTitle("Witness Dashbord");
             stage.show();
         }
         
@@ -156,6 +159,7 @@ public class LoginController implements Initializable {
             Scene scene = new Scene(root);
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(scene);
+            stage.setTitle("Archivist");
             stage.show();
         }
         
@@ -171,6 +175,7 @@ public class LoginController implements Initializable {
             Scene scene = new Scene(root);
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(scene);
+            stage.setTitle("Accountant Dashbord");
             stage.show();
         }
         
@@ -186,13 +191,14 @@ public class LoginController implements Initializable {
             Scene scene = new Scene(root);
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(scene);
+            stage.setTitle("Legal Advisor Dashbord");
             stage.show();
         }
         
         // Marriage Candidate - Arpita
         else if (userTypeComboBox.getValue().equals("Marriage Candidate")) {
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("arpita/marriageCandidateDashbord.fxml"));
+            loader.setLocation(getClass().getResource("arpita/MarriageCandidateDashboard.fxml"));
             Parent root = loader.load(); 
             
             MarriageCandidateDashboardController marriageCandidateDashbordController = loader.getController();
@@ -201,6 +207,7 @@ public class LoginController implements Initializable {
             Scene scene = new Scene(root);
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(scene);
+            stage.setTitle("Marriage Candidate Dashbord");
             stage.show();
         }
         
@@ -216,6 +223,7 @@ public class LoginController implements Initializable {
             Scene scene = new Scene(root);
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(scene);
+            stage.setTitle("Marriage Counselor");
             stage.show();
         }
     }

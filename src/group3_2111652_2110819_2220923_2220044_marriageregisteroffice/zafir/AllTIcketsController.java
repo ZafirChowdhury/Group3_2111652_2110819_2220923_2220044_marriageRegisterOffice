@@ -15,6 +15,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.stage.Stage;
 
 /**
@@ -23,6 +26,15 @@ import javafx.stage.Stage;
  * @author zafir
  */
 public class AllTIcketsController implements Initializable {
+
+    @FXML
+    private TableView<?> table;
+    @FXML
+    private TableColumn<?, ?> subCol;
+    @FXML
+    private TableColumn<?, ?> statusCol;
+    @FXML
+    private Label openTicketCountLable;
 
     /**
      * Initializes the controller class.
@@ -52,6 +64,10 @@ public class AllTIcketsController implements Initializable {
         stage.setTitle("Admin Dashbord");
         stage.setScene(scene);
         stage.show();
+    }
+
+    @FXML
+    private void viewSupportTicketOnClick(ActionEvent event) {
     }
     
 }

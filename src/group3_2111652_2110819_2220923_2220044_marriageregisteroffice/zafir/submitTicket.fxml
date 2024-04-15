@@ -6,13 +6,14 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="417.0" prefWidth="453.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="group3_2111652_2110819_2220923_2220044_marriageregisteroffice.zafir.SubmitTicketController">
+<AnchorPane id="AnchorPane" prefHeight="489.0" prefWidth="448.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group3_2111652_2110819_2220923_2220044_marriageregisteroffice.zafir.SubmitTicketController">
    <children>
       <Label layoutX="34.0" layoutY="60.0" text="Subject:" />
-      <TextArea layoutX="28.0" layoutY="136.0" prefHeight="219.0" prefWidth="398.0" />
-      <Button layoutX="358.0" layoutY="364.0" mnemonicParsing="false" text="Submit" />
-      <Label layoutX="34.0" layoutY="113.0" text="Description: " />
-      <TextField layoutX="108.0" layoutY="55.0" prefHeight="26.0" prefWidth="322.0" />
+      <TextArea layoutX="28.0" layoutY="136.0" prefHeight="263.0" prefWidth="398.0" />
+      <Button layoutX="197.0" layoutY="407.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="99.0" text="Submit" />
+      <Label layoutX="28.0" layoutY="114.0" text="Description: " />
+      <TextField layoutX="95.0" layoutY="55.0" prefHeight="26.0" prefWidth="322.0" />
+      <Button layoutX="384.0" layoutY="449.0" mnemonicParsing="false" text="Back" />
+      <Label fx:id="outputLable" layoutX="16.0" layoutY="420.0" />
    </children>
 </AnchorPane>
