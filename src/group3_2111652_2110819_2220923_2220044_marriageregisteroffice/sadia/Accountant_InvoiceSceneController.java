@@ -125,10 +125,7 @@ try{
 
     @FXML
     private void ViewInvoiceonTable(ActionEvent event) throws IOException, FileNotFoundException, ClassNotFoundException {
-        ObservableList<Invoice> invoiceList = FXCollections.observableArrayList();
-        
-        accountant.showinvoice(invoiceList);
-        invoiceTable.setItems(invoiceList);
+       
     }
     
 }

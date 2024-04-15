@@ -4,19 +4,28 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="612.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group3_2111652_2110819_2220923_2220044_marriageregisteroffice.sadia.LegalAdvisor_DashboardController">
    <children>
       <Button layoutX="22.0" layoutY="53.0" mnemonicParsing="false" onAction="#gotoPrenupSceneOnclick" text="Draft Prenup document" />
       <Button layoutX="20.0" layoutY="124.0" mnemonicParsing="false" onAction="#ViewGuidesOnclick" prefHeight="51.0" prefWidth="145.0" text="Marriage Guidelist Viewer" wrapText="true" />
       <Button layoutX="21.0" layoutY="187.0" mnemonicParsing="false" onAction="#viewLegalDocumentOnclick" prefHeight="51.0" prefWidth="145.0" text="Company LegalDoc Viewer" wrapText="true" />
-      <Button layoutX="20.0" layoutY="254.0" mnemonicParsing="false" onAction="#gotoChartSceneOnclick" prefHeight="51.0" prefWidth="145.0" text="GENERATE CHART" wrapText="true" />
-      <Label fx:id="usernameLable" layoutX="28.0" layoutY="24.0" text="Welcome,  Legal Advisor" />
-      <Label layoutX="327.0" layoutY="57.0" text="View Guide" textFill="#e41818" />
-      <Label layoutX="305.0" layoutY="204.0" text="View Company Document" textFill="#e41818" />
-      <TextArea layoutX="181.0" layoutY="87.0" prefHeight="111.0" prefWidth="411.0" />
-      <TextArea layoutX="181.0" layoutY="232.0" prefHeight="142.0" prefWidth="411.0" />
-      <Button layoutX="20.0" layoutY="316.0" mnemonicParsing="false" onAction="#gotoContactLogScene" prefHeight="51.0" prefWidth="145.0" text="Add new contact to contact log" wrapText="true" />
-      <Button layoutX="22.0" layoutY="87.0" mnemonicParsing="false" onAction="#gotoConsultationListSceneOnclick" text="Add consultation date" />
+      <Button layoutX="20.0" layoutY="254.0" mnemonicParsing="false" onAction="#gotoChartSceneOnclick" prefHeight="51.0" prefWidth="145.0" text="CHARTS" wrapText="true" />
+      <Label fx:id="usernameLable" layoutX="24.0" layoutY="20.0" text="Welcome,  Legal Advisor">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font></Label>
+      <Label layoutX="344.0" layoutY="62.0" text="View Guide" textFill="#19a9e3" />
+      <Label layoutX="318.0" layoutY="204.0" text="View Company Document" textFill="#5519e3" />
+      <TextArea fx:id="viewGuideTextArea" layoutX="181.0" layoutY="87.0" prefHeight="111.0" prefWidth="411.0" />
+      <TextArea fx:id="viewdocTextArea" layoutX="181.0" layoutY="232.0" prefHeight="142.0" prefWidth="411.0" />
+      <Button layoutX="20.0" layoutY="316.0" mnemonicParsing="false" onAction="#gotoContactLogScene" prefHeight="51.0" prefWidth="145.0" text="ContactBook" wrapText="true" />
+      <Button layoutX="22.0" layoutY="87.0" mnemonicParsing="false" onAction="#gotoConsultationListSceneOnclick" text=" Consultation List " />
+      <Button layoutX="500.0" layoutY="20.0" mnemonicParsing="false" onAction="#logoutOnclick" prefHeight="42.0" prefWidth="92.0" text="LOG OUT" textFill="#ce0e0e">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
