@@ -32,6 +32,8 @@ public class MarriageApplication implements Serializable {
     private String WitnessName;
     private boolean granted;
     private MarriageCandidate mc;
+    
+    private boolean isComplete;
 
 
     public MarriageApplication(String applicationID, String groomName, String brideName, String groomNID, String brideNID, String groomReligion, String brideReligion, LocalDate groomDOB, LocalDate brideDOB, String presentAddress, String permanentAddress, LocalDate pefferredMarriageDate, String MobileNumber, String WitnessName, MarriageCandidate mc) {
@@ -51,7 +53,19 @@ public class MarriageApplication implements Serializable {
         this.WitnessName = WitnessName;
         this.mc = mc;
         granted = false;
+        
+        this.isComplete = false;
     }
+
+    public boolean isIsComplete() {
+        return isComplete;
+    }
+
+    public void setIsComplete(boolean isComplete) {
+        this.isComplete = isComplete;
+    }
+    
+    
 
     public MarriageCandidate getMc() {
         return mc;

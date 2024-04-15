@@ -6,8 +6,10 @@
 
 <AnchorPane id="AnchorPane" prefHeight="385.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group3_2111652_2110819_2220923_2220044_marriageregisteroffice.zafir.TicketViewController">
    <children>
-      <Label layoutX="41.0" layoutY="53.0" text="Subject: " />
+      <Label fx:id="subjectLable" layoutX="41.0" layoutY="53.0" text="Subject: " />
       <Label layoutX="41.0" layoutY="93.0" text="Description: " />
-      <Button layoutX="489.0" layoutY="345.0" mnemonicParsing="false" text="Close Ticket" />
+      <Button layoutX="432.0" layoutY="352.0" mnemonicParsing="false" onAction="#closeTicketOnClick" text="Close Ticket" />
+      <Button layoutX="536.0" layoutY="352.0" mnemonicParsing="false" onAction="#backButtonOnClick" text="Back" />
+      <Label fx:id="descriptionLable" layoutX="41.0" layoutY="125.0" prefHeight="151.0" prefWidth="512.0" wrapText="true" />
    </children>
 </AnchorPane>

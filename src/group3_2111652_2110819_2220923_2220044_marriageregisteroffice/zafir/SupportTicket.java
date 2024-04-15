@@ -4,22 +4,24 @@
  */
 package group3_2111652_2110819_2220923_2220044_marriageregisteroffice.zafir;
 
+import java.io.Serializable;
+
 /**
  *
  * @author zafir
  */
-public class SupportTicket {
+public class SupportTicket implements Serializable{
     private final String submittedBy;
     private String subject;
     private String description;
     private String closedBy;
-    private boolean isCloded;
+    private String isCloded;
 
     public SupportTicket(String submittedBy, String subject, String description) {
         this.submittedBy = submittedBy;
         this.subject = subject;
         this.description = description;
-        this.isCloded = false;
+        this.isCloded = "Open";
     }
 
     public String getSubject() {
@@ -46,12 +48,16 @@ public class SupportTicket {
         this.closedBy = closedBy;
     }
 
-    public boolean isIsCloded() {
+    public String getIsCloded() {
         return isCloded;
     }
 
-    public void setIsCloded(boolean isCloded) {
+    public void setIsCloded(String isCloded) {
         this.isCloded = isCloded;
+    }
+
+    public String getSubmittedBy() {
+        return submittedBy;
     }
 
     @Override
