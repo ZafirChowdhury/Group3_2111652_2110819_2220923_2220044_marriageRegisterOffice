@@ -106,17 +106,17 @@ public abstract class User implements Serializable {
         ObjectOutputStream oos;
         
         try {
-        if (file.exists()) {
-            fos = new FileOutputStream(file, true);
-            oos = new AppendableObjectOutputStream(fos);
-        } else {
-            fos = new FileOutputStream(file, true);
-            oos = new ObjectOutputStream(fos);
-        }
-        
-            oos.writeObject(username);
-            System.out.println(username + "saved to database.");
-            oos.close();
+            if (file.exists()) {
+                fos = new FileOutputStream(file, true);
+                oos = new AppendableObjectOutputStream(fos);
+            } else {
+                fos = new FileOutputStream(file, true);
+                oos = new ObjectOutputStream(fos);
+            }
+
+                oos.writeObject(username);
+                System.out.println(username + "saved to database.");
+                oos.close();
             
         } catch(Exception ex) {
             System.out.println("There was a error while saving the username");
@@ -133,18 +133,18 @@ public abstract class User implements Serializable {
         ObjectOutputStream oos;
         
         try {
-        if (file.exists()) {
-            fos = new FileOutputStream(file, true);
-            oos = new AppendableObjectOutputStream(fos);
-        } else {
-            fos = new FileOutputStream(file, true);
-            oos = new ObjectOutputStream(fos);
-        }
-        
-        oos.writeObject(this);
-        System.out.println(this.toString() + "  Saved.");
-        User.saveUsername(username);
-        oos.close();
+            if (file.exists()) {
+                fos = new FileOutputStream(file, true);
+                oos = new AppendableObjectOutputStream(fos);
+            } else {
+                fos = new FileOutputStream(file, true);
+                oos = new ObjectOutputStream(fos);
+            }
+
+            oos.writeObject(this);
+            System.out.println(this.toString() + "  Saved.");
+            User.saveUsername(this.username);
+            oos.close();
         
         } catch(Exception ex) {
             System.out.println("There was a error while saving the user");
@@ -155,7 +155,7 @@ public abstract class User implements Serializable {
     }
     
     // Bit finiky, Test out the return null parts
-    // Try suing a array list
+    // Try suing a array liArrayListst
     public static User verifyUser(String username, String password, String path) {
         ArrayList<User> userList = new ArrayList<>();
         
@@ -202,5 +202,98 @@ public abstract class User implements Serializable {
                 
         System.out.println("End of method, User not found");
         return null;
+    }
+    
+    public boolean deleteUser() throws IOException {
+        ArrayList<User> userList = new ArrayList<>();
+        ArrayList<String> usernameList = new ArrayList<>();
+        
+        // Reading all the user obj to userList
+        try {
+            File file = new File(User.getPath(this.type));
+            if (!file.exists()) {
+                System.out.println("File dose not exist, No user of that type exists");
+                return false;
+            }
+            
+            FileInputStream fis = new FileInputStream(file);
+            ObjectInputStream ois = new ObjectInputStream(fis);
+            
+            try {
+                while (true) {
+                User user = (User) ois.readObject();
+                userList.add(user);
+            }
+                
+            } catch(EOFException e) {
+                System.out.println("End of file reached.");
+                ois.close();
+            }
+            
+        } catch(Exception e) {
+            System.out.println("Error while reading file");            
+            return false;
+        }
+        
+        
+        // Reading all the username files
+        try {
+            File file = new File("bin/username.bin");
+            if (file.exists()) {
+                FileInputStream fis = new FileInputStream(file);
+                ObjectInputStream ois = new ObjectInputStream(fis);
+                
+                try {
+                    while (true) {
+                       String username = (String) ois.readObject();
+                       usernameList.add(username);
+                    }
+                    
+                } catch (EOFException e) {
+                    ois.close();
+                    System.out.println("All username read");
+                }
+                              
+            } else {
+                System.out.println("No user exists");
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            System.err.println("Error while trying to read username.bin");
+            return false;
+        }
+        
+        // Removing username string
+        usernameList.remove(this.username);
+        // Removing username obj
+        for (User u : userList) {
+            if (u.username.equals(this.username)) {
+                userList.remove(u);
+                break;
+            }
+        }
+        
+        
+        // Deleting file
+        File usernameFile = new File("bin/username.bin");
+        File userObjFile = new File(User.getPath(this.type));
+        
+        usernameFile.delete();
+        userObjFile.delete();
+        
+        // Saving all the old user obj intance
+        // Using saveUser() method causes username to be not saved properally
+        for (User u : userList) {
+            u.saveUser(User.getPath(this.type));
+        }
+        
+        // Save usernames from username arrayList if they are unique
+        for (String s : usernameList) {
+            if (User.isUniqueUsername(s)) { 
+                User.saveUsername(s);
+            }
+        }
+        
+        return true;
     }
 }

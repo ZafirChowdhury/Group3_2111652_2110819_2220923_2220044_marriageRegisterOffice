@@ -4,13 +4,12 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="207.0" prefWidth="391.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="group3_2111652_2110819_2220923_2220044_marriageregisteroffice.zafir.UserViewController">
+<AnchorPane id="AnchorPane" prefHeight="210.0" prefWidth="305.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group3_2111652_2110819_2220923_2220044_marriageregisteroffice.zafir.UserViewController">
    <children>
-      <Label layoutX="33.0" layoutY="38.0" text="Username:" />
-      <Label layoutX="33.0" layoutY="60.0" text="Type: " />
-      <Label layoutX="33.0" layoutY="85.0" text="Date Created: " />
-      <Button layoutX="242.0" layoutY="150.0" mnemonicParsing="false" text="Edit" />
-      <Button layoutX="299.0" layoutY="150.0" mnemonicParsing="false" text="Delete" />
+      <Label fx:id="usernameLable" layoutX="33.0" layoutY="38.0" text="Username:" />
+      <Label fx:id="typeLable" layoutX="33.0" layoutY="60.0" text="Type: " />
+      <Button layoutX="14.0" layoutY="170.0" mnemonicParsing="false" onAction="#deleteButtonOnClick" text="Delete User" />
+      <Button layoutX="241.0" layoutY="170.0" mnemonicParsing="false" onAction="#backButtonOnClick" text="Back" />
+      <Label fx:id="outputLable" layoutX="36.0" layoutY="105.0" />
    </children>
 </AnchorPane>

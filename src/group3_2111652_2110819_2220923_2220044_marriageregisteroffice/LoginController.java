@@ -4,7 +4,7 @@
  */
 package group3_2111652_2110819_2220923_2220044_marriageregisteroffice;
 
-import group3_2111652_2110819_2220923_2220044_marriageregisteroffice.arpita.MarriageCandidateDashbordController;
+import group3_2111652_2110819_2220923_2220044_marriageregisteroffice.arpita.MarriageCandidateDashboardController;
 import group3_2111652_2110819_2220923_2220044_marriageregisteroffice.arpita.MarriageCounselorDashbordController;
 import group3_2111652_2110819_2220923_2220044_marriageregisteroffice.sadia.Accountant_DashboardController;
 import group3_2111652_2110819_2220923_2220044_marriageregisteroffice.sadia.LegalAdvisor_DashboardController;
@@ -111,6 +111,7 @@ public class LoginController implements Initializable {
             Scene scene = new Scene(root);
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(scene);
+            stage.setTitle("It Admin Dashbord");
             stage.show(); 
         }
         
@@ -126,6 +127,7 @@ public class LoginController implements Initializable {
             Scene scene = new Scene(root);
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(scene);
+            stage.setTitle("Marriage Registarar");
             stage.show();
         }
         
@@ -141,6 +143,7 @@ public class LoginController implements Initializable {
             Scene scene = new Scene(root);
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(scene);
+            stage.setTitle("Witness Dashbord");
             stage.show();
         }
         
@@ -156,6 +159,7 @@ public class LoginController implements Initializable {
             Scene scene = new Scene(root);
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(scene);
+            stage.setTitle("Archivist");
             stage.show();
         }
         
@@ -171,6 +175,7 @@ public class LoginController implements Initializable {
             Scene scene = new Scene(root);
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(scene);
+            stage.setTitle("Accountant Dashbord");
             stage.show();
         }
         
@@ -186,21 +191,23 @@ public class LoginController implements Initializable {
             Scene scene = new Scene(root);
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(scene);
+            stage.setTitle("Legal Advisor Dashbord");
             stage.show();
         }
         
         // Marriage Candidate - Arpita
         else if (userTypeComboBox.getValue().equals("Marriage Candidate")) {
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("arpita/marriageCandidateDashbord.fxml"));
+            loader.setLocation(getClass().getResource("arpita/MarriageCandidateDashboard.fxml"));
             Parent root = loader.load(); 
             
-            MarriageCandidateDashbordController marriageCandidateDashbordController = loader.getController();
+            MarriageCandidateDashboardController marriageCandidateDashbordController = loader.getController();
             marriageCandidateDashbordController.receiveUserData(user);
             
             Scene scene = new Scene(root);
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(scene);
+            stage.setTitle("Marriage Candidate Dashbord");
             stage.show();
         }
         
@@ -216,6 +223,7 @@ public class LoginController implements Initializable {
             Scene scene = new Scene(root);
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(scene);
+            stage.setTitle("Marriage Counselor");
             stage.show();
         }
     }

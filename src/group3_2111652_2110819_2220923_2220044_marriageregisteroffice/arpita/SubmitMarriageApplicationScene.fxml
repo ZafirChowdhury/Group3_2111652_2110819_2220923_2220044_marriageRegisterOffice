@@ -6,8 +6,8 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="622.0" prefWidth="862.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
+<AnchorPane id="AnchorPane" prefHeight="622.0" prefWidth="862.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group3_2111652_2110819_2220923_2220044_marriageregisteroffice.arpita.SubmitMarriageApplicationSceneController"> 
+    <children>
       <Label layoutX="30.0" layoutY="26.0" prefHeight="21.0" prefWidth="268.0" text="Submit Marriage Application" />
       <Label layoutX="46.0" layoutY="81.0" prefHeight="21.0" prefWidth="160.0" />
       <Label layoutX="46.0" layoutY="130.0" prefHeight="21.0" prefWidth="160.0" text="Groom Name:" />
@@ -16,14 +16,12 @@
       <Label layoutX="46.0" layoutY="301.0" prefHeight="21.0" prefWidth="160.0" text="Bride NID:" />
       <Label layoutX="46.0" layoutY="81.0" prefHeight="21.0" prefWidth="160.0" text="Applicant Id:" />
       <Label layoutX="463.0" layoutY="71.0" prefHeight="21.0" prefWidth="173.0" text="Preferred marriage date:" />
-      <TextField layoutX="148.0" layoutY="76.0" />
-      <TextField layoutX="148.0" layoutY="125.0" />
-      <TextField layoutX="148.0" layoutY="171.0" />
-      <TextField layoutX="148.0" layoutY="229.0" />
-      <TextField layoutX="148.0" layoutY="286.0" />
-      <DatePicker layoutX="627.0" layoutY="66.0" />
-      <Button layoutX="447.0" layoutY="239.0" mnemonicParsing="false" text="Add" />
-      <Button layoutX="571.0" layoutY="239.0" mnemonicParsing="false" text="Finish" />
+      <TextField fx:id="applicationIDTextField" layoutX="148.0" layoutY="76.0" />
+      <TextField fx:id="groomNameTextField" layoutX="148.0" layoutY="125.0" />
+      <TextField fx:id="brideNameTextField" layoutX="148.0" layoutY="171.0" />
+      <TextField fx:id="groomNIDTextField" layoutX="148.0" layoutY="229.0" />
+      <TextField fx:id="brideNIDTextField" layoutX="148.0" layoutY="286.0" />
+      <DatePicker fx:id="preferredDateDatePicker" layoutX="627.0" layoutY="66.0" />
       <Label layoutX="46.0" layoutY="358.0" prefHeight="21.0" prefWidth="112.0" text="Groom Religion:" />
       <Label layoutX="46.0" layoutY="402.0" prefHeight="21.0" prefWidth="112.0" text="Bride Religion:" />
       <Label layoutX="46.0" layoutY="445.0" prefHeight="21.0" prefWidth="98.0" text="Groom Dob:" />
@@ -32,13 +30,15 @@
       <Label layoutX="46.0" layoutY="568.0" prefHeight="21.0" prefWidth="140.0" text="Permanent Address:" />
       <Label layoutX="471.0" layoutY="130.0" prefHeight="21.0" prefWidth="112.0" text="Mobile Number:" />
       <Label layoutX="471.0" layoutY="186.0" prefHeight="21.0" prefWidth="112.0" text="Witness Name:" />
-      <TextField layoutX="164.0" layoutY="343.0" />
-      <TextField layoutX="164.0" layoutY="387.0" />
-      <TextField layoutX="164.0" layoutY="430.0" />
-      <TextField layoutX="164.0" layoutY="480.0" />
-      <TextField layoutX="164.0" layoutY="522.0" />
-      <TextField layoutX="186.0" layoutY="563.0" />
-      <TextField layoutX="592.0" layoutY="115.0" />
-      <TextField layoutX="592.0" layoutY="181.0" />
-   </children>
+      <TextField fx:id="groomReligionTextField" layoutX="164.0" layoutY="343.0" />
+      <TextField fx:id="brideReligionTextField" layoutX="164.0" layoutY="387.0" />
+      <TextField fx:id="presentAdressTextField" layoutX="164.0" layoutY="522.0" prefHeight="25.0" prefWidth="437.0" />
+      <TextField fx:id="permanentAdressTextField" layoutX="186.0" layoutY="563.0" prefHeight="25.0" prefWidth="437.0" />
+      <TextField fx:id="mobileNumberTextField" layoutX="592.0" layoutY="115.0" />
+      <TextField fx:id="witnessNameTExtField" layoutX="592.0" layoutY="181.0" />
+      <DatePicker fx:id="groomDOBDatePicker" layoutX="141.0" layoutY="443.0" />
+      <DatePicker fx:id="brideDOBDatePicker" layoutX="141.0" layoutY="483.0" />
+      <Button layoutX="632.0" layoutY="253.0" mnemonicParsing="false" onMouseClicked="#SubmitButtonOnClick" prefHeight="25.0" prefWidth="54.0" text="Submit" />
+    </children>
+
 </AnchorPane>
