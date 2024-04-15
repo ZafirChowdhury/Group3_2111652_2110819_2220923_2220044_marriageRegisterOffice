@@ -43,14 +43,14 @@ public class TestReadObj {
         
         System.out.println("Reading User Bin files.");
         try {
-            File file = new File("bin/earlyPayment.bin");
+            File file = new File("bin/itAdmin.bin");
             if (file.exists()) {
                 FileInputStream fis = new FileInputStream(file);
                 ObjectInputStream ois = new ObjectInputStream(fis);
                 
                 try {
                     while (true) {
-                       EarlyPayment user = (EarlyPayment) ois.readObject();
+                       User user = (User) ois.readObject();
                        System.out.println(user.toString());
                     }
                 } catch (EOFException e) {

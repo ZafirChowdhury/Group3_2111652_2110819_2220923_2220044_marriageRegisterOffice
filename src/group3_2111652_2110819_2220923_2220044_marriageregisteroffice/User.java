@@ -106,17 +106,17 @@ public abstract class User implements Serializable {
         ObjectOutputStream oos;
         
         try {
-        if (file.exists()) {
-            fos = new FileOutputStream(file, true);
-            oos = new AppendableObjectOutputStream(fos);
-        } else {
-            fos = new FileOutputStream(file, true);
-            oos = new ObjectOutputStream(fos);
-        }
-        
-            oos.writeObject(username);
-            System.out.println(username + "saved to database.");
-            oos.close();
+            if (file.exists()) {
+                fos = new FileOutputStream(file, true);
+                oos = new AppendableObjectOutputStream(fos);
+            } else {
+                fos = new FileOutputStream(file, true);
+                oos = new ObjectOutputStream(fos);
+            }
+
+                oos.writeObject(username);
+                System.out.println(username + "saved to database.");
+                oos.close();
             
         } catch(Exception ex) {
             System.out.println("There was a error while saving the username");
@@ -133,18 +133,18 @@ public abstract class User implements Serializable {
         ObjectOutputStream oos;
         
         try {
-        if (file.exists()) {
-            fos = new FileOutputStream(file, true);
-            oos = new AppendableObjectOutputStream(fos);
-        } else {
-            fos = new FileOutputStream(file, true);
-            oos = new ObjectOutputStream(fos);
-        }
-        
-        oos.writeObject(this);
-        System.out.println(this.toString() + "  Saved.");
-        User.saveUsername(username);
-        oos.close();
+            if (file.exists()) {
+                fos = new FileOutputStream(file, true);
+                oos = new AppendableObjectOutputStream(fos);
+            } else {
+                fos = new FileOutputStream(file, true);
+                oos = new ObjectOutputStream(fos);
+            }
+
+            oos.writeObject(this);
+            System.out.println(this.toString() + "  Saved.");
+            User.saveUsername(this.username);
+            oos.close();
         
         } catch(Exception ex) {
             System.out.println("There was a error while saving the user");
@@ -204,9 +204,7 @@ public abstract class User implements Serializable {
         return null;
     }
     
-    public boolean deleteUser() {
-        // Read all user obj of that type and save it in a array
-        // Read all username obj and save in in a array
+    public boolean deleteUser() throws IOException {
         ArrayList<User> userList = new ArrayList<>();
         ArrayList<String> usernameList = new ArrayList<>();
         
@@ -237,6 +235,8 @@ public abstract class User implements Serializable {
             return false;
         }
         
+        
+        // Reading all the username files
         try {
             File file = new File("bin/username.bin");
             if (file.exists()) {
@@ -259,35 +259,41 @@ public abstract class User implements Serializable {
             }
         } catch (Exception ex) {
             ex.printStackTrace();
+            System.err.println("Error while trying to read username.bin");
+            return false;
         }
         
-        
-        // TODO REMOVING USER PART NOT WORKING
-        // Removing user obj
+        // Removing username string
         usernameList.remove(this.username);
         // Removing username obj
-        userList.remove(this);
+        for (User u : userList) {
+            if (u.username.equals(this.username)) {
+                userList.remove(u);
+                break;
+            }
+        }
+        
         
         // Deleting file
         File usernameFile = new File("bin/username.bin");
         File userObjFile = new File(User.getPath(this.type));
         
+        usernameFile.delete();
+        userObjFile.delete();
+        
         // Saving all the old user obj intance
+        // Using saveUser() method causes username to be not saved properally
         for (User u : userList) {
             u.saveUser(User.getPath(this.type));
         }
         
+        // Save usernames from username arrayList if they are unique
+        for (String s : usernameList) {
+            if (User.isUniqueUsername(s)) { 
+                User.saveUsername(s);
+            }
+        }
+        
         return true;
-        
-        // Test then remove username part, it isnt needed
-        
-        
-        // Reading all the username to usrnameList
-        
-        
-        // Remove the user obj from the array
-        // Remove the username string from the array
-        
-        // Rewrite all obj from bin file with the objects from array
     }
 }

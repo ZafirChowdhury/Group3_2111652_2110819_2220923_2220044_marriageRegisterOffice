@@ -74,7 +74,7 @@ public class UserViewController implements Initializable {
     }
 
     @FXML
-    private void deleteButtonOnClick(ActionEvent event) {
+    private void deleteButtonOnClick(ActionEvent event) throws IOException {
         if (showUser.getType().equals("IT Admin")) {
             System.out.println("We dont allow admin account be deleted.");
             outputLable.setText("Admin cannot be deleated by design!");
