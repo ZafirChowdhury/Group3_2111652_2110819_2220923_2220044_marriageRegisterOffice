@@ -6,7 +6,11 @@ package group3_2111652_2110819_2220923_2220044_marriageregisteroffice.zafir;
 
 import group3_2111652_2110819_2220923_2220044_marriageregisteroffice.User;
 import group3_2111652_2110819_2220923_2220044_marriageregisteroffice.arpita.MarriageApplication;
+import group3_2111652_2110819_2220923_2220044_marriageregisteroffice.sufi.AppendableObjectOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -75,6 +79,38 @@ public class MarriageViewController implements Initializable {
         stage.setTitle("Marriage Registrar Dashbord");
         stage.setScene(scene);
         stage.show();
+    }
+
+    @FXML
+    private void createMarriageCertificateOnClick(ActionEvent event) {
+        MarriageCertificate mc = new MarriageCertificate(ma.getBrideName(), 
+                                                        ma.getGroomName(), 
+                                                        ma.getPefferredMarriageDate().toString(), 
+                                                        currentUser.getUsername(), 
+                                                        ma.getWitnessName(), 
+                                                        ma.getMc().getUsername());
+        
+        File file = new File("bin/marriageCertificate.bin");
+        FileOutputStream fos;
+        ObjectOutputStream oos;
+        
+        try {
+            if (file.exists()) {
+                fos = new FileOutputStream(file, true);
+                oos = new AppendableObjectOutputStream(fos);
+            } else {
+                fos = new FileOutputStream(file, true);
+                oos = new ObjectOutputStream(fos);
+            }
+            
+            oos.writeObject(mc);
+            System.out.println("Marriage certificate saved succesfully");
+            oos.close();
+            
+        } catch (Exception e) {
+            System.out.println("There was a error while saving Marriage");
+            e.printStackTrace();
+        }
     }
     
 }

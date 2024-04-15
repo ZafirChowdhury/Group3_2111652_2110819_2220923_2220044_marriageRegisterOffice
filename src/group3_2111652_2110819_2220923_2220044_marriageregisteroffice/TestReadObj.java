@@ -6,6 +6,7 @@ package group3_2111652_2110819_2220923_2220044_marriageregisteroffice;
 
 import group3_2111652_2110819_2220923_2220044_marriageregisteroffice.arpita.MarriageApplication;
 import group3_2111652_2110819_2220923_2220044_marriageregisteroffice.zafir.EarlyPayment;
+import group3_2111652_2110819_2220923_2220044_marriageregisteroffice.zafir.MarriageCertificate;
 import java.io.EOFException;
 import java.io.File;
 import java.io.FileInputStream;
@@ -44,14 +45,14 @@ public class TestReadObj {
         
         System.out.println("Reading User Bin files.");
         try {
-            File file = new File("bin/MarriageApplication.bin");
+            File file = new File("bin/marriageCertificate.bin");
             if (file.exists()) {
                 FileInputStream fis = new FileInputStream(file);
                 ObjectInputStream ois = new ObjectInputStream(fis);
                 
                 try {
                     while (true) {
-                        MarriageApplication ma = (MarriageApplication) ois.readObject();
+                        MarriageCertificate ma = (MarriageCertificate) ois.readObject();
                        System.out.println(ma.toString());
                     }
                 } catch (EOFException e) {

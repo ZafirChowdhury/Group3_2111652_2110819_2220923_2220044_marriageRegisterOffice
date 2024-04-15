@@ -32,9 +32,7 @@
             <Font size="15.0" />
          </font>
       </Label>
-      <Button layoutX="76.0" layoutY="325.0" mnemonicParsing="false" text="Schedule Date" />
-      <Button layoutX="203.0" layoutY="325.0" mnemonicParsing="false" text="Create Marriage Certificate" />
-      <Button layoutX="414.0" layoutY="325.0" mnemonicParsing="false" text="Edit" />
+      <Button layoutX="200.0" layoutY="336.0" mnemonicParsing="false" onAction="#createMarriageCertificateOnClick" prefHeight="49.0" prefWidth="200.0" text="Create Marriage Certificate" />
       <Button layoutX="536.0" layoutY="360.0" mnemonicParsing="false" onAction="#backButtonOnClick" text="Back" />
    </children>
 </AnchorPane>
