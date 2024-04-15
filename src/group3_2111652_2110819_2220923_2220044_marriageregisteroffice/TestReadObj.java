@@ -4,6 +4,7 @@
  */
 package group3_2111652_2110819_2220923_2220044_marriageregisteroffice;
 
+import group3_2111652_2110819_2220923_2220044_marriageregisteroffice.arpita.MarriageApplication;
 import group3_2111652_2110819_2220923_2220044_marriageregisteroffice.zafir.EarlyPayment;
 import java.io.EOFException;
 import java.io.File;
@@ -43,15 +44,15 @@ public class TestReadObj {
         
         System.out.println("Reading User Bin files.");
         try {
-            File file = new File("bin/itAdmin.bin");
+            File file = new File("bin/MarriageApplication.bin");
             if (file.exists()) {
                 FileInputStream fis = new FileInputStream(file);
                 ObjectInputStream ois = new ObjectInputStream(fis);
                 
                 try {
                     while (true) {
-                       User user = (User) ois.readObject();
-                       System.out.println(user.toString());
+                        MarriageApplication ma = (MarriageApplication) ois.readObject();
+                       System.out.println(ma.toString());
                     }
                 } catch (EOFException e) {
                     System.out.println("End of file reached");

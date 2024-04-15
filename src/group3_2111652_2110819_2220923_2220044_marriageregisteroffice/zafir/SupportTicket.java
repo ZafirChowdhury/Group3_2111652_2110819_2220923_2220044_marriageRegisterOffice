@@ -10,6 +10,7 @@ import java.io.Serializable;
  *
  * @author zafir
  */
+
 public class SupportTicket implements Serializable{
     private final String submittedBy;
     private String subject;
@@ -63,6 +64,10 @@ public class SupportTicket implements Serializable{
     @Override
     public String toString() {
         return "SupportTicket{" + "submittedBy=" + submittedBy + ", subject=" + subject + ", description=" + description + ", closedBy=" + closedBy + ", isCloded=" + isCloded + '}';
-    }    
+    }  
+    
+    public boolean delete(){
+        return true;
+    }
 }
 

@@ -246,4 +246,9 @@ public class MarriageApplication implements Serializable {
     public void setWitnessName(String WitnessName) {
         this.WitnessName = WitnessName;
     }
+
+    @Override
+    public String toString() {
+        return "MarriageApplication{" + "applicationID=" + applicationID + ", groomName=" + groomName + ", brideName=" + brideName + ", groomNID=" + groomNID + ", brideNID=" + brideNID + ", groomReligion=" + groomReligion + ", brideReligion=" + brideReligion + ", groomDOB=" + groomDOB + ", brideDOB=" + brideDOB + ", presentAddress=" + presentAddress + ", permanentAddress=" + permanentAddress + ", pefferredMarriageDate=" + pefferredMarriageDate + ", MobileNumber=" + MobileNumber + ", WitnessName=" + WitnessName + ", granted=" + granted + ", mc=" + mc + ", isComplete=" + isComplete + '}';
+    }    
 }

@@ -74,5 +74,25 @@ public class MarriageRegistrarDashbordController implements Initializable {
         stage.setTitle("All Submitted Tickets");
         stage.show();
     }
+
+    @FXML
+    private void viewPendingMarrage(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("pendingMarriages.fxml"));
+        Parent root = loader.load(); 
+
+        PendingMarriagesController pendingMarriagesController = loader.getController();
+        pendingMarriagesController.receiveUserData(currentUser);
+
+        Scene scene = new Scene(root);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.setTitle("Pending Marriages");
+        stage.show();
+    }
+
+    @FXML
+    private void viewComplitedMarrage(ActionEvent event) {
+    }
     
 }

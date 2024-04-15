@@ -17,5 +17,6 @@
       <Button layoutX="474.0" layoutY="360.0" mnemonicParsing="false" onAction="#viewSupportTicketOnClick" text="View" />
       <Label fx:id="openTicketCountLable" layoutX="33.0" layoutY="28.0" text="Open Ticket Count: " />
       <Button layoutX="536.0" layoutY="360.0" mnemonicParsing="false" onAction="#backButtonOnClick" text="Back" />
+      <Label fx:id="outputLable" layoutX="33.0" layoutY="344.0" prefHeight="45.0" prefWidth="424.0" />
    </children>
 </AnchorPane>
