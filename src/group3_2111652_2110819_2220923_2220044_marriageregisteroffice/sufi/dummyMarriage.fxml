@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="672.0" prefWidth="901.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group3_2111652_2110819_2220923_2220044_marriageregisteroffice.sufi.DummyMarriageController">
+   <children>
+      <Label layoutX="330.0" layoutY="55.0" text="Dummy Marriage">
+         <font>
+            <Font name="System Bold" size="31.0" />
+         </font>
+      </Label>
+      <Label layoutX="63.0" layoutY="188.0" prefHeight="31.0" prefWidth="354.0" text="Candidate 1 Name: ">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="64.0" layoutY="232.0" prefHeight="31.0" prefWidth="354.0" text="Age:">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="64.0" layoutY="273.0" prefHeight="31.0" prefWidth="354.0" text="Nationality:">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="65.0" layoutY="317.0" prefHeight="31.0" prefWidth="354.0" text="NID:">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="65.0" layoutY="358.0" prefHeight="31.0" prefWidth="354.0" text="Father's Name: ">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="66.0" layoutY="402.0" prefHeight="31.0" prefWidth="354.0" text="Mother's Name: ">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="66.0" layoutY="443.0" prefHeight="31.0" prefWidth="354.0" text="Witness Name: ">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="64.0" layoutY="518.0" prefHeight="31.0" prefWidth="354.0" text="Witness Relationship: ">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="492.0" layoutY="186.0" prefHeight="31.0" prefWidth="354.0" text="Candidate 2 Name: ">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="493.0" layoutY="230.0" prefHeight="31.0" prefWidth="354.0" text="Age:">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="493.0" layoutY="271.0" prefHeight="31.0" prefWidth="354.0" text="Nationality:">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="494.0" layoutY="315.0" prefHeight="31.0" prefWidth="354.0" text="NID:">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="494.0" layoutY="356.0" prefHeight="31.0" prefWidth="354.0" text="Father's Name: ">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="495.0" layoutY="400.0" prefHeight="31.0" prefWidth="354.0" text="Mother's Name: ">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="495.0" layoutY="441.0" prefHeight="31.0" prefWidth="354.0" text="Witness Name: ">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="493.0" layoutY="516.0" prefHeight="31.0" prefWidth="354.0" text="Witness Relationship: ">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Line endX="-32.0" endY="20.0" layoutX="491.0" layoutY="560.0" startX="-32.0" startY="-370.0" />
+      <Label fx:id="marriageIDL" layoutX="361.0" layoutY="123.0" prefHeight="31.0" prefWidth="196.0" text="Marriage ID:">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="492.0" layoutY="556.0" prefHeight="31.0" prefWidth="354.0" text="Date and Time: ">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="65.0" layoutY="556.0" prefHeight="31.0" prefWidth="354.0" text="Venue: ">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="candidate1L" layoutX="232.0" layoutY="191.0" prefHeight="25.0" prefWidth="196.0" />
+      <TextField fx:id="age1L" layoutX="232.0" layoutY="235.0" prefHeight="25.0" prefWidth="196.0" />
+      <TextField fx:id="nationality1L" layoutX="232.0" layoutY="276.0" prefHeight="25.0" prefWidth="196.0" />
+      <TextField fx:id="NID1L" layoutX="232.0" layoutY="318.0" prefHeight="25.0" prefWidth="196.0" />
+      <TextField fx:id="father1L" layoutX="232.0" layoutY="361.0" prefHeight="25.0" prefWidth="196.0" />
+      <TextField fx:id="mother1L" layoutX="232.0" layoutY="405.0" prefHeight="25.0" prefWidth="196.0" />
+      <TextField fx:id="rel1L" layoutX="232.0" layoutY="521.0" prefHeight="25.0" prefWidth="196.0" />
+      <TextField fx:id="witness1L" layoutX="232.0" layoutY="446.0" prefHeight="25.0" prefWidth="196.0" />
+      <TextField fx:id="venueL" layoutX="232.0" layoutY="559.0" prefHeight="25.0" prefWidth="196.0" />
+      <TextField fx:id="candidate2L" layoutX="672.0" layoutY="189.0" prefHeight="25.0" prefWidth="196.0" />
+      <TextField fx:id="age2L" layoutX="672.0" layoutY="235.0" prefHeight="25.0" prefWidth="196.0" />
+      <TextField fx:id="nationality2L" layoutX="672.0" layoutY="276.0" prefHeight="25.0" prefWidth="196.0" />
+      <TextField fx:id="NID2L" layoutX="672.0" layoutY="320.0" prefHeight="25.0" prefWidth="196.0" />
+      <TextField fx:id="father2L" layoutX="672.0" layoutY="361.0" prefHeight="25.0" prefWidth="196.0" />
+      <TextField fx:id="mother2L" layoutX="672.0" layoutY="403.0" prefHeight="25.0" prefWidth="196.0" />
+      <TextField fx:id="witness2L" layoutX="672.0" layoutY="446.0" prefHeight="25.0" prefWidth="196.0" />
+      <TextField fx:id="rel2L" layoutX="672.0" layoutY="521.0" prefHeight="25.0" prefWidth="196.0" />
+      <TextField fx:id="dateL" layoutX="672.0" layoutY="559.0" prefHeight="25.0" prefWidth="196.0" promptText="2024-04-12 15:30" />
+      <Label layoutX="66.0" layoutY="479.0" prefHeight="31.0" prefWidth="354.0" text="Witness ID: ">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="witIDL1" layoutX="232.0" layoutY="482.0" prefHeight="25.0" prefWidth="196.0" />
+      <Label layoutX="495.0" layoutY="479.0" prefHeight="31.0" prefWidth="354.0" text="Witness ID: ">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="witIDL2" layoutX="674.0" layoutY="482.0" prefHeight="25.0" prefWidth="196.0" />
+      <Button layoutX="384.0" layoutY="605.0" mnemonicParsing="false" onMouseClicked="#submitMarriage" prefHeight="46.0" prefWidth="151.0" text="Submit">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
