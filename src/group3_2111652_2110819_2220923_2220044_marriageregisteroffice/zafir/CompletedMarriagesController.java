@@ -8,6 +8,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 
 /**
@@ -19,6 +20,12 @@ public class CompletedMarriagesController implements Initializable {
 
     @FXML
     private TableView<?> table;
+    @FXML
+    private TableColumn<?, ?> brideCol;
+    @FXML
+    private TableColumn<?, ?> groomCol;
+    @FXML
+    private TableColumn<?, ?> dateCol;
 
     /**
      * Initializes the controller class.

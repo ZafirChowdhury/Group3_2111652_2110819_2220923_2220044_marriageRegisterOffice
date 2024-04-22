@@ -18,8 +18,6 @@
             <Font size="15.0" />
          </font>
       </Label>
-      <Button layoutX="756.0" layoutY="24.0" mnemonicParsing="false" onMouseClicked="#logout" prefHeight="31.0" prefWidth="118.0" text="Log Out" />
-      <Button layoutX="21.0" layoutY="24.0" mnemonicParsing="false" onMouseClicked="#dashboard" prefHeight="31.0" prefWidth="118.0" text="Dashboard" />
       <Label fx:id="age1L" layoutX="64.0" layoutY="232.0" prefHeight="31.0" prefWidth="354.0" text="Age:">
          <font>
             <Font size="15.0" />

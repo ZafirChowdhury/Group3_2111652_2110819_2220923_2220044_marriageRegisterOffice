@@ -5,6 +5,8 @@
 package group3_2111652_2110819_2220923_2220044_marriageregisteroffice.sufi;
 
 import java.net.URL;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -52,6 +54,10 @@ public class UpcomingWeddingDetailsController implements Initializable {
     private Label rel2L;
     @FXML
     private Label marriageIDL;
+    @FXML
+    private Label dateL;
+    @FXML
+    private Label venueL;
 
     /**
      * Initializes the controller class.
@@ -61,12 +67,30 @@ public class UpcomingWeddingDetailsController implements Initializable {
         // TODO
     }    
 
-    @FXML
-    private void logout(MouseEvent event) {
-    }
 
-    @FXML
-    private void dashboard(MouseEvent event) {
+    void init(DummyMarriageSufi m) {
+        marriageIDL.setText("Marriage ID: "+m.getMarriageID());
+        candidate1L.setText("Candidate Name 1: "+m.getCandidateName1());
+        age1L.setText("Age: "+Integer.toString(m.getAge1()));
+        NID1L.setText("NID: "+Integer.toString(m.getNID1()));
+        nationality1L.setText("Nationality: "+m.getNationality1());
+        father1L.setText("Father's Name: "+m.getFather1());
+        mother1L.setText("Mother's Name: "+m.getMother1());
+        witness1L.setText("Witness Name: "+m.getWitness1());
+        rel1L.setText("Witness Relationship: "+m.getRel1());
+        candidate2L.setText("Candidate Name 2: "+m.getCandidateName2());
+        age2L.setText("Age: "+Integer.toString(m.getAge2()));
+        NID2L.setText("NID: "+Integer.toString(m.getNID2()));
+        nationality2L.setText("Nationality: "+m.getNationality2());
+        father2L.setText("Father's Name: "+m.getFather2());
+        mother2L.setText("Mother's Name: "+m.getMother2());
+        witness2L.setText("Witness Name: "+m.getWitness2());
+        rel2L.setText("Witness Relationship: "+m.getRel2());
+        venueL.setText("Venue: "+m.getVenue());
+        LocalDateTime y = LocalDateTime.of(m.getDate(),m.getTime());
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+        String f = y.format(formatter);
+        dateL.setText("Date and Time: "+f);
     }
     
 }

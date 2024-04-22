@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="group3_2111652_2110819_2220923_2220044_marriageregisteroffice.arpita.ScheduleController">
+   <children>
+      <Label layoutX="60.0" layoutY="128.0" prefHeight="21.0" prefWidth="45.0" text="Date" />
+      <Label layoutX="60.0" layoutY="182.0" prefHeight="21.0" prefWidth="45.0" text="Time" />
+      <Button layoutX="357.0" layoutY="314.0" mnemonicParsing="false" onMouseClicked="#confirmButtonOnClick" text="Confirm" />
+      <DatePicker fx:id="dateDatePicker" layoutX="128.0" layoutY="126.0" />
+      <ComboBox fx:id="timeComboBox" layoutX="128.0" layoutY="180.0" prefWidth="150.0" />
+      <Label layoutX="60.0" layoutY="239.0" prefHeight="21.0" prefWidth="59.0" text="Duration (H):" />
+      <ComboBox fx:id="durationComboBox" layoutX="128.0" layoutY="237.0" prefWidth="150.0" />
+   </children>
+</AnchorPane>

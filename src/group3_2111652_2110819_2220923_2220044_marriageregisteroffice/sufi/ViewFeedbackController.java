@@ -19,11 +19,11 @@ import javafx.scene.input.MouseEvent;
 public class ViewFeedbackController implements Initializable {
 
     @FXML
-    private Label userIDL;
-    @FXML
     private Label userNameL;
     @FXML
     private Label feedbackL;
+    @FXML
+    private Label marriageIDL;
 
     /**
      * Initializes the controller class.
@@ -33,8 +33,11 @@ public class ViewFeedbackController implements Initializable {
         // TODO
     }    
 
-    @FXML
-    private void closeWindow(MouseEvent event) {
+    void init(Feedback f) {
+        userNameL.setText("User Name: "+f.getUsername());
+        feedbackL.setText(f.getFeedback());
+        marriageIDL.setText("Marriage ID: "+f.getMarriageID());
     }
+
     
 }

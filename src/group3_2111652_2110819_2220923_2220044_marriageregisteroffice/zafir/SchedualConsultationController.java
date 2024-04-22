@@ -6,7 +6,11 @@ package group3_2111652_2110819_2220923_2220044_marriageregisteroffice.zafir;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.DatePicker;
 
 /**
  * FXML Controller class
@@ -15,6 +19,11 @@ import javafx.fxml.Initializable;
  */
 public class SchedualConsultationController implements Initializable {
 
+    @FXML
+    private DatePicker datePicker;
+    @FXML
+    private ComboBox<String> mcComboBox;
+
     /**
      * Initializes the controller class.
      */
@@ -22,5 +31,9 @@ public class SchedualConsultationController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+
+    @FXML
+    private void scheduleButtonOnClick(ActionEvent event) {
+    }
     
 }

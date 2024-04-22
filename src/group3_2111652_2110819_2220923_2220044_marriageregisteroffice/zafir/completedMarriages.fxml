@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -16,12 +15,11 @@
       </Label>
       <TableView fx:id="table" layoutX="24.0" layoutY="76.0" prefHeight="300.0" prefWidth="559.0">
         <columns>
-          <TableColumn prefWidth="191.0" text="Partner 1" />
-          <TableColumn prefWidth="163.0" text="Partner 2" />
-            <TableColumn prefWidth="204.0" text=" Date" />
+          <TableColumn fx:id="brideCol" prefWidth="191.0" text="Bride" />
+          <TableColumn fx:id="groomCol" prefWidth="163.0" text="Groom" />
+            <TableColumn fx:id="dateCol" prefWidth="204.0" text=" Date" />
         </columns>
       </TableView>
-      <Button layoutX="477.0" layoutY="392.0" mnemonicParsing="false" text="View in detail" />
       <Label layoutX="40.0" layoutY="384.0" text="Select a single marriage and click on the button to ">
          <font>
             <Font size="11.0" />

@@ -7,7 +7,9 @@ package group3_2111652_2110819_2220923_2220044_marriageregisteroffice;
 import java.io.EOFException;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutput;
 import java.io.ObjectOutputStream;
@@ -31,6 +33,14 @@ public abstract class User implements Serializable {
         this.type = type;
     }
 
+    public String getUsername() {
+        return username;
+    }
+
+    public String getType() {
+        return type;
+    }
+    
     public String getPassword() {
         return password;
     }
@@ -44,32 +54,40 @@ public abstract class User implements Serializable {
         return "User{" + "username=" + username + ", type=" + type + '}';
     }
     
+    // Returns path to bin file according to the user type given
+    public static String getPath(String type) {
+        if (type.equals("Marriage Registrar")) return "bin/marriageRegistrar.bin";
+        if (type.equals("IT Admin")) return "bin/itAdmin.bin";
+        if (type.equals("Marriage Candidate")) return "bin/marriageCandidate.bin";
+        if (type.equals("Legal Advisor")) return "bin/legalAdvisor.bin";
+        if (type.equals("Accountant")) return "bin/accountant.bin";
+        if (type.equals("Witness")) return "bin/witness.bin";
+        if (type.equals("Archivist")) return "bin/archivist.bin";
+        if (type.equals("Marriage Counselor")) return "bin/marriageCounselor.bin";
+        return "";
+    }
+    
     // Returns true if username dose not exist
     public static boolean isUniqueUsername(String username){
-        ArrayList<String> usernames =  new ArrayList<>();
-        
         try {
-            File usernameFile = new File("bin/username.bin");
-            if (usernameFile.exists()) {
-                FileInputStream fis = new FileInputStream(usernameFile);
+            File file = new File("bin/username.bin");
+            if (file.exists()) {
+                FileInputStream fis = new FileInputStream(file);
                 ObjectInputStream ois = new ObjectInputStream(fis);
                 
                 try {
                     while (true) {
-                        usernames.add((String) ois.readObject());
+                       String user = (String) ois.readObject();
+                       if (user.equals(username)) return false;
                     }
+                    
                 } catch (EOFException e) {
                     ois.close();
+                    return true;
                 }
-                
-                for (String s : usernames) {
-                    if (s.equals(username)) {
-                        // Username exists
-                        return false;
-                    }
-                }
-                
+                              
             } else {
+                // As file dose not exsit so
                 // Username dose not exist
                 return true;
             }
@@ -81,54 +99,52 @@ public abstract class User implements Serializable {
         return true;
     }
     
-    // Returns true if given username is saved successfully
-    public static boolean saveUsername(String username) {
-        if (!isUniqueUsername(username)) {
-            // Username exists
-            System.out.println("Invalid use of method, username allready exists");
+    // Returns true if username is saved
+    public static boolean saveUsername(String username) throws FileNotFoundException, IOException {
+        File file = new File("bin/username.bin");
+        FileOutputStream fos;
+        ObjectOutputStream oos;
+        
+        try {
+            if (file.exists()) {
+                fos = new FileOutputStream(file, true);
+                oos = new AppendableObjectOutputStream(fos);
+            } else {
+                fos = new FileOutputStream(file, true);
+                oos = new ObjectOutputStream(fos);
+            }
+
+                oos.writeObject(username);
+                System.out.println(username + "saved to database.");
+                oos.close();
+            
+        } catch(Exception ex) {
+            System.out.println("There was a error while saving the username");
             return false;
         }
         
-        try {
-            File usernameFile = new File("bin/username.bin");
-            FileOutputStream fos;
-            ObjectOutputStream oos;
-            if (usernameFile.exists()) {
-                fos = new FileOutputStream(usernameFile, true);
-                oos = new AppendableObjectOutputStream(fos);
-            } else {
-                fos = new FileOutputStream(usernameFile, true);
-                oos = new ObjectOutputStream(fos);
-            }
-            
-            oos.writeObject(username);
-            oos.close();            
-            
-        } catch(Exception ex) {
-            System.err.println("There was a error writing to username.bin");
-            return false;
-        }        
         return true;
     }
-    
-    // Returns true if object is saved 
+       
+    // Returns true if User object is saved 
     public boolean saveUser(String path){
         File file = new File(path);
         FileOutputStream fos;
         ObjectOutputStream oos;
         
         try {
-        if (file.exists()) {
-            fos = new FileOutputStream(file, true);
-            oos = new AppendableObjectOutputStream(fos);
-        } else {
-            fos = new FileOutputStream(file, true);
-            oos = new ObjectOutputStream(fos);
-        }
-        
-        oos.writeObject(this);
-        System.out.println(this.toString() + "Saved.");
-        oos.close();
+            if (file.exists()) {
+                fos = new FileOutputStream(file, true);
+                oos = new AppendableObjectOutputStream(fos);
+            } else {
+                fos = new FileOutputStream(file, true);
+                oos = new ObjectOutputStream(fos);
+            }
+
+            oos.writeObject(this);
+            System.out.println(this.toString() + "  Saved.");
+            User.saveUsername(this.username);
+            oos.close();
         
         } catch(Exception ex) {
             System.out.println("There was a error while saving the user");
@@ -138,34 +154,146 @@ public abstract class User implements Serializable {
         return true;
     }
     
-    // TODO : DOSE NOT WORK
-    // TRY : Use type to set path and ArrayList type
+    // Bit finiky, Test out the return null parts
+    // Try suing a array liArrayListst
     public static User verifyUser(String username, String password, String path) {
-        // Add all the obj instace in array list
-        ArrayList userList = new ArrayList();
+        ArrayList<User> userList = new ArrayList<>();
         
         try {
             File file = new File(path);
             if (!file.exists()) {
-                System.out.println("File dose not exist");
+                System.out.println("File dose not exist, No user of that type exists");
+                return null;
             }
+            
             FileInputStream fis = new FileInputStream(file);
             ObjectInputStream ois = new ObjectInputStream(fis);
             
             try {
-                userList.add((User) ois.readObject());
-            } catch(EOFException e) {
+                while (true) {
+                User user = (User) ois.readObject();
+                userList.add(user);
+                System.out.println("All users added to the ArrayList");
+            }
                 
+            } catch(EOFException e) {
+                System.out.println("End of file reached.");
+                ois.close();
             }
             
         } catch(Exception e) {
-            e.printStackTrace();
+            System.out.println("Error while reading file");            
+            return null;
         }
         
-        for (Object u : userList) {
-            System.out.println(u.toString());
+        for (User u : userList) {
+            if (u.getUsername().equals(username)) {
+                System.out.println("User found, checking password");
+                if (u.getPassword().equals(password)) {
+                    System.out.println("Password matched, loggin in user: " + u.toString());
+                    return u;
+                }
+                else {
+                    System.out.println("Password dose not match.");
+                    return null;
+                }
+            }
         }
-        
+                
+        System.out.println("End of method, User not found");
         return null;
+    }
+    
+    public boolean deleteUser() throws IOException {
+        ArrayList<User> userList = new ArrayList<>();
+        ArrayList<String> usernameList = new ArrayList<>();
+        
+        // Reading all the user obj to userList
+        try {
+            File file = new File(User.getPath(this.type));
+            if (!file.exists()) {
+                System.out.println("File dose not exist, No user of that type exists");
+                return false;
+            }
+            
+            FileInputStream fis = new FileInputStream(file);
+            ObjectInputStream ois = new ObjectInputStream(fis);
+            
+            try {
+                while (true) {
+                User user = (User) ois.readObject();
+                userList.add(user);
+            }
+                
+            } catch(EOFException e) {
+                System.out.println("End of file reached.");
+                ois.close();
+            }
+            
+        } catch(Exception e) {
+            System.out.println("Error while reading file");            
+            return false;
+        }
+        
+        
+        // Reading all the username files
+        try {
+            File file = new File("bin/username.bin");
+            if (file.exists()) {
+                FileInputStream fis = new FileInputStream(file);
+                ObjectInputStream ois = new ObjectInputStream(fis);
+                
+                try {
+                    while (true) {
+                       String username = (String) ois.readObject();
+                       usernameList.add(username);
+                    }
+                    
+                } catch (EOFException e) {
+                    ois.close();
+                    System.out.println("All username read");
+                }
+                              
+            } else {
+                System.out.println("No user exists");
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            System.err.println("Error while trying to read username.bin");
+            return false;
+        }
+        
+        // Removing username string
+        usernameList.remove(this.username);
+        // Removing username obj
+        for (User u : userList) {
+            if (u.username.equals(this.username)) {
+                userList.remove(u);
+                break;
+            }
+        }
+        
+        
+        // Deleting file
+        File usernameFile = new File("bin/username.bin");
+        File userObjFile = new File(User.getPath(this.type));
+        
+        usernameFile.delete();
+        userObjFile.delete();
+        
+        // Saving all the old user obj intance
+        // Using saveUser() method causes username to be not saved properally
+        for (User u : userList) {
+            u.saveUser(User.getPath(this.type));
+        }
+        
+        // Save usernames from username arrayList if they are unique
+        for (String s : usernameList) {
+            if (User.isUniqueUsername(s)) { 
+                User.saveUsername(s);
+            }
+        }
+        
+        return true;
     }
 }

@@ -4,6 +4,14 @@
  */
 package group3_2111652_2110819_2220923_2220044_marriageregisteroffice;
 
+import group3_2111652_2110819_2220923_2220044_marriageregisteroffice.arpita.MarriageCandidateDashboardController;
+import group3_2111652_2110819_2220923_2220044_marriageregisteroffice.arpita.MarriageCounselorDashbordController;
+import group3_2111652_2110819_2220923_2220044_marriageregisteroffice.sadia.Accountant_DashboardController;
+import group3_2111652_2110819_2220923_2220044_marriageregisteroffice.sadia.LegalAdvisor_DashboardController;
+import group3_2111652_2110819_2220923_2220044_marriageregisteroffice.sufi.ArchivistDashboardController;
+import group3_2111652_2110819_2220923_2220044_marriageregisteroffice.sufi.WitnessDashboardController;
+import group3_2111652_2110819_2220923_2220044_marriageregisteroffice.zafir.AdminDashbordController;
+import group3_2111652_2110819_2220923_2220044_marriageregisteroffice.zafir.MarriageRegistrarDashbordController;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -77,25 +85,171 @@ public class LoginController implements Initializable {
             Alert a = new Alert(Alert.AlertType.ERROR);
             a.setContentText("Password must be at least 6 characters long");
             a.showAndWait();
-            System.err.println("Password must be at least 6 characters long");
+            System.out.println("Password must be at least 6 characters long");
             return;
         }
         
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        FXMLLoader loader = null;
-        if(userTypeComboBox.getValue().equals("Marriage Candidate")) {
-            loader = new FXMLLoader(getClass().getResource("/Arpita/MarriageCandidateHomepage.fxml"));
+        // User Verification
+        User user = User.verifyUser(usernameTextFiled.getText().trim(), ((String) passwordField.getText()).trim(), User.getPath(userTypeComboBox.getValue()));
+        if (user == null) {
+            Alert a = new Alert(Alert.AlertType.ERROR);
+            a.setContentText("Incorrect passowrd or username, please try again");
+            a.showAndWait();
+            System.out.println("Incorrect passowrd or username, please try again");
+            return;
         }
-        Parent root = loader.load();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-        stage.setTitle("Marriage Candidate");
-
         
+        // IT Admin - Zafir
+        else if (userTypeComboBox.getValue().equals("IT Admin")) {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("zafir/adminDashbord.fxml"));
+            Parent root = loader.load(); 
+            
+            AdminDashbordController adminDashbordController = loader.getController();
+            adminDashbordController.receiveUserData(user);
+            
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.setTitle("It Admin Dashbord");
+            stage.show(); 
+        }
         
-        // User.verifyUser("", "", "bin/itAdmin.bin");
+        // Marriage Registrar - Zafir
+        else if (userTypeComboBox.getValue().equals("Marriage Registrar")) {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("zafir/marriageRegistrarDashbord.fxml"));
+            Parent root = loader.load(); 
+            
+            MarriageRegistrarDashbordController marriageRegistrarDashbordController  = loader.getController();
+            marriageRegistrarDashbordController.receiveUserData(user);
+            
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.setTitle("Marriage Registarar");
+            stage.show();
+        }
         
+        // Witness - Sufi
+        else if (userTypeComboBox.getValue().equals("Witness")) {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("sufi/witnessDashboard.fxml"));
+            Parent root = loader.load(); 
+            
+            WitnessDashboardController witnessDashboardController = loader.getController();
+            witnessDashboardController.receiveUserData(user);
+            
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.setTitle("Witness Dashbord");
+            stage.show();
+        }
+        
+        // Archivist - Sufi
+        else if (userTypeComboBox.getValue().equals("Archivist")) {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("sufi/archivistDashboard.fxml"));
+            Parent root = loader.load(); 
+            
+            ArchivistDashboardController archivistDashboardController = loader.getController();
+            archivistDashboardController.receiveUserData(user);
+            
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.setTitle("Archivist");
+            stage.show();
+        }
+        
+        // Accountant - Sadia
+        else if (userTypeComboBox.getValue().equals("Accountant")) {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("sadia/Accountant_Dashboard.fxml"));
+            Parent root = loader.load(); 
+            
+            Accountant_DashboardController accountant_DashboardController = loader.getController();
+            accountant_DashboardController.receiveUserData(user);
+            
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.setTitle("Accountant Dashbord");
+            stage.show();
+        }
+        
+        // Legal Advisor - Sadia
+        else if (userTypeComboBox.getValue().equals("Legal Advisor")) {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("sadia/LegalAdvisor_Dashboard.fxml"));
+            Parent root = loader.load(); 
+            
+            LegalAdvisor_DashboardController legalAdvisor_DashboardController = loader.getController();
+            legalAdvisor_DashboardController.receiveUserData(user);
+            
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.setTitle("Legal Advisor Dashbord");
+            stage.show();
+        }
+        
+        // Marriage Candidate - Arpita
+        else if (userTypeComboBox.getValue().equals("Marriage Candidate")) {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("arpita/MarriageCandidateDashboard.fxml"));
+            Parent root = loader.load(); 
+            
+            MarriageCandidateDashboardController marriageCandidateDashbordController = loader.getController();
+            marriageCandidateDashbordController.receiveUserData(user);
+            
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.setTitle("Marriage Candidate Dashbord");
+            stage.show();
+        }
+        
+        // Marriage Counselor - Arpita
+        else if (userTypeComboBox.getValue().equals("Marriage Counselor")) {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("arpita/marriageCounselorDashbord.fxml"));
+            Parent root = loader.load(); 
+            
+            MarriageCounselorDashbordController marriageCounselorDashbordController = loader.getController();
+            marriageCounselorDashbordController.receiveUserData(user);
+            
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.setTitle("Marriage Counselor");
+            stage.show();
+        }
     }
     
+    
+    
 }
+
+/*
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("zafir/adminDashbord.fxml"));
+            Parent root = loader.load(); 
+            
+            AdminDashbordController adminDashbordController = loader.getController();
+            adminDashbordController.receiveUserData(user);
+            
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+
+            ADD THIS CODE TO YOUR DASHBORD CONTROLLR to recive the user obj
+                User user;
+                public void receiveUserData(User user){
+                    userNameLable.setText("You are logged in as: " + user.getUsername());
+                    System.out.println(user.toString());
+                    return;
+                }
+*/
